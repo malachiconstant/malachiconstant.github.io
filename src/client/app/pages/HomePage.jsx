@@ -7,7 +7,7 @@ class HomePage extends React.Component {
 	render() {
 		return(
 			<div className="main-page generic-page">
-				<p>This is the main page</p>
+				<p>this website is under construction</p>
 			</div>
 		)
 	}
