@@ -1,0 +1,22 @@
+@import 'global-variables';
+
+.generic-page {
+	padding-left: $pd-one;
+	padding-right: $pd-one;
+	padding-top: $pd-one;
+	h2,
+	p {
+		opacity: 0;
+		transition: opacity 1s;
+	}
+	&.appear {
+		h2,
+		p {
+			opacity: 1;
+		}
+	}
+}
+
+@media (min-width: $min-one) {
+
+}

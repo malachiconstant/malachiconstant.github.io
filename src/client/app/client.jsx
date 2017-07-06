@@ -7,12 +7,19 @@ import HomePage from "./pages/HomePage.jsx";
 import AboutTheSitePage from "./pages/AboutTheSitePage.jsx";
 
 
+class Client extends React.Component{
+	render() {
+		return(
+			<div ref="mainWrapper" className="main-wrapper">
+				<Router history={ hashHistory }>
+					<Route path="/" component={HomePage}></Route>
+					<Route path="about" component={AboutTheSitePage}></Route>
+				</Router>
+			</div>
+		)
+	}
+}
 ReactDOM.render(
-
-	<Router history={ hashHistory }>
-		<Route path="/" component={HomePage}></Route>
-		<Route path="about" component={AboutTheSitePage}></Route>
-	</Router>
-	,
-	document.getElementById('app')
+ 	React.createElement(Client),
+ 	document.getElementById('app')
 );
