@@ -73,10 +73,12 @@ p {
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 15px; }
-  .generic-page h2,
-  .generic-page p {
-    opacity: 0;
-    transition: opacity 1s; }
-  .generic-page.appear h2,
-  .generic-page.appear p {
-    opacity: 1; }
+.progress-meter {
+  width: 100%;
+  height: 2px;
+  position: fixed;
+  top: 0;
+  left: 0; }
+  .progress-meter .gauge {
+    background-color: #323232;
+    height: 2px; }
