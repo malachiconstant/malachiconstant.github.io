@@ -9,6 +9,12 @@ class ProgressMeter extends React.Component {
 		window.addEventListener('load', function() {
 			progressBar();
 		});
+		window.addEventListener('scroll', function(){
+			progressBar();
+		});
+		window.addEventListener('resize', function(){
+			progressBar();
+		});
 		function progressBar() {
 			const gauge = self.refs.gauge;
 			const winHeight = window.innerHeight;
@@ -18,7 +24,6 @@ class ProgressMeter extends React.Component {
 			const docHeight = (Math.max( body.scrollHeight, body.offsetHeight,html.clientHeight, html.scrollHeight, html.offsetHeight )) - winHeight;
 			const YTop = document.body.scrollTop;
 			const pPercentage = (YTop / docHeight) * 100;
-						console.log(pPercentage);
 
 			gauge.style.width = pPercentage + "%";
 		}
