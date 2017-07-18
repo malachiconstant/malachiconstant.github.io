@@ -1,0 +1,13 @@
+@import 'global-variables';
+
+.main-menu {
+	.top-bar{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}
+
+@media (min-width: $min-one) {
+
+}
