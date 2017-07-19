@@ -7,20 +7,13 @@ class CrossHatch extends React.Component {
 		constructor(props) {
 	  super(props);
 	  this.state = {
-	  };
+	  	menuVisible: this.props.menuOpen
+	  };	
 	}
 	componentDidMount() {
+
 	}
 	render() {
-		function crossLines(dimension,splitBy) {
-			const totalLines = dimension * splitBy;
-			const round =  Math.round(totalLines);
-			const theArray = [];
-			for (var i=0; i <= round; i++) {
-			  theArray.push(i);
-			}
-			return theArray;
-		}
 
 		const hItems = crossLines(window.innerHeight,0.05).map((number) =>
 			<div className="h-lines" 
@@ -43,15 +36,41 @@ class CrossHatch extends React.Component {
 				key={"v" + number}>
 			</div>
 		);
+
 		const lastLine = Math.max(
 							Math.round(100*((crossLines(window.innerWidth,0.05).length)*0.01))/100,
 							Math.round(100*((crossLines(window.innerHeight,0.15).length)*0.01))/100);
+
 		const crossHatchStyle = {
 			transitionDelay: ((this.props.menuOpen) ? 0 : lastLine*1.5) + "s"
 		}
+
+		if (this.props.menuOpen) {
+			var recordedTime = this.props.duration;
+			
+		} else {
+			var recordedTime = new Date().getTime();
+
+		}	
+
+		var totalTime = ((recordedTime - this.props.duration) < (lastLine * 1000)) ? (recordedTime - this.props.duration) : lastLine*1000;
+
+		console.log(totalTime);
 		const bgStyle = {
-			transitionDelay: ((this.props.menuOpen) ? 0 : lastLine*1) + "s"
+			transitionDelay: ((this.props.menuOpen) ? 0 : (totalTime/1000)) + "s"
 		}
+
+		function crossLines(dimension,splitBy) {
+			const totalLines = dimension * splitBy;
+			const round =  Math.round(totalLines);
+			const theArray = [];
+			for (var i=0; i <= round; i++) {
+			  theArray.push(i);
+			}
+			return theArray;
+		}
+
+		
 		return(
 			<div className={"crosshatch-container " + ((this.props.menuOpen) ? "open": "")} style={crossHatchStyle}>
 				<div className="cross-hatch-bg" style={bgStyle}></div>

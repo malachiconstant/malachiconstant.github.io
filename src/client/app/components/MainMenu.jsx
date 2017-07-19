@@ -8,19 +8,23 @@ class MainMenu extends React.Component {
 		constructor(props) {
 	  super(props);
 	  this.state = {
-	  	menuOpen : false
+	  	menuOpen : false,
+	  	duration: 0
 	  };
 	   this._toggleMenu = this._toggleMenu.bind(this);
 	}
 	componentDidMount() {
 
-
 	}
 	_toggleMenu(){
-		console.log("hellowwww");
-		this.setState(prevState => ({menuOpen : !prevState.menuOpen}));
+		this.setState(prevState => ({
+			menuOpen : !prevState.menuOpen,
+			duration: this.state.menuOpen ?  this.state.duration : new Date().getTime()
+		}));
+
 	}
 	render() {
+
 
 		return(
 			<div className="main-menu">
@@ -33,6 +37,7 @@ class MainMenu extends React.Component {
 				</div>
 				<CrossHatch 
 				menuOpen={this.state.menuOpen}
+				duration={this.state.duration}
 				/>
 			</div>
 		)
