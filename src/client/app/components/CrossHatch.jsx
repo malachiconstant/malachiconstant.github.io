@@ -55,7 +55,6 @@ class CrossHatch extends React.Component {
 
 		var totalTime = ((recordedTime - this.props.duration) < (lastLine * 1000)) ? (recordedTime - this.props.duration) : lastLine*1000;
 
-		console.log(totalTime);
 		const bgStyle = {
 			transitionDelay: ((this.props.menuOpen) ? 0 : (totalTime/1000)) + "s"
 		}

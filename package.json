@@ -14,7 +14,9 @@
     "css-loader": "^0.28.4",
     "style-loader": "^0.18.2",
     "extract-text-webpack-plugin": "^2.1.2",
-    "webpack": "^2.4.1"
+    "webpack": "^2.4.1",
+    "postcss-loader": "^2.0.6",
+    "autoprefixer": "^7.1.2"
   },
   "devDependencies": {
     "react-app-tools": "git+https://github.com/malachiconstant/react-app.git"

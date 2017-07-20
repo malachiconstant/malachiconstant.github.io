@@ -26,6 +26,7 @@
 		height: 100%;
 		flex-direction: column;
 		justify-content: space-between;
+		transform: scaleX(-1);
 		
 	}
 	.h-lines {
@@ -44,6 +45,7 @@
 		height: 100%;
 		flex-direction: row;
 		justify-content: space-between;
+		transform: scaleY(-1);
 	}
 	.v-lines {
 		background-color: $light-grey02;
@@ -56,6 +58,12 @@
 		transform: scale(1);
 		.cross-hatch-bg {
 			opacity: 0.95;
+		}
+		.h-container {
+			transform: scaleX(1);
+		}
+		.v-container {
+			transform: scaleY(1);
 		}
 	}
 

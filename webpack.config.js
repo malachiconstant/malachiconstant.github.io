@@ -20,7 +20,10 @@ var config = {
 			},
 			{
 			    test: /\.scss$/,
-			    loader: ExtractTextPlugin.extract('css-loader!sass-loader')
+			    loader: ExtractTextPlugin.extract({
+			    	fallback: 'style-loader',
+			    	use: ['css-loader','postcss-loader','sass-loader']
+			    })
 			}
 	    ]
 	 },

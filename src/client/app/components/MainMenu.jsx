@@ -32,7 +32,13 @@ class MainMenu extends React.Component {
 				<div className="mobile-wrapper">
 					<div className="top-bar">
 						<div className="main-logo"></div>
-						<div onClick={() => this._toggleMenu()} className="menu-button" role="button" aria-haspopup="true" tabIndex="0">x</div>
+						<div onClick={() => this._toggleMenu()} className={"menu-button " + ((this.state.menuOpen) ? "visibe" : "hidden")} role="button" aria-haspopup="true" tabIndex="0">
+							<div className="common-icon menu-icon top"></div>
+							<div className="common-icon menu-icon middle"></div>
+							<div className="common-icon menu-icon bottom"></div>
+							<div className="common-icon exit-icon bar-1"></div>
+							<div className="common-icon exit-icon bar2"></div>
+						</div>
 					</div>
 				</div>
 				<CrossHatch 
