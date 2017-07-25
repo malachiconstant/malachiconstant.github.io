@@ -68,7 +68,6 @@ class CrossHatch extends React.Component {
 			}
 			return theArray;
 		}
-
 		
 		return(
 			<div className={"crosshatch-container " + ((this.props.menuOpen) ? "open": "")} style={crossHatchStyle}>
