@@ -47,14 +47,12 @@ class MainMenu extends React.Component {
 				self.setState({
 					topBar: true
 				});
-				console.log("up");
 			}
 			if(scrollDown && !self.state.menuOpen){
 				self.setState({
 					topBar: false
 				});
 				clearTimeout(scrollDetect);
-				console.log("down");
 			}
 			scrollDetect = setTimeout(function(){
 				self.setState({
