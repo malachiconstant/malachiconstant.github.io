@@ -17,6 +17,7 @@ class HomePage extends React.Component {
 			<div ref="genericPage" className="generic-page home-page ">
 				<h2>Elegance through creativity and efficiency.</h2>
 				<p>this website is under construction</p>
+				<p><a href="https://github.com/malachiconstant/malachiconstant.github.io/tree/dev" title="github development repository for jonmanalo.com"> view the development repository of this website here</a></p>
 			</div>
 		)
 	}
