@@ -5,6 +5,7 @@
  	width: 100%;
  	transition: top 0.2s linear 0.2s;
  	top: 0;
+ 	z-index: 1;
  	&.nav-down {
  		top: 0;
  	}

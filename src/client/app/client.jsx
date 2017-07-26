@@ -7,10 +7,12 @@ import HomePage from "./pages/HomePage.jsx";
 import AboutTheSitePage from "./pages/AboutTheSitePage.jsx";
 import MainMenu from "./components/MainMenu.jsx";
 import ProgressMeter from "./components/ProgressMeter.jsx";
+import VectorStreaks from "./components/VectorStreaks.jsx";
 class Client extends React.Component{
 	render() {
 		return(
 			<div ref="mainWrapper" className="main-wrapper">
+				<VectorStreaks />
 				<MainMenu />
 				<Router history={ hashHistory }>
 					<Route path="/" component={HomePage}></Route>

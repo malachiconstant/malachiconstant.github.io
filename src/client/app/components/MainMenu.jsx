@@ -47,7 +47,6 @@ class MainMenu extends React.Component {
 				self.setState({
 					topBar: true
 				});
-				console.log("true");
 			}
 			if(scrollDown && !self.state.menuOpen){
 				self.setState({

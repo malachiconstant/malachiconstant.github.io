@@ -160,7 +160,8 @@ a {
   width: 100%;
   -webkit-transition: top 0.2s linear 0.2s;
   transition: top 0.2s linear 0.2s;
-  top: 0; }
+  top: 0;
+  z-index: 1; }
   .main-menu.nav-down {
     top: 0; }
   .main-menu.nav-up {
@@ -331,3 +332,8 @@ a {
   .progress-meter .gauge {
     background-color: #323232;
     height: 2px; }
+.vector-streaks-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; }
