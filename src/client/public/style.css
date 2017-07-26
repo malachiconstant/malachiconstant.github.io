@@ -70,7 +70,13 @@ p {
 
 a {
   color: #323232;
-  text-decoration: none; }
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  display: inline-block; }
+  a:hover {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02); }
 
 #app {
   width: 100%; }

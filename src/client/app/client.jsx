@@ -11,12 +11,10 @@ class Client extends React.Component{
 	render() {
 		return(
 			<div ref="mainWrapper" className="main-wrapper">
-				<MainMenu />
 				<Router history={ hashHistory }>
 					<Route path="/" component={HomePage}></Route>
 					<Route path="about" component={AboutTheSitePage}></Route>
 				</Router>
-				<ProgressMeter />
 			</div>
 		)
 	}
