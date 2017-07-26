@@ -33,8 +33,8 @@ class MainMenu extends React.Component {
 			const initOffset = self.state.initOffset;
 			const scrollOffset = self.state.scrollOffset;
 			const scrollingAction = (scrollDetect !== self.state.scrolling);
-			const scrollUpOrTop = (scrollOffset < initOffset || scrollOffset == 0);
-			const scrollDown = ((scrollOffset - 300) > initOffset);
+			const scrollUpOrTop = (scrollOffset < initOffset || scrollOffset == 0 || window.pageYOffset < 100);
+			const scrollDown = ((scrollOffset - 150) > initOffset);
 
 			if (scrollingAction) {
 				self.setState({
@@ -47,6 +47,7 @@ class MainMenu extends React.Component {
 				self.setState({
 					topBar: true
 				});
+				console.log("true");
 			}
 			if(scrollDown && !self.state.menuOpen){
 				self.setState({
