@@ -1,0 +1,74 @@
+@import 'global-variables';
+
+.crosshatch-container {
+	position: fixed;
+	top: 0px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transform: scale(0);
+	.cross-hatch-bg {
+		background-color: #ffffff;
+		position: absolute;
+		top: 0px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+	.h-container {
+		display: flex;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		flex-direction: column;
+		justify-content: space-between;
+		transform: scaleX(-1);
+		
+	}
+	.h-lines {
+		background-color: $light-grey02;
+		width: 100%;
+		height: 1px;
+		transition-timing-function: ease-in;
+
+	}
+	.v-container {
+		display: flex;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		flex-direction: row;
+		justify-content: space-between;
+		transform: scaleY(-1);
+	}
+	.v-lines {
+		background-color: $light-grey02;
+		width: 1px;
+		height: 0;
+		transition-timing-function: ease-in;
+
+	}
+	&.open {
+		transform: scale(1);
+		.cross-hatch-bg {
+			opacity: 0.95;
+		}
+		.h-container {
+			transform: scaleX(1);
+		}
+		.v-container {
+			transform: scaleY(1);
+		}
+	}
+
+}
+
+@media (min-width: $min-one) {
+
+}
