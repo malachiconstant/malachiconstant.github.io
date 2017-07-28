@@ -13,11 +13,12 @@ class VectorStreaks extends React.Component {
 	}
 	componentDidMount() {
 		const self = this;
-		let perSquareArea = 250000;
+		let perSquareArea = 90000;
 		svgContainerDims();
 
 		
 		generateAmount(perSquareArea);
+		
 		window.addEventListener("resize", function(){			
 			svgContainerDims();
 			generateAmount(perSquareArea);
@@ -38,8 +39,8 @@ class VectorStreaks extends React.Component {
 
 	}
 	render() {
+
 		const self = this;
-		randomizeVector(document.documentElement.clientWidth);
 		function createVectors() {
 			const vectorAmount = self.state.vectorAmount;
 			const theArray = [];
@@ -48,12 +49,33 @@ class VectorStreaks extends React.Component {
 			}
 			return theArray;
 		}
-		function randomizeVector(axis) {
+
+		function createVectors2() {
+			const vectorAmount = self.state.vectorAmount;
+			const theArray = [];
+			for (var i=0; i <= vectorAmount; i++) {
+			  theArray.push({rH : Math.floor(Math.random() * 400)/100 });
+			}
+			console.dir(theArray);
+			return theArray;
+			
+		}
+		//random vector position
+		function vectorPos(axis) {
 			return Math.floor(Math.random() * axis)
 		}
+		const vW = document.documentElement.clientWidth;
+		const vH = document.body.offsetHeight;
+		const vectorLines = createVectors2().map((item, number) =>
 
-		const vectorLines = createVectors().map((number) =>
-			<rect key={"rect" + number} x={randomizeVector(document.documentElement.clientWidth)} y={randomizeVector(document.body.offsetHeight)} style={{width:"10px",height:"10px",fill:"green",display:"inline"}} />
+			<path
+				ref="pathref"
+				key={"pathkey" + number}
+				id={"pathID" + item}
+				d={"M " + vectorPos(vW) + " " + vectorPos(vH) + " h " + item.rH + " v 500 h -" + item.rH + " Z"}
+				stroke="none"
+  				strokeWidth="0"
+  				fill="#000000" />
 			
 		)
 
