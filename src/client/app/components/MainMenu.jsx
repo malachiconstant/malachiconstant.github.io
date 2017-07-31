@@ -5,16 +5,16 @@ import CrossHatch from "../components/CrossHatch.jsx";
 import '../sass/MainMenu.scss';
 
 class MainMenu extends React.Component {
-		constructor(props) {
-	  super(props);
-	  this.state = {
-	  	menuOpen : false,
-	  	duration: 0,
-	  	initOffset: 0,
-	  	scrollOffset: 0,
-	  	scrolling: false,
-	  	topBar: true
-	  };
+	constructor(props) {
+		super(props);
+		this.state = {
+			menuOpen : false,
+			duration: 0,
+			initOffset: 0,
+			scrollOffset: 0,
+			scrolling: false,
+			topBar: true
+		};
 	   this._toggleMenu = this._toggleMenu.bind(this);
 	}
 	componentDidMount(){

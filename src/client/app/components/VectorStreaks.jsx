@@ -54,9 +54,8 @@ class VectorStreaks extends React.Component {
 			const vectorAmount = self.state.vectorAmount;
 			const theArray = [];
 			for (var i=0; i <= vectorAmount; i++) {
-			  theArray.push({rH : Math.floor(Math.random() * 400)/100 });
+			  theArray.push({rW : Math.floor(Math.random() * 400)/100 });
 			}
-			console.dir(theArray);
 			return theArray;
 			
 		}
@@ -71,8 +70,8 @@ class VectorStreaks extends React.Component {
 			<path
 				ref="pathref"
 				key={"pathkey" + number}
-				id={"pathID" + item}
-				d={"M " + vectorPos(vW) + " " + vectorPos(vH) + " h " + item.rH + " v 500 h -" + item.rH + " Z"}
+				id={"pathID" + number}
+				d={"M " + vectorPos(vW) + " " + vectorPos(vH) + " h " + item.rW + " v 500 h -" + item.rW + " Z"}
 				stroke="none"
   				strokeWidth="0"
   				fill="#000000" />
