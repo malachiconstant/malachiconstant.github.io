@@ -109,7 +109,6 @@ class MainMenu extends React.Component {
 			width: window.innerWidth + "px",
 			height: window.innerHeight + "px"
 		}
-			
 		return(
 			<div ref="refMenu" className={"main-menu " + ((this.state.menuOpen) ? "active" : "not-active") + " " + ((this.state.topBar) ? "nav-down" : "nav-up")}>
 				<div className="mobile-wrapper">
