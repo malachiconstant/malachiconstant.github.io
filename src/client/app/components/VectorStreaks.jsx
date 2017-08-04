@@ -19,9 +19,6 @@ class VectorStreaks extends React.Component {
 
 	}	
 
-
-
-
 	render() {
 		
 		setTimeout(function(){
@@ -88,6 +85,7 @@ class VectorStreaks extends React.Component {
 
 						const vX = document.documentElement.clientWidth;
 						const vY = document.body.offsetHeight;
+						const rW = Math.floor(Math.random() * 400)/100;
 
 
 
@@ -100,6 +98,7 @@ class VectorStreaks extends React.Component {
 							svgContainer.appendChild(document.createElementNS("http://www.w3.org/2000/svg","line"));
 							svgLine[number].setAttributeNS(null,"data-x", randomizePos(vX));
 							svgLine[number].setAttributeNS(null,"data-y", randomizePos(vY));
+							svgLine[number].setAttributeNS(null,"data-y2", 0);
 							svgLine[number].setAttributeNS(null,"x1", svgLine[number].dataset.x);
 							svgLine[number].setAttributeNS(null,"y1", svgLine[number].dataset.y);
 							svgLine[number].setAttributeNS(null,"x2", svgLine[number].dataset.x);
@@ -109,7 +108,6 @@ class VectorStreaks extends React.Component {
 							svgLine[number].style.opacity = Math.random();
 
 						}
-
 						for (var i = 0; i < generateAmount(100000); i++) {
 							lineInstance(i);
 						}
@@ -125,12 +123,17 @@ class VectorStreaks extends React.Component {
 						});						
 						window.addEventListener('scroll',function(){
 							for (var i = 0; i < generateAmount(100000); i++) {
-								svgLine[i].setAttributeNS(null,"y2", parseInt(svgLine[i].dataset.y) + vectorSpeed());
+								const eachLine = svgLine[i];
+								TweenMax.from(eachLine, 1, {attr:{y2: ((vectorSpeed()/rW) + parseInt(svgLine[i].dataset.y))}, ease:Linear.easeNone});
+								TweenMax.to(eachLine, 1, {attr:{y2: parseInt(svgLine[i].dataset.y)}, ease:Power2.easeIn});
 							}
 						});
+
+
+
+
 					} 
 
-					// svgPath[0].setAttribute("d", "M " + window.innerWidth/2 + " " + document.body.offsetHeight/2 + " h 10 v " + vectorSpeed() + " h -10 Z");
 				}
 		},25);
 
