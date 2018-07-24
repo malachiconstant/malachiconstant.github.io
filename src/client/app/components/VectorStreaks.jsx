@@ -7,7 +7,7 @@ import '../sass/VectorStreaks.scss';
 
 
 
-class VectorStreaks extends React.Component {
+class VectorStreaks extends React.PureComponent {
 		constructor(props) {
 	  super(props);
 	  this.state = {
@@ -32,8 +32,8 @@ class VectorStreaks extends React.Component {
 			});
 
 				function svgContainerDims() {
-					svgContainer.setAttribute("width", document.documentElement.clientWidth);
-					svgContainer.setAttribute("height", document.body.offsetHeight);
+					svgContainer.setAttribute("width", window.innerWidth);
+					svgContainer.setAttribute("height", window.innerHeight);
 				}
 
 				function createRect() {
@@ -47,10 +47,9 @@ class VectorStreaks extends React.Component {
 					generateRect();
 
 					function generateAmount(perSquareArea) {
-						const docArea = document.documentElement.clientWidth * document.body.offsetHeight;
-						const rawAmountPerArea = docArea/perSquareArea;
+						const docArea = window.innerWidth * window.innerHeight;
+						const rawAmountPerArea = docArea/(perSquareArea * 1000);
 						const roundedAmountPerArea = Math.round(rawAmountPerArea);
-
 						return roundedAmountPerArea;
 					}
 
@@ -73,8 +72,7 @@ class VectorStreaks extends React.Component {
 
 							const timer = setTimeout(function(){
 								lastPos = newPos;
-							}, 50);	
-
+							}, 100);	
 
 							return scrollSpeed;
 							
@@ -84,27 +82,27 @@ class VectorStreaks extends React.Component {
 					function generateRect(){
 
 						const vX = document.documentElement.clientWidth;
-						const vY = document.body.offsetHeight;
+						const vY = window.innerHeight;
 						const rW = Math.floor(Math.random() * 400)/100;
 
 						function lineInstance(number) {
-							const vX = document.documentElement.clientWidth;
-							const vY = document.body.offsetHeight;
+							const vX = window.innerWidth;
+							const vY = window.innerHeight;
 
 							svgContainer.appendChild(document.createElementNS("http://www.w3.org/2000/svg","line"));
-							svgLine[number].setAttributeNS(null,"data-x", randomizePos(vX));
-							svgLine[number].setAttributeNS(null,"data-y", randomizePos(vY));
-							svgLine[number].setAttributeNS(null,"data-yr", parseInt(Math.random() * (400 - 100) + 100));
+							svgLine[number].setAttributeNS(null,"data-x", Math.floor(Math.random() * (vX - 0 + 1) + 0));
+							svgLine[number].setAttributeNS(null,"data-y", Math.floor(Math.random() * (vY - 0 + 1) + 0));
+							svgLine[number].setAttributeNS(null,"data-yr", Math.floor(Math.random() * (8 - 2 + 1 ) + 2) / 100);
 							svgLine[number].setAttributeNS(null,"x1", svgLine[number].dataset.x);
 							svgLine[number].setAttributeNS(null,"y1", svgLine[number].dataset.y);
 							svgLine[number].setAttributeNS(null,"x2", svgLine[number].dataset.x);
 							svgLine[number].setAttributeNS(null,"y2", svgLine[number].dataset.y);
 							svgLine[number].setAttributeNS(null,"stroke", "#000000" );
-							svgLine[number].setAttributeNS(null,"stroke-width", Math.floor(Math.random() * (5 - 1) + 1));
-							svgLine[number].style.opacity = Math.random() * (0.5 - 0.1) + 0.1;
+							svgLine[number].setAttributeNS(null,"stroke-width", Math.floor(Math.random() * (5 - 1 + 1) + 1)  );
+							svgLine[number].style.opacity = Math.floor(Math.random() * (3 - 1 + 1 ) + 1) / 10;
 
 						}
-						for (var i = 0; i < generateAmount(100000); i++) {
+						for (var i = 0; i < generateAmount(30); i++) {
 							lineInstance(i);
 						}
 						window.addEventListener('resize',function(){
@@ -113,49 +111,25 @@ class VectorStreaks extends React.Component {
 								svgContainer.removeChild(svgContainer.firstChild);
 							}
 
-							for (var i = 0; i < generateAmount(100000); i++) {
+							for (var i = 0; i < generateAmount(30); i++) {
 								lineInstance(i);
 							}
-						});						
+						});	
+						var isScrolling;					
 						window.addEventListener('scroll',function(){
-							for (var i = 0; i < generateAmount(100000); i++) {
+							for (var i = 0; i < generateAmount(30); i++) {
 								const eachLine = svgLine[i];
-								// TweenMax.from(eachLine, 1, {attr:{y2: (vectorSpeed() + parseInt(eachLine.dataset.y))}, ease:Linear.easeNone});
-
-								if( (vectorSpeed() + parseInt(eachLine.dataset.y)) > Number(eachLine.dataset.yr/4) + parseInt(eachLine.dataset.y)){
-
-									TweenMax.from(eachLine, eachLine.dataset.yr/500, {attr:{y2: (Number(eachLine.dataset.yr/4) + parseInt(eachLine.dataset.y))}, ease:Linear.easeNone});
-								};
-								if( (vectorSpeed() + parseInt(eachLine.dataset.y)) < -Number(eachLine.dataset.yr/4) + parseInt(eachLine.dataset.y)) {
-				
-									TweenMax.from(eachLine, eachLine.dataset.yr/500, {attr:{y2: (-Number(eachLine.dataset.yr/4) + parseInt(eachLine.dataset.y))}, ease:Linear.easeNone});
-								};
-
-								if( (vectorSpeed() + parseInt(eachLine.dataset.y)) > Number(eachLine.dataset.yr/2) + parseInt(eachLine.dataset.y)){
-
-									TweenMax.from(eachLine, eachLine.dataset.yr/500, {attr:{y2: (Number(eachLine.dataset.yr/2) + parseInt(eachLine.dataset.y))}, ease:Linear.easeNone});
-								};
-								if( (vectorSpeed() + parseInt(eachLine.dataset.y)) < -Number(eachLine.dataset.yr/2) + parseInt(eachLine.dataset.y)) {
-				
-									TweenMax.from(eachLine, eachLine.dataset.yr/500, {attr:{y2: (-Number(eachLine.dataset.yr/2) + parseInt(eachLine.dataset.y))}, ease:Linear.easeNone});
-								};
-
-								if( (vectorSpeed() + parseInt(eachLine.dataset.y)) > Number(eachLine.dataset.yr) + parseInt(eachLine.dataset.y)){
-
-									TweenMax.from(eachLine, eachLine.dataset.yr/500, {attr:{y2: (Number(eachLine.dataset.yr) + parseInt(eachLine.dataset.y))}, ease:Linear.easeNone});
-								};
-								if( (vectorSpeed() + parseInt(eachLine.dataset.y)) < -Number(eachLine.dataset.yr) + parseInt(eachLine.dataset.y)) {
-				
-									TweenMax.from(eachLine, eachLine.dataset.yr/500, {attr:{y2: (-Number(eachLine.dataset.yr) + parseInt(eachLine.dataset.y))}, ease:Linear.easeNone});
-								};
-
-								TweenMax.to(eachLine, eachLine.dataset.yr/500, {attr:{y2: parseInt(eachLine.dataset.y)}, ease:Power1.easeOut});
+								window.clearTimeout( isScrolling );
+								TweenMax.from(eachLine, 0.1, {attr:{y2: ((vectorSpeed() * (eachLine.dataset.yr)) + parseInt(eachLine.dataset.y))}, ease:Linear.easeNone});
+							}
+							for (var i = 0; i < generateAmount(30); i++) {	
+								const eachLine = svgLine[i];	
+								isScrolling = setTimeout(function(){
+									TweenMax.to(eachLine, 0.2, {attr:{y2: parseInt(eachLine.dataset.y)}, ease:Power1.easeOut});
+									// console.dir(eachLine.dataset.yr);
+								}, 500);
 							}
 						});
-
-
-
-
 					} 
 
 				}
@@ -164,6 +138,7 @@ class VectorStreaks extends React.Component {
 		return(
 			<div id="theVContainer" className="vector-streaks-container">
 				<svg id="svgContainer" ref="svgContainer" className="svg-container">
+
 					
 				</svg>
 			</div>

@@ -7,6 +7,7 @@ import "./sass/common.scss";
 
 class Client extends React.Component{
 
+
 	render() {
 		return(
 			<div ref="mainWrapper" className="main-wrapper">

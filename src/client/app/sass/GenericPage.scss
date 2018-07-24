@@ -1,10 +1,14 @@
 @import 'global-variables';
-
-.generic-page {
-	padding-left: $pd-one;
-	padding-right: $pd-one;
-	padding-top: $pd-one;
+.page-content-wrapper {
+	position: relative;
+	z-index: 1;
+	.generic-page {
+		padding-left: $pd-one;
+		padding-right: $pd-one;
+		padding-top: ($header-height + 10);
+	}
 }
+
 
 @media (min-width: $min-one) {
 
