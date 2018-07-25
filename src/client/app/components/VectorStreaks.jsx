@@ -11,7 +11,6 @@ class VectorStreaks extends React.PureComponent {
 		constructor(props) {
 	  super(props);
 	  this.state = {
-	  	vectorAmount: 0,
 	  };
 
 	}
@@ -52,16 +51,6 @@ class VectorStreaks extends React.PureComponent {
 						const roundedAmountPerArea = Math.round(rawAmountPerArea);
 						return roundedAmountPerArea;
 					}
-
-					function randomizePos(axis) {
-						  	// Math.floor(Math.random() * 400)/100;
-						  	return Math.floor(Math.random() * axis);
-					}
-
-					function randomizeWidth() {
-						return Math.floor(Math.random() * 400)/100;
-					}
-
 					function vectorSpeed() {
 
 							const newPos = window.scrollY;
@@ -75,8 +64,6 @@ class VectorStreaks extends React.PureComponent {
 							}, 100);	
 
 							return scrollSpeed;
-							
-
 					}
 
 					function generateRect(){
@@ -92,7 +79,7 @@ class VectorStreaks extends React.PureComponent {
 							svgContainer.appendChild(document.createElementNS("http://www.w3.org/2000/svg","line"));
 							svgLine[number].setAttributeNS(null,"data-x", Math.floor(Math.random() * (vX - 0 + 1) + 0));
 							svgLine[number].setAttributeNS(null,"data-y", Math.floor(Math.random() * (vY - 0 + 1) + 0));
-							svgLine[number].setAttributeNS(null,"data-yr", Math.floor(Math.random() * (8 - 2 + 1 ) + 2) / 100);
+							svgLine[number].setAttributeNS(null,"data-yr", Math.floor(Math.random() * (10 - 2 + 1 ) + 2) / 100);
 							svgLine[number].setAttributeNS(null,"x1", svgLine[number].dataset.x);
 							svgLine[number].setAttributeNS(null,"y1", svgLine[number].dataset.y);
 							svgLine[number].setAttributeNS(null,"x2", svgLine[number].dataset.x);
@@ -100,9 +87,8 @@ class VectorStreaks extends React.PureComponent {
 							svgLine[number].setAttributeNS(null,"stroke", "#000000" );
 							svgLine[number].setAttributeNS(null,"stroke-width", Math.floor(Math.random() * (5 - 1 + 1) + 1)  );
 							svgLine[number].style.opacity = Math.floor(Math.random() * (3 - 1 + 1 ) + 1) / 10;
-
 						}
-						for (var i = 0; i < generateAmount(30); i++) {
+						for (var i = 0; i < generateAmount(25); i++) {
 							lineInstance(i);
 						}
 						window.addEventListener('resize',function(){
@@ -111,24 +97,37 @@ class VectorStreaks extends React.PureComponent {
 								svgContainer.removeChild(svgContainer.firstChild);
 							}
 
-							for (var i = 0; i < generateAmount(30); i++) {
+							for (var i = 0; i < generateAmount(25); i++) {
 								lineInstance(i);
 							}
 						});	
-						var isScrolling;					
+						var isScrolling;				
 						window.addEventListener('scroll',function(){
-							for (var i = 0; i < generateAmount(30); i++) {
+							for (var i = 0; i < generateAmount(25); i++) {
 								const eachLine = svgLine[i];
 								window.clearTimeout( isScrolling );
-								TweenMax.from(eachLine, 0.1, {attr:{y2: ((vectorSpeed() * (eachLine.dataset.yr)) + parseInt(eachLine.dataset.y))}, ease:Linear.easeNone});
+								TweenMax.to(eachLine, 0.1, {
+									attr:{
+										y2: (vectorSpeed() * -(eachLine.dataset.yr)) + parseInt(eachLine.dataset.y)
+									},
+									ease:Linear.easeNone
+								});
 							}
-							for (var i = 0; i < generateAmount(30); i++) {	
-								const eachLine = svgLine[i];	
-								isScrolling = setTimeout(function(){
-									TweenMax.to(eachLine, 0.2, {attr:{y2: parseInt(eachLine.dataset.y)}, ease:Power1.easeOut});
-									// console.dir(eachLine.dataset.yr);
-								}, 500);
-							}
+							isScrolling = setTimeout(function(){
+								for (var i = 0; i < generateAmount(25); i++) {	
+									const eachLine = svgLine[i];	
+									eachLine.setAttributeNS(null,"data-x", Math.floor(Math.random() * (vX - 0 + 1) + 0));
+										TweenMax.to(eachLine, 0.1, {
+											attr:{
+												y2: parseInt(eachLine.dataset.y),
+												x1: (eachLine.dataset.x),
+												x2: (eachLine.dataset.x)
+
+											}, 
+											ease:Power1.easeOut
+										});	
+								}
+							}, 250);
 						});
 					} 
 
@@ -138,8 +137,9 @@ class VectorStreaks extends React.PureComponent {
 		return(
 			<div id="theVContainer" className="vector-streaks-container">
 				<svg id="svgContainer" ref="svgContainer" className="svg-container">
-
+					<defs>
 					
+					</defs>
 				</svg>
 			</div>
 		)
