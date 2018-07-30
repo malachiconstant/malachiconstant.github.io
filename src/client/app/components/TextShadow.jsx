@@ -13,24 +13,36 @@ class TextShadow extends React.PureComponent {
 	  this.setTsRef = element => {
 	  	this.tsRef = element;
 	  }
+	  this.textShadow = this.textShadow.bind(this);
 	}
 
 	componentDidMount() {
-		this.textShadow(this.tsRef);
+		this.textShadow();
+		window.addEventListener('scroll', this.textShadow);
+		window.addEventListener('resize', this.textShadow);
+
 	}
-	textShadow(theRef) {
-			console.dir(theRef.childNodes.length);
-			var i;
-			for (i = 0; i < theRef.childNodes.length; i++) {
-				theRef.childNodes[i].style.textShadow = "0px 0px 5px rgba(0,0,0,0.5)";
-			}
-	}
+	componentWillUnmount() {
+  		window.removeEventListener('scroll', this.textShadow);
+  		window.removeEventListener('resize', this.textShadow);
+	};
+	textShadow() {
+		const winPos = window.scrollY;
+		const winCenter = window.outerHeight / 3; 
+		const winPC = window.scrollY + winCenter;
+		const tsRef = this.tsRef.childNodes;
+		// console.log(shCenter); 
+		var i;
+		for (i = 0; i < tsRef.length; i++) {
+			tsRef[i].style.textShadow = "2px " + Math.min(5, Math.max(-5, ((winPos) - (tsRef[i].offsetTop - winCenter)) * 0.015)) + "px 3px rgba(0,0,0,0.2)";
+		}
+	};
 	render() {
-				return(
-					<div className="text-shadow" ref={this.setTsRef} >
-						{this.props.children}
-					</div>
-				)
+		return(
+			<div className="text-shadow" ref={this.setTsRef} >
+				{this.props.children}
+			</div>
+		)
 	}
 }
 export default TextShadow;

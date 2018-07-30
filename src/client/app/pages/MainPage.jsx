@@ -3,7 +3,6 @@ import {render} from 'react-dom';
 import {Link, IndexLink} from 'react-router';
 import '../sass/GenericPage.scss';
 import '../sass/HomePage.scss';
-import VectorStreaks from "../components/VectorStreaks.jsx";
 import MainMenu from "../components/MainMenu.jsx";
 import ProgressMeter from "../components/ProgressMeter.jsx";
 
@@ -12,7 +11,7 @@ class MainPage extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			time: "afternoon",
+			time: "day",
 		};
 	}
 
@@ -20,17 +19,17 @@ class MainPage extends React.Component {
 		const hour= new Date().getHours();
 
 		console.log(hour);
-		if(hour >= 5 || hour <= 11 ) {
+		if(hour >= 5 && hour <= 11 ) {
 			this.setState({
 				time: "morning"
 			});
 		}
-		if(hour >=12 || hour <= 18) {
+		if(hour >=12 && hour <= 18) {
 			this.setState({
 				time: "afternoon"
 			});
 		}
-		if(hour >= 19 || hour <= 5) {
+		if(hour >= 19 && hour <= 5) {
 			this.setState({
 				time: "evening"
 			});
@@ -51,7 +50,6 @@ class MainPage extends React.Component {
 		}
 		return(
 			<div className={"page-container " + this.state.time} >
-				<VectorStreaks time={this.state.time} />
 					<MainMenu time={this.state.time} />
 					<PageContent time={this.state.time} children={this.props.children}/>
 				<ProgressMeter time={this.state.time} />
