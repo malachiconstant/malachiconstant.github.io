@@ -123,7 +123,7 @@ class MainMenu extends React.Component {
 			<div ref={this.setMenuRef} className={"main-menu " + ((this.state.menuOpen) ? "active" : "not-active") + " " + ((this.state.topBar) ? "nav-down" : "nav-up")}>
 				<div className="mobile-wrapper">
 					<div className="top-bar">
-						<div className="main-logo">logo will go here</div>
+						<div className="main-logo"><span>jonManalo.com</span></div>
 						<div onClick={() => this._toggleMenu()} className={"menu-button " + ((this.state.menuOpen) ? "visible" : "hidden")} role="button" aria-haspopup="true" tabIndex="0">
 							<div className="bars-container ">
 								<div className="common-icon menu-icon top"></div>

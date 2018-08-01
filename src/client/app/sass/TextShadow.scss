@@ -1,1 +1,18 @@
 @import 'global-variables';
+
+.text-shadow {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	h2,p {
+		position: relative;
+	}
+}
+
+.page-content-wrapper .generic-page .section  {
+	&.left .text-shadow {
+		@media (min-width: $min-one) {
+			align-items: flex-start;
+		}
+	}
+}

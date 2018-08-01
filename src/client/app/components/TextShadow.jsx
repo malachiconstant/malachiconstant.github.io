@@ -35,6 +35,9 @@ class TextShadow extends React.PureComponent {
 		var i;
 		for (i = 0; i < tsRef.length; i++) {
 			tsRef[i].style.textShadow = "2px " + Math.min(5, Math.max(-5, ((winPos) - (tsRef[i].offsetTop - winCenter)) * 0.015)) + "px 3px rgba(0,0,0,0.3)";
+			if(this.props.parallax == "true") {
+				tsRef[i].style.top = -(((winPos) + (tsRef[i].offsetTop - winCenter)) * this.props.rate) + "px";
+			}
 		}
 	};
 	render() {
