@@ -6,6 +6,42 @@
 		padding-left: $pd-one;
 		padding-right: $pd-one;
 		padding-top: ($header-height + 10);
+		@media (min-width: $min-one) {
+			padding-left: $pd-one-d;
+			padding-right: $pd-one-d;
+		}
+		.section {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			> div {
+				width: 100%;
+				@media (min-width: $min-one) {
+					width: 48%;
+					display: flex;
+					align-items: center;
+				}
+			}
+			@media (min-width: $min-one) {
+				flex-direction: row;
+				padding-top: 50px;
+				padding-bottom: 50px;
+			}
+			&.left {
+				@media (min-width: $min-one) {
+
+					justify-content: flex-start;
+				}
+			}
+			&.right {
+				@media (min-width: $min-one) {
+
+					justify-content: flex-end;
+				}
+			}
+		}
 	}
 }
 

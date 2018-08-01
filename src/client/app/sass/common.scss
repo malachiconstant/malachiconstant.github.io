@@ -54,6 +54,11 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a {
+	letter-spacing: 5px;
+	line-height: 2;
+}
 h1,h2 {
 	font-size: 32px;
 	padding-top: 4px;
@@ -66,8 +71,8 @@ h3 {
 }
 p {
 	font-size: 18px;
-	padding-top: 4px;
-	padding-bottom: 4px;
+	padding-top: 8px;
+	padding-bottom: 8px;
 }
 a {
 	color: $black;

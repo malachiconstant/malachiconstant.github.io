@@ -15,7 +15,11 @@ class MainMenu extends React.Component {
 			scrolling: false,
 			topBar: true
 		};
-	   this._toggleMenu = this._toggleMenu.bind(this);
+		this.menuRef = null;
+		this.setMenuRef = element => {
+			this.menuRef = element;
+		}
+		this._toggleMenu = this._toggleMenu.bind(this);
 	}
 	componentDidMount(){
 		const self = this;
@@ -70,47 +74,53 @@ class MainMenu extends React.Component {
 		}));
 
 	}
+	renderMenuList(){
+		const menuList = [
+			{
+				"linkTitle": "About Me",
+				"linkDescription": "About Me",
+				"hRef" : "about-me"
+			},
+			{
+				"linkTitle": "About The Site",
+				"linkDescription": "About The Site",
+				"hRef" : "about-the-site"
+			},
+			{
+				"linkTitle": "Playground",
+				"linkDescription": "Playground",
+				"hRef" : "playground"
+			},
+			{
+				"linkTitle": "Contact",
+				"linkDescription": "Contact",
+				"hRef" : "contact"
+			}
+		];
+		
+		return[...menuList].map((menu,i) => {
+			function goToSection(number) {
+				console.log('' + menu.hRef);
+				TweenMax.to(window, 1, {scrollTo: (document.getElementById('' + menu.hRef).offsetTop + number), ease: Power3.easeOut});
+			}
+			
+			return(
+				<li key={i}>
+					<div onClick={() => {this._toggleMenu(), goToSection(-50)}} title={menu.linkDescription}>
+						<span>{menu.linkTitle}</span>
+					</div>
+				</li>
+			)
+		} )
+	}
 	render() {
-		function renderMenuList(){
-			const menuList = [
-				{
-					"linkTitle": "About Me",
-					"linkDescription": "About Me",
-					"hRef" : "#aboutme"
-				},
-				{
-					"linkTitle": "About The Site",
-					"linkDescription": "About The Site",
-					"hRef" : "#aboutthesite"
-				},
-				{
-					"linkTitle": "Playground",
-					"linkDescription": "Playground",
-					"hRef" : "#playground"
-				},
-				{
-					"linkTitle": "Contact Us",
-					"linkDescription": "Contact Us",
-					"hRef" : "#contactus"
-				}
-			];
 
-			return[...menuList].map((menu,i) => {
-				return(
-					<li key={i}>
-						<a href={menu.hRef} title={menu.linkDescription}>
-							<span>{menu.linkTitle}</span>
-						</a>
-					</li>
-				)
-			} )
-		}
 		const listDimensions = {
 			width: window.innerWidth + "px",
 			height: window.innerHeight + "px"
 		}
 		return(
-			<div ref="refMenu" className={"main-menu " + ((this.state.menuOpen) ? "active" : "not-active") + " " + ((this.state.topBar) ? "nav-down" : "nav-up")}>
+			<div ref={this.setMenuRef} className={"main-menu " + ((this.state.menuOpen) ? "active" : "not-active") + " " + ((this.state.topBar) ? "nav-down" : "nav-up")}>
 				<div className="mobile-wrapper">
 					<div className="top-bar">
 						<div className="main-logo">logo will go here</div>
@@ -133,7 +143,7 @@ class MainMenu extends React.Component {
 				/>
 				<div className="list-container" style={listDimensions}>
 					<ul>
-						{renderMenuList()}
+						{this.renderMenuList()}
 					</ul>
 				</div>
 			</div>
