@@ -5,6 +5,7 @@ import '../sass/GenericPage.scss';
 import '../sass/HomePage.scss';
 import TextShadow from "../components/TextShadow.jsx";
 import BoxShadow from "../components/BoxShadow.jsx";
+import HeroSection from "../components/HeroSection.jsx";
 
 
 
@@ -22,14 +23,16 @@ class HomePage extends React.Component {
 	render() {
 		return(
 			<div ref="genericPage" className="generic-page home-page ">
-				<TextShadow>
-					<h2>Good {this.props.time}!</h2>
-				</TextShadow>
-				<div className="section left">
-					<TextShadow>
-						<p>Welcome to my site.  Most of everything you see here has been designed and developed by yours truly.</p>
-					</TextShadow>
-				</div>
+				<HeroSection>
+					
+						<h2>Good {this.props.time}!</h2>
+					
+					<div className="section left">
+						<TextShadow>
+							<p>Welcome to my site.  Most of everything you see here has been designed and developed by yours truly.</p>
+						</TextShadow>
+					</div>
+				</HeroSection>
 				<div id="about-me">
 				</div>
 				<div>
@@ -48,12 +51,12 @@ class HomePage extends React.Component {
 						<img className="profile-image" src="/src/client/public/media/profile.jpg" alt="" />
 					</BoxShadow>
 				</div>
-				<div style={{width :100+ "%"}}>
-					<TextShadow>
+				<div className="section">
+					<TextShadow parallax="false" rate="0.5">
 						<p>this is the other paragraph</p>
 					</TextShadow>
 				</div>
-				<div style={{width :100+ "%"}}>
+				<div className="section">
 					<TextShadow>
 						<p>Disrupt selvage raclette poutine, raw denim paleo asymmetrical woke chillwave wayfarers. Hot chicken cliche butcher 90's, ugh  messenger bag vaporware iPhone.</p>
 					</TextShadow>

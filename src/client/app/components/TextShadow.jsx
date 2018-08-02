@@ -28,16 +28,13 @@ class TextShadow extends React.PureComponent {
 	};
 	textShadow() {
 		const winPos = window.scrollY;
-		const winCenter = window.outerHeight / 2.75; 
+		const winCenter = window.outerHeight / 3; 
 		const winPC = window.scrollY + winCenter;
 		const tsRef = this.tsRef.childNodes;
 		// console.log(shCenter); 
 		var i;
 		for (i = 0; i < tsRef.length; i++) {
-			tsRef[i].style.textShadow = "2px " + Math.min(5, Math.max(-5, ((winPos) - (tsRef[i].offsetTop - winCenter)) * 0.015)) + "px 3px rgba(0,0,0,0.3)";
-			if(this.props.parallax == "true") {
-				tsRef[i].style.top = -(((winPos) + (tsRef[i].offsetTop - winCenter)) * this.props.rate) + "px";
-			}
+			tsRef[i].style.textShadow = "2px " + Math.min(5, Math.max(-5, ((winPos) - (tsRef[i].offsetParent.offsetTop - winCenter)) * 0.015)) + "px 3px rgba(0,0,0,0.3)";
 		}
 	};
 	render() {

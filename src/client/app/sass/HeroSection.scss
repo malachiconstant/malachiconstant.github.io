@@ -1,0 +1,22 @@
+@import 'global-variables';
+
+.hero-section {
+	background-color: $black;
+	margin-left: -$pd-one;
+	margin-right: -$pd-one;
+	@media(min-width: $min-one) {
+		margin-left: -$pd-one-d;
+		margin-right: -$pd-one-d;
+	}
+
+	h2, p {
+		color: $white;
+		mix-blend-mode: difference;
+		margin-left: $pd-one;
+			margin-right: $pd-one;
+		@media(min-width: $min-one) {
+			margin-left: $pd-one-d;
+			margin-right: $pd-one-d;
+		}
+	}
+}
