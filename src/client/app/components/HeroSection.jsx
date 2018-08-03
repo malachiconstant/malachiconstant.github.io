@@ -11,8 +11,19 @@ class BoxShadow extends React.PureComponent {
 	}
 
 	render() {
+		setTimeout(function(){
+			heroDims();
+			window.addEventListener('resize',function(){
+				heroDims();
+			});
+
+			function heroDims() {
+				const winH = window.outerHeight;
+				document.querySelectorAll('.hero-section')[0].style.height = (winH - 138) + "px";
+			}
+		},25);
 		return(
-			<div className="hero-section" >
+			<div className="hero-section" id="heroSection">
 				{this.props.children}
 			</div>
 		)

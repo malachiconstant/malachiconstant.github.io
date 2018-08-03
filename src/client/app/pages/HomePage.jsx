@@ -24,11 +24,9 @@ class HomePage extends React.Component {
 		return(
 			<div ref="genericPage" className="generic-page home-page ">
 				<HeroSection>
-					
-						<h2>Good {this.props.time}!</h2>
-					
 					<div className="section left">
 						<TextShadow>
+							<h2>Good {this.props.time}!</h2>
 							<p>Welcome to my site.  Most of everything you see here has been designed and developed by yours truly.</p>
 						</TextShadow>
 					</div>

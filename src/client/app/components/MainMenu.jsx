@@ -106,7 +106,7 @@ class MainMenu extends React.Component {
 			
 			return(
 				<li key={i}>
-					<div onClick={() => {this._toggleMenu(), goToSection(-50)}} title={menu.linkDescription}>
+					<div onClick={() => {this._toggleMenu(), goToSection(-41)}} title={menu.linkDescription}>
 						<span>{menu.linkTitle}</span>
 					</div>
 				</li>

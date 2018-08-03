@@ -5,7 +5,7 @@
 	.generic-page {
 		padding-left: $pd-one;
 		padding-right: $pd-one;
-		padding-top: ($header-height + 10);
+		padding-top: ($header-height + 1);
 		@media (min-width: $min-one) {
 			padding-left: $pd-one-d;
 			padding-right: $pd-one-d;
@@ -31,8 +31,8 @@
 			}
 			@media (min-width: $min-one) {
 				flex-direction: row;
-				padding-top: 50px;
-				padding-bottom: 50px;
+				padding-top: 30px;
+				padding-bottom: 30px;
 			}
 			// &.left {
 			// 	@media (min-width: $min-one) {

@@ -4,7 +4,7 @@
   .page-content-wrapper .generic-page {
     padding-left: 15px;
     padding-right: 15px;
-    padding-top: 50px; }
+    padding-top: 41px; }
     @media (min-width: 769px) {
       .page-content-wrapper .generic-page {
         padding-left: 30px;
@@ -45,8 +45,8 @@
           -webkit-box-direction: normal;
               -ms-flex-direction: row;
                   flex-direction: row;
-          padding-top: 50px;
-          padding-bottom: 50px; } }
+          padding-top: 30px;
+          padding-bottom: 30px; } }
 .home-page {
   background-repeat: repeat;
   background-image: url("/src/client/public/media/bg_01.png");
@@ -92,7 +92,17 @@
 .hero-section {
   background-color: #323232;
   margin-left: -15px;
-  margin-right: -15px; }
+  margin-right: -15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
   @media (min-width: 769px) {
     .hero-section {
       margin-left: -30px;
