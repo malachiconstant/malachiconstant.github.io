@@ -31,6 +31,7 @@ class HomePage extends React.Component {
 						</TextShadow>
 					</div>
 				</HeroSection>
+		{/* ======= ABOUT ME ======== */} 
 				<div id="about-me">
 				</div>
 				<div>
@@ -38,7 +39,6 @@ class HomePage extends React.Component {
 						<h2>About Me</h2>
 					</TextShadow>
 				</div>
-
 				<div className="section left">
 					<TextShadow parallax="false" rate="0.3">
 						<p>I am a front-end web developer based in Toronto. Because of my background in visual arts, I've always been interested in the aesthetics and animations of a site or app. Whenever presented with a design comp, I enjoy problem-solving and finding solutions to match the designers' intent.</p>
@@ -49,9 +49,17 @@ class HomePage extends React.Component {
 						<img className="profile-image" src="/src/client/public/media/profile.jpg" alt="" />
 					</BoxShadow>
 				</div>
-				<div className="section">
+		{/* ======= ABOUT THE SITE ======== */}
+				<div id="about-the-site">
+				</div>
+				<div>
+					<TextShadow>
+						<h2>About The Site</h2>
+					</TextShadow>
+				</div>
+				<div className="section left">
 					<TextShadow parallax="false" rate="0.5">
-						<p>this is the other paragraph</p>
+						<p>This website aims to use the technologies I've learned, thus far.  It will be constantly evolving as I refine the skills I already have, and as I learn new ones.  You can view the <a href="https://github.com/malachiconstant/malachiconstant.github.io" title="github repository" target="_blank">Github repository for this site here.</a></p>
 					</TextShadow>
 				</div>
 				<div className="section">

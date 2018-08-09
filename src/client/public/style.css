@@ -102,7 +102,12 @@
           flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+  background-repeat: repeat, no-repeat;
+  background-image: url("/src/client/public/media/bg_02.png"), url("/src/client/public/media/hero-bg-day.png");
+  background-size: 20px, 2000px;
+  background-position: 0% 0%, -100px -100px;
+  background-attachment: fixed, fixed; }
   @media (min-width: 769px) {
     .hero-section {
       margin-left: -30px;
