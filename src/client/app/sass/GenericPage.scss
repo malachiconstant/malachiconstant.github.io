@@ -17,6 +17,21 @@
 			padding-top: 15px;
 			padding-bottom: 15px;
 			justify-content: space-between;
+			&.text-right {
+				@media (min-width: $min-one) {
+					flex-direction: row-reverse;
+				}
+			}
+			a {
+				transition: all $gen-dur;
+				text-decoration: underline;
+				&:hover,
+				&:focus,
+				&:active{
+					letter-spacing: 6px;
+					font-weight: $font-bold;
+				}
+			}
 			> div {
 				width: 100%;
 				@media (min-width: $min-one) {
@@ -34,18 +49,6 @@
 				padding-top: 30px;
 				padding-bottom: 30px;
 			}
-			// &.left {
-			// 	@media (min-width: $min-one) {
-
-			// 		justify-content: flex-start;
-			// 	}
-			// }
-			// &.right {
-			// 	@media (min-width: $min-one) {
-
-			// 		justify-content: flex-end;
-			// 	}
-			// }
 		}
 	}
 }

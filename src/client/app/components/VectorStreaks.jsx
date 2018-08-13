@@ -26,7 +26,7 @@ class VectorStreaks extends React.PureComponent {
 			createRect();
 			svgContainerDims();
 
-			window.addEventListener('resize',function(){
+			window.addEventListener('resize', () =>{
 				svgContainerDims();
 			});
 

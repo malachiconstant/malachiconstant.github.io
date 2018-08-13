@@ -7,7 +7,7 @@
 }
 
 .page-content-wrapper .generic-page .section  {
-	&.left .text-shadow {
+	.text-shadow {
 		@media (min-width: $min-one) {
 			align-items: flex-start;
 		}

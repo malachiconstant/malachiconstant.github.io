@@ -7,14 +7,15 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	background-repeat: repeat, no-repeat;
+	background-repeat: repeat, repeat;
 	background-image: url("/src/client/public/media/bg_02.png"), url("/src/client/public/media/hero-bg-day.png");
-	background-size: 20px, 2000px;
+	background-size: 20px, 1000px;
 	background-position: 0% 0%, -100px -100px;
 	background-attachment: fixed, fixed;
 	@media(min-width: $min-one) {
 		margin-left: -$pd-one-d;
 		margin-right: -$pd-one-d;
+		background-size: 20px, 2000px;
 	}
 
 	h2, p {
