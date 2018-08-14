@@ -2,19 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, hashHistory} from 'react-router';
+import Routes from "./Routes.jsx";
 import "./sass/common.scss";
-import HomePage from "./pages/HomePage.jsx";
-import AboutTheSitePage from "./pages/AboutTheSitePage.jsx";
-import MainMenu from "./components/MainMenu.jsx";
-import ProgressMeter from "./components/ProgressMeter.jsx";
+
 class Client extends React.Component{
+
+
 	render() {
 		return(
 			<div ref="mainWrapper" className="main-wrapper">
-				<Router history={ hashHistory }>
-					<Route path="/" component={HomePage}></Route>
-					<Route path="about" component={AboutTheSitePage}></Route>
-				</Router>
+
+				<Router history={hashHistory} routes={Routes} />
+
 			</div>
 		)
 	}

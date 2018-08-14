@@ -1,1 +1,51 @@
 @import 'global-variables';
+
+.home-page {
+	background-repeat: repeat;
+	background-image: url("/src/client/public/media/bg_01.png");
+	background-attachment: fixed;
+	background-position: center center;
+}
+.block {
+	padding-left: $pd-one;
+	padding-right: $pd-one;
+	&.shift-01 {
+		@include shift01(0.3);
+	}
+	@media (min-width: $min-one) {
+		padding-left: $pd-one-d;
+		padding-right: $pd-one-d;
+	}
+}
+.section {
+	&.about-me,
+	&.about-site,
+	&.pens {
+		> div {
+			width: 100%;
+			@media (min-width: $min-one) {
+				width: 48%;
+				display: flex;
+				align-items: center;
+			}
+			img {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+	&.about-site {
+		@media (min-width: $min-one) {
+			flex-direction: row-reverse;
+		}
+	}
+	&.pens {
+		flex-wrap: wrap;
+	}
+	&.contact {
+		justify-content: flex-start;
+	}
+	&.footer {
+		justify-content: flex-end;
+	}
+}

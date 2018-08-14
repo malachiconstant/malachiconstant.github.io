@@ -5,17 +5,22 @@ import CrossHatch from "../components/CrossHatch.jsx";
 import '../sass/MainMenu.scss';
 
 class MainMenu extends React.Component {
-		constructor(props) {
-	  super(props);
-	  this.state = {
-	  	menuOpen : false,
-	  	duration: 0,
-	  	initOffset: 0,
-	  	scrollOffset: 0,
-	  	scrolling: false,
-	  	topBar: true
-	  };
-	   this._toggleMenu = this._toggleMenu.bind(this);
+	constructor(props) {
+		super(props);
+		this.state = {
+			menuOpen : false,
+			duration: 0,
+			initOffset: 0,
+			scrollOffset: 0,
+			scrolling: false,
+			topBar: true
+		};
+		this.menuRef = null;
+		this.setMenuRef = element => {
+			this.menuRef = element;
+		}
+		this._toggleMenu = this._toggleMenu.bind(this);
+		this._goTop = this._goTop.bind(this);
 	}
 	componentDidMount(){
 		const self = this;
@@ -47,7 +52,6 @@ class MainMenu extends React.Component {
 				self.setState({
 					topBar: true
 				});
-				console.log("true");
 			}
 			if(scrollDown && !self.state.menuOpen){
 				self.setState({
@@ -71,51 +75,59 @@ class MainMenu extends React.Component {
 		}));
 
 	}
+	_goTop(){
+		TweenMax.to(window, 1, {scrollTo: 0, ease: Power3.easeOut});
+	}
+	renderMenuList(){
+		const menuList = [
+			{
+				"linkTitle": "About Me",
+				"linkDescription": "About Me",
+				"hRef" : "about-me"
+			},
+			{
+				"linkTitle": "About The Site",
+				"linkDescription": "About The Site",
+				"hRef" : "about-the-site"
+			},
+			{
+				"linkTitle": "Pens",
+				"linkDescription": "Pens",
+				"hRef" : "pens"
+			},
+			{
+				"linkTitle": "Contact",
+				"linkDescription": "Contact",
+				"hRef" : "contact"
+			}
+		];
+		
+		return[...menuList].map((menu,i) => {
+			function goToSection(number) {
+				console.log('' + menu.hRef);
+				TweenMax.to(window, 1, {scrollTo: (document.getElementById('' + menu.hRef).offsetTop + number), ease: Power3.easeOut});
+			}
+			
+			return(
+				<li key={i}>
+					<div onClick={() => {this._toggleMenu(), goToSection(-41)}} title={menu.linkDescription}>
+						<span>{menu.linkTitle}</span>
+					</div>
+				</li>
+			)
+		} )
+	}
 	render() {
-		function renderMenuList(){
-			const menuList = [
-				{
-					"linkTitle": "About Me",
-					"linkDescription": "About Me",
-					"hRef" : "#aboutme"
-				},
-				{
-					"linkTitle": "About The Site",
-					"linkDescription": "About The Site",
-					"hRef" : "#aboutthesite"
-				},
-				{
-					"linkTitle": "Playground",
-					"linkDescription": "Playground",
-					"hRef" : "#playground"
-				},
-				{
-					"linkTitle": "Contact Us",
-					"linkDescription": "Contact Us",
-					"hRef" : "#contactus"
-				}
-			];
 
-			return[...menuList].map((menu,i) => {
-				return(
-					<li key={i}>
-						<a href={menu.hRef} title={menu.linkDescription}>
-							<span>{menu.linkTitle}</span>
-						</a>
-					</li>
-				)
-			} )
-		}
 		const listDimensions = {
 			width: window.innerWidth + "px",
 			height: window.innerHeight + "px"
 		}
-			
 		return(
-			<div ref="refMenu" className={"main-menu " + ((this.state.menuOpen) ? "active" : "not-active") + " " + ((this.state.topBar) ? "nav-down" : "nav-up")}>
+			<div ref={this.setMenuRef} className={"main-menu " + ((this.state.menuOpen) ? "active" : "not-active") + " " + ((this.state.topBar) ? "nav-down" : "nav-up")}>
 				<div className="mobile-wrapper">
 					<div className="top-bar">
-						<div className="main-logo">logo will go here</div>
+						<div className="main-logo" onClick={() => {this._goTop()}}><span>jonManalo.com</span></div>
 						<div onClick={() => this._toggleMenu()} className={"menu-button " + ((this.state.menuOpen) ? "visible" : "hidden")} role="button" aria-haspopup="true" tabIndex="0">
 							<div className="bars-container ">
 								<div className="common-icon menu-icon top"></div>
@@ -135,7 +147,7 @@ class MainMenu extends React.Component {
 				/>
 				<div className="list-container" style={listDimensions}>
 					<ul>
-						{renderMenuList()}
+						{this.renderMenuList()}
 					</ul>
 				</div>
 			</div>

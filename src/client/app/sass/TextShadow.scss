@@ -1,0 +1,15 @@
+@import 'global-variables';
+
+.text-shadow {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.page-content-wrapper .generic-page .section  {
+	.text-shadow {
+		@media (min-width: $min-one) {
+			align-items: flex-start;
+		}
+	}
+}

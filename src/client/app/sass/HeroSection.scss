@@ -1,0 +1,44 @@
+@import 'global-variables';
+
+.hero-section {
+	@include shift01(0.3);
+	margin-left: -$pd-one;
+	margin-right: -$pd-one;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-repeat: repeat, repeat;
+	background-image: url("/src/client/public/media/bg_02.png"), url("/src/client/public/media/hero-bg-day.png");
+	background-size: 20px, 1000px;
+	background-position: 0% 0%, -100px -100px;
+	background-attachment: fixed, fixed;
+	@media(min-width: $min-one) {
+		margin-left: -$pd-one-d;
+		margin-right: -$pd-one-d;
+		background-size: 20px, 2000px;
+	}
+	.section {
+		> div {
+			width: 100%;
+			@media (min-width: $min-one) {
+				width: 48%;
+				display: flex;
+				align-items: center;
+			}
+			img {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+	h2, p {
+		color: rgba(255,165,210,1);
+		mix-blend-mode: difference;
+		margin-left: $pd-one;
+		margin-right: $pd-one;
+		@media(min-width: $min-one) {
+			margin-left: $pd-one-d;
+			margin-right: $pd-one-d;
+		}
+	}
+}

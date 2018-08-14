@@ -1,0 +1,22 @@
+@import 'global-variables';
+
+.box-shadow {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	position: relative;
+
+	.profile-image {
+		max-width: 400px;
+		position: relative;
+	}
+}
+.section {
+	&.left .box-shadow {
+		@media (min-width: $min-one) {
+			justify-content: flex-end;
+		}
+	}
+}
