@@ -11,7 +11,9 @@ class Client extends React.Component{
 	render() {
 		return(
 			<div ref="mainWrapper" className="main-wrapper">
+
 				<Router history={hashHistory} routes={Routes} />
+
 			</div>
 		)
 	}
