@@ -1,7 +1,7 @@
 @import 'global-variables';
 
 .hero-section {
-	background-color: $black;
+	@include shift01(0.3);
 	margin-left: -$pd-one;
 	margin-right: -$pd-one;
 	display: flex;
@@ -17,9 +17,22 @@
 		margin-right: -$pd-one-d;
 		background-size: 20px, 2000px;
 	}
-
+	.section {
+		> div {
+			width: 100%;
+			@media (min-width: $min-one) {
+				width: 48%;
+				display: flex;
+				align-items: center;
+			}
+			img {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
 	h2, p {
-		color: $white;
+		color: rgba(255,165,210,1);
 		mix-blend-mode: difference;
 		margin-left: $pd-one;
 		margin-right: $pd-one;

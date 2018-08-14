@@ -6,6 +6,10 @@ $light-grey: #d3d3d3;
 $light-grey02: #e0e0e0;
 $off-white: #f2f2f2;
 
+@mixin shift01($opacity) {
+	background-color: rgba(255,165,210,$opacity);
+}
+
 // SCREEN WIDTHS
 
 $bp-one: 768px;
