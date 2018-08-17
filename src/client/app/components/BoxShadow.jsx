@@ -47,10 +47,10 @@ class BoxShadow extends React.PureComponent {
 			bxRef[i].style.boxShadow = "2px " + Math.min(5, Math.max(-5, ((winPos) - (bxRef[i].offsetParent.offsetTop - winCenter)) * 0.015)) + "px 3px rgba(0,0,0,0.3)";
 
 			if(this.props.parallax == "true" && document.body.clientWidth > 768) {
-				bxRef[i].style.top = -(Math.min(50, Math.max(-500,(winPos) + (bxRef[i].offsetTop - winCenter)) * this.props.rate)) + "px";
+				bxRef[i].style.transform = "translateY(" + (-(Math.min(50, Math.max(-500,(winPos) + (bxRef[i].offsetTop - winCenter)) * this.props.rate))) + "px)";
 			}
 			if(this.props.parallax == "true" && document.body.clientWidth <= 768) {
-				bxRef[i].style.top = -(winPos) + (((bxRef[i].offsetTop - winCenter) * 0.015) + (bxRefParent.parentNode.clientHeight * 1.15)) + "px";
+				bxRef[i].style.transform = "translateY(" + (-(winPos) + (((bxRef[i].offsetTop - winCenter) * 0.015) + (bxRefParent.parentNode.clientHeight * 1.15))) + "px)";
 			}
 
 		}

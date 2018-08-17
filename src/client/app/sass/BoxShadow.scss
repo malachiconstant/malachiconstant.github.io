@@ -11,6 +11,8 @@
 	.profile-image {
 		max-width: 400px;
 		position: relative;
+		transition: transform 0.2s;
+		transition-timing-function: ease-out;
 	}
 }
 .section {
