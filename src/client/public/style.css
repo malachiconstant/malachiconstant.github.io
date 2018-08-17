@@ -145,7 +145,13 @@
   position: relative; }
   .box-shadow .profile-image {
     max-width: 400px;
-    position: relative; }
+    position: relative;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s;
+    -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out; }
 
 @media (min-width: 769px) {
   .section.left .box-shadow {

@@ -30,43 +30,43 @@ class BoxShadow extends React.PureComponent {
 				const winW = window.innerWidth;
 				const winH = window.innerHeight;
 				const bgPos = document.querySelectorAll('.hero-section')[0];
-				if(winW > 768){
-					// bgPos.style.backgroundSize = "20px, " + (winW * 0.8) + "px";
-					bgPos.style.backgroundPosition = "center center," + (2000) + "px " + 3000 + "px";
+				// if(winW > 768){
+				// 	// bgPos.style.backgroundSize = "20px, " + (winW * 0.8) + "px";
+				// 	bgPos.style.backgroundPosition = "center center," + (2000) + "px " + 3000 + "px";
 				
-					var tl = new TimelineMax();
+				// 	var tl = new TimelineMax();
 
-					tl.add(
-						TweenMax.to(
-							bgPos, 120,{
-								css:{
-									backgroundPosition: "center center, " + (-4000) + "px " + (-6000) + "px",
-								}, 
-								ease: Power0.easeNone
-							}
-						)
-					);
-					const repeat = tl.repeat();
-					tl.repeat(-1);
-				}
-				else {
-					bgPos.style.backgroundPosition = "center center," + (1000) + "px " + 1500 + "px";
+				// 	tl.add(
+				// 		TweenMax.to(
+				// 			bgPos, 120,{
+				// 				css:{
+				// 					backgroundPosition: "center center, " + (-4000) + "px " + (-6000) + "px",
+				// 				}, 
+				// 				ease: Power0.easeNone
+				// 			}
+				// 		)
+				// 	);
+				// 	const repeat = tl.repeat();
+				// 	tl.repeat(-1);
+				// }
+				// else {
+				// 	bgPos.style.backgroundPosition = "center center," + (1000) + "px " + 1500 + "px";
 				
-					var tl = new TimelineMax();
+				// 	var tl = new TimelineMax();
 
-					tl.add(
-						TweenMax.to(
-							bgPos, 120,{
-								css:{
-									backgroundPosition: "center center, " + (-2000) + "px " + (-3000) + "px",
-								}, 
-								ease: Power0.easeNone
-							}
-						)
-					);
-					const repeat = tl.repeat();
-					tl.repeat(-1);
-				}
+				// 	tl.add(
+				// 		TweenMax.to(
+				// 			bgPos, 120,{
+				// 				css:{
+				// 					backgroundPosition: "center center, " + (-2000) + "px " + (-3000) + "px",
+				// 				}, 
+				// 				ease: Power0.easeNone
+				// 			}
+				// 		)
+				// 	);
+				// 	const repeat = tl.repeat();
+				// 	tl.repeat(-1);
+				// }
 			}
 		},25);
 
