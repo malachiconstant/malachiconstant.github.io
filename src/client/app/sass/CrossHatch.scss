@@ -17,6 +17,11 @@
 		opacity: 0;
 		transition: opacity 0.3s;
 	}
+	&.evening {
+		.cross-hatch-bg {
+			background-color: $silver;
+		}
+	}
 	.h-container {
 		display: flex;
 		position: absolute;

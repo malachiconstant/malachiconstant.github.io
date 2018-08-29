@@ -12,6 +12,12 @@
 	background-size: 20px, 1000px;
 	background-position: 0% 0%, -100px -100px;
 	background-attachment: fixed, fixed;
+	&.morning {
+		@include shift02(0.3);
+	}
+	&.evening {
+		@include shift03(1);
+	}
 	@media(min-width: $min-one) {
 		margin-left: -$pd-one-d;
 		margin-right: -$pd-one-d;

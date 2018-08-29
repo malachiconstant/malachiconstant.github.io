@@ -28,12 +28,31 @@
  			padding-right: $pd-one-d;
  		}
 	}
+	&.evening {
+		.top-bar {
+			background-color: $silver;
+			border-bottom: 1px solid $white;
+		}
+	}
+	&.morning {
+		.top-bar {
+			border-bottom: 1px solid $shift02c;
+		}
+	}
 	.main-logo {
 		position: relative;
 		z-index:1;
 		display: flex;
 		align-items: center;
 		cursor: pointer;		
+	}
+	&.morning {
+		span {
+			color: $shift02c;
+		}
+	}
+	&.evening {
+		color: $white;
 	}
 	.menu-button {
 		position: relative;
@@ -124,6 +143,16 @@
 	}
 	.common-icon {
 		background-color: $black;
+	}
+	&.morning {
+		.common-icon {
+			background-color: $shift02c;
+		}
+	}
+	&.evening {
+		.common-icon {
+			background-color: $white;
+		}
 	}
 	.list-container {
 		position: fixed;

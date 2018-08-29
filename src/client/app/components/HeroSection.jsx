@@ -71,7 +71,7 @@ class BoxShadow extends React.PureComponent {
 		},25);
 
 		return(
-			<div className="hero-section" id="heroSection">
+			<div className={`hero-section ${this.props.time}`} id="heroSection">
 				{this.props.children}
 			</div>
 		)

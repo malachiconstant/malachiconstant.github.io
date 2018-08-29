@@ -1,16 +1,45 @@
 @import 'global-variables';
 
+
 .home-page {
 	background-repeat: repeat;
 	background-image: url("/src/client/public/media/bg_01.png");
 	background-attachment: fixed;
 	background-position: center center;
+	&.morning {
+		color: $shift02c;
+		a {
+			color: $shift02c;
+		}
+	}
+	&.evening {
+		color: $white;
+		a {
+			color: $white;
+		}
+	}
 }
 .block {
 	padding-left: $pd-one;
 	padding-right: $pd-one;
 	&.shift-01 {
 		@include shift01(0.3);
+		&.morning {
+			@include shift02(0.3);
+		}
+		&.afternoon {
+			color: $shift01c;
+			a {
+				color: $shift01c;
+			}
+		}
+		&.evening {
+			@include shift03(1);
+			color: $shift03c;
+			a {
+				color: $shift03c;
+			}
+		}
 	}
 	@media (min-width: $min-one) {
 		padding-left: $pd-one-d;

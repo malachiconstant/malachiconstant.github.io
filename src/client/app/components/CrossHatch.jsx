@@ -70,7 +70,7 @@ class CrossHatch extends React.Component {
 		}
 		
 		return(
-			<div className={"crosshatch-container " + ((this.props.menuOpen) ? "open": "")} style={crossHatchStyle}>
+			<div className={`crosshatch-container ${this.props.time} ${(this.props.menuOpen) ? "open": ""}`} style={crossHatchStyle}>
 				<div className="cross-hatch-bg" style={bgStyle}></div>
 				<div className="h-container">
 					{hItems}

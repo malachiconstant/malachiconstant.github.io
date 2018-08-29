@@ -4,6 +4,11 @@
   .page-content-wrapper .generic-page {
     padding-top: 41px; }
 
+.page-container {
+  background-color: #f2f2f2; }
+  .page-container.evening {
+    background-color: c0c0c0; }
+
 .section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -40,12 +45,31 @@
   background-image: url("/src/client/public/media/bg_01.png");
   background-attachment: fixed;
   background-position: center center; }
+  .home-page.morning {
+    color: #a600ff; }
+    .home-page.morning a {
+      color: #a600ff; }
+  .home-page.evening {
+    color: #ffffff; }
+    .home-page.evening a {
+      color: #ffffff; }
 
 .block {
   padding-left: 15px;
   padding-right: 15px; }
   .block.shift-01 {
     background-color: rgba(255, 165, 210, 0.3); }
+    .block.shift-01.morning {
+      background-color: rgba(255, 165, 0, 0.3); }
+    .block.shift-01.afternoon {
+      color: #B17493; }
+      .block.shift-01.afternoon a {
+        color: #B17493; }
+    .block.shift-01.evening {
+      background-color: #323232;
+      color: #CB74A0; }
+      .block.shift-01.evening a {
+        color: #CB74A0; }
   @media (min-width: 769px) {
     .block {
       padding-left: 30px;
@@ -177,6 +201,10 @@
   background-size: 20px, 1000px;
   background-position: 0% 0%, -100px -100px;
   background-attachment: fixed, fixed; }
+  .hero-section.morning {
+    background-color: rgba(255, 165, 0, 0.3); }
+  .hero-section.evening {
+    background-color: #323232; }
   @media (min-width: 769px) {
     .hero-section {
       margin-left: -30px;
@@ -223,6 +251,8 @@
     opacity: 0;
     -webkit-transition: opacity 0.3s;
     transition: opacity 0.3s; }
+  .crosshatch-container.evening .cross-hatch-bg {
+    background-color: c0c0c0; }
   .crosshatch-container .h-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -315,6 +345,11 @@
       .main-menu .top-bar {
         padding-left: 30px;
         padding-right: 30px; } }
+  .main-menu.evening .top-bar {
+    background-color: c0c0c0;
+    border-bottom: 1px solid #ffffff; }
+  .main-menu.morning .top-bar {
+    border-bottom: 1px solid #a600ff; }
   .main-menu .main-logo {
     position: relative;
     z-index: 1;
@@ -325,6 +360,10 @@
         -ms-flex-align: center;
             align-items: center;
     cursor: pointer; }
+  .main-menu.morning span {
+    color: #a600ff; }
+  .main-menu.evening {
+    color: #ffffff; }
   .main-menu .menu-button {
     position: relative;
     z-index: 1;
@@ -421,6 +460,10 @@
     height: 40px; }
   .main-menu .common-icon {
     background-color: #323232; }
+  .main-menu.morning .common-icon {
+    background-color: #a600ff; }
+  .main-menu.evening .common-icon {
+    background-color: #ffffff; }
   .main-menu .list-container {
     position: fixed;
     display: -webkit-box;
@@ -500,8 +543,7 @@ body {
   font-weight: 300;
   font-size: 18px;
   color: #323232;
-  letter-spacing: 0.15em;
-  background-color: #f2f2f2; }
+  letter-spacing: 0.15em; }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
