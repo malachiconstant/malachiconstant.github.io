@@ -124,7 +124,7 @@ class MainMenu extends React.Component {
 			height: window.innerHeight + "px"
 		}
 		return(
-			<div ref={this.setMenuRef} className={"main-menu " + ((this.state.menuOpen) ? "active" : "not-active") + " " + ((this.state.topBar) ? "nav-down" : "nav-up")}>
+			<div ref={this.setMenuRef} className={"main-menu " + this.props.time + " " + ((this.state.menuOpen) ? "active" : "not-active") + " " + ((this.state.topBar) ? "nav-down" : "nav-up")}>
 				<div className="mobile-wrapper">
 					<div className="top-bar">
 						<div className="main-logo" onClick={() => {this._goTop()}}><span>jonManalo.com</span></div>
@@ -144,6 +144,7 @@ class MainMenu extends React.Component {
 				<CrossHatch 
 				menuOpen={this.state.menuOpen}
 				duration={this.state.duration}
+				time={this.props.time}
 				/>
 				<div className="list-container" style={listDimensions}>
 					<ul>

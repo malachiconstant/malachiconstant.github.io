@@ -8,6 +8,12 @@
 
 	}
 }
+.page-container {
+	background-color: $off-white;
+	&.evening {
+		background-color: $silver;
+	}
+}
 .section {
 	display: flex;
 	flex-direction: column;
