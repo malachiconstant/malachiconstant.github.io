@@ -17,7 +17,6 @@ class MainPage extends React.Component {
 
 	componentDidMount(){
 		const hour= new Date().getHours();
-
 		console.log(hour);
 		if(hour >= 5 && hour <= 11 ) {
 			this.setState({
@@ -50,8 +49,8 @@ class MainPage extends React.Component {
 		}
 		return(
 			<div className={"page-container " + this.state.time} >
-					<MainMenu time={this.state.time} />
-					<PageContent time={this.state.time} children={this.props.children}/>
+				<MainMenu time={this.state.time} />
+				<PageContent time={this.state.time} children={this.props.children}/>
 				<ProgressMeter time={this.state.time} />
 			</div>
 		)
