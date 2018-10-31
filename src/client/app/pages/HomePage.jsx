@@ -10,8 +10,6 @@ import TextShadow from "../components/TextShadow.jsx";
 import BoxShadow from "../components/BoxShadow.jsx";
 import HeroSection from "../components/HeroSection.jsx";
 
-
-
 class HomePage extends React.Component {
 
 	constructor(props) {
@@ -20,10 +18,15 @@ class HomePage extends React.Component {
 
 		};
 	}
-	componentWillMount() {
+	componentDidMount() {
+		const link = document.createElement('meta');
+		link.name="author";
+		link.content="Jon Manalo";
+		document.getElementsByTagName('head')[0].appendChild(link);
 		
 	}
 	render() {
+
 		function svgColors(theProp, color1, color2) {
 			switch(theProp){
 				case "evening":
@@ -32,7 +35,6 @@ class HomePage extends React.Component {
 				default:
 					return color2;				
 			}
-
 		}
 		function penH() {
 			const winW = window.innerWidth;
@@ -60,7 +62,7 @@ class HomePage extends React.Component {
 				</div>
 				<div className="block">
 					<div>
-						<TextShadow>
+						<TextShadow classAppend="offside_text" role="heading">
 							<h2>About Me</h2>
 						</TextShadow>
 					</div>
@@ -80,7 +82,7 @@ class HomePage extends React.Component {
 					<div id="about-the-site">
 					</div>
 					<div>
-						<TextShadow>
+						<TextShadow classAppend="offside_text" role="heading">
 							<h2>About The Site</h2>
 						</TextShadow>
 					</div>
@@ -560,12 +562,12 @@ class HomePage extends React.Component {
 						</div>
 					</div>
 				</div>
-			{/* ======= PENS ======== */}
+		{/* ======= PENS ======== */}
 				<div className="block">
 					<div id="pens">
 					</div>
 					<div>
-						<TextShadow>
+						<TextShadow classAppend="offside_text" role="heading">
 							<h2>Pens</h2>
 						</TextShadow>
 					</div>
@@ -590,7 +592,7 @@ class HomePage extends React.Component {
 					<div id="contact">
 					</div>
 					<div>
-						<TextShadow>
+						<TextShadow classAppend="offside_text" role="heading">
 							<h2>Contact</h2>
 						</TextShadow>
 						<div className="section contact">

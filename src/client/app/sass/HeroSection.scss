@@ -14,9 +14,14 @@
 	background-attachment: fixed, fixed;
 	&.morning {
 		@include shift02(0.3);
+		animation: colorChangeMor 10s 0s linear infinite;
+	}
+	&.afternoon {
+		animation: colorChangeAft 10s 0s linear infinite;
 	}
 	&.evening {
 		@include shift03(1);
+		animation: colorChangeEve 10s 0s linear infinite;
 	}
 	@media(min-width: $min-one) {
 		margin-left: -$pd-one-d;
@@ -46,5 +51,60 @@
 			margin-left: $pd-one-d;
 			margin-right: $pd-one-d;
 		}
+	}
+}
+
+
+@keyframes colorChangeMor {
+	0% {
+		background-color: rgba(255,165,0,0.3);
+	}
+	25% {
+		background-color: rgba(255,165,0,0.3);
+	}
+	50% {
+		background-color: rgba(0,165,0,0.3);
+	}
+	75% {
+		background-color: rgba(255,0,0,0.3);
+	}
+	100% {
+		background-color: rgba(255,165,0,0.3);
+	}
+}
+
+@keyframes colorChangeEve {
+	0% {
+		background-color: rgba(50,50,50,0.3);
+	}
+	25% {
+		background-color: rgba(50,50,50,0.3);
+	}
+	50% {
+		background-color: rgba(0,50,50,0.3);
+	}
+	75% {
+		background-color: rgba(50,0,50,0.3);
+	}
+	100% {
+		background-color: rgba(50,50,50,0.3);
+	}
+}
+
+@keyframes colorChangeAft {
+	0% {
+		background-color: rgba(255,165,210,0.3);
+	}
+	25% {
+		background-color: rgba(255,165,210,0.3);
+	}
+	50% {
+		background-color: rgba(0,165,210,0.3);
+	}
+	75% {
+		background-color: rgba(255,0,210,0.3);
+	}
+	100% {
+		background-color: rgba(255,165,210,0.3);
 	}
 }
