@@ -58,7 +58,7 @@ class TextShadow extends React.PureComponent {
 	};
 	render() {
 		return(
-			<div className={`text-shadow ${this.props.classAppend}`} ref={this.setTsRef} >
+			<div className={`text-shadow ${this.props.classAppend ? this.props.classAppend : ""}`} ref={this.setTsRef} >
 				{this.props.children}
 			</div>
 		)

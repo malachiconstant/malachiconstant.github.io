@@ -166,8 +166,8 @@
     -webkit-transform: translateX(100%) rotateY(85deg);
             transform: translateX(100%) rotateY(85deg); }
   .offside_text h2.vroom {
-    -webkit-animation: vroom 0.6s cubic-bezier(0.19, 1, 0.22, 1), open 0.2s 0.6s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-            animation: vroom 0.6s cubic-bezier(0.19, 1, 0.22, 1), open 0.2s 0.6s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    -webkit-animation: vroom 0.7s cubic-bezier(0.19, 1, 0.22, 1), open 0.2s 0.7s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+            animation: vroom 0.7s cubic-bezier(0.19, 1, 0.22, 1), open 0.2s 0.7s cubic-bezier(0.895, 0.03, 0.685, 0.22);
     -webkit-transform: translateX(0%) rotateX(0deg);
             transform: translateX(0%) rotateX(0deg); }
 
@@ -360,6 +360,47 @@
     background-color: rgba(255, 0, 210, 0.3); }
   100% {
     background-color: rgba(255, 165, 210, 0.3); } }
+.tech-wrapper .svg-container svg {
+  -webkit-transform: translateY(300%) rotateY(85deg);
+          transform: translateY(300%) rotateY(85deg); }
+
+.tech-wrapper .svg-container.flips svg {
+  -webkit-animation: rise 0.7s cubic-bezier(0.19, 1, 0.22, 1), open2 0.2s 0.7s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+          animation: rise 0.7s cubic-bezier(0.19, 1, 0.22, 1), open2 0.2s 0.7s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  -webkit-transform: translateY(0%) rotateY(0deg);
+          transform: translateY(0%) rotateY(0deg); }
+
+@-webkit-keyframes rise {
+  0% {
+    -webkit-transform: translateY(100%) rotateY(85deg);
+            transform: translateY(100%) rotateY(85deg); }
+  100% {
+    -webkit-transform: translateY(0%) rotateY(85deg);
+            transform: translateY(0%) rotateY(85deg); } }
+
+@keyframes rise {
+  0% {
+    -webkit-transform: translateY(100%) rotateY(85deg);
+            transform: translateY(100%) rotateY(85deg); }
+  100% {
+    -webkit-transform: translateY(0%) rotateY(85deg);
+            transform: translateY(0%) rotateY(85deg); } }
+
+@-webkit-keyframes open2 {
+  0% {
+    -webkit-transform: rotateY(85deg);
+            transform: rotateY(85deg); }
+  100% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg); } }
+
+@keyframes open2 {
+  0% {
+    -webkit-transform: rotateY(85deg);
+            transform: rotateY(85deg); }
+  100% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg); } }
 .crosshatch-container {
   position: fixed;
   top: 0px;
