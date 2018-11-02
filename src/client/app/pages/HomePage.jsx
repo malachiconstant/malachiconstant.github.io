@@ -9,6 +9,7 @@ import '../sass/Contact.scss';
 import TextShadow from "../components/TextShadow.jsx";
 import BoxShadow from "../components/BoxShadow.jsx";
 import HeroSection from "../components/HeroSection.jsx";
+import SvgContainer from "../components/SvgContainer.jsx";
 
 class HomePage extends React.Component {
 
@@ -91,7 +92,7 @@ class HomePage extends React.Component {
 							<p>This website aims to use the technologies I've learned, thus far.  It will be constantly evolving as I refine the skills I already have, and as I learn new ones.  You can view the <a href="https://github.com/malachiconstant/malachiconstant.github.io" title="github repository" target="_blank">Github repository for this site here.</a></p>
 						</TextShadow>
 						<div className="tech-wrapper">
-							<div className="svg-container sass">
+							<SvgContainer  classAppend="sass">
 								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 									 viewBox="0 0 500 500" enableBackground="new 0 0 500 500">
 								<g id="Layer_1">
@@ -127,8 +128,8 @@ class HomePage extends React.Component {
 									</g>
 								</g>
 								</svg>
-							</div>
-							<div className="svg-container gsap">
+							</SvgContainer>
+							<SvgContainer  classAppend="gsap">
 		
 								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 									 viewBox="0 0 500 500" enableBackground="new 0 0 500 500" >
@@ -308,8 +309,8 @@ class HomePage extends React.Component {
 									</g>
 								</g>
 								</svg>
-							</div>
-							<div className="svg-container adobe">
+							</SvgContainer>
+							<SvgContainer classAppend="adobe">
 
 								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 									 viewBox="0 0 500 500" enableBackground="new 0 0 500 500">
@@ -332,8 +333,8 @@ class HomePage extends React.Component {
 										c22.2-18.6,49.5-27.8,76.9-27.8c30.7,0,61.4,11.7,84.8,35C434.5,212.1,434.4,288.1,387.7,334.9z"/>
 								</g>
 								</svg>
-							</div>
-							<div className="svg-container github">
+							</SvgContainer>
+							<SvgContainer classAppend="github">
 
 								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 									 viewBox="0 0 500 500" enableBackground="new 0 0 500 500" >
@@ -351,8 +352,8 @@ class HomePage extends React.Component {
 									</g>
 								</g>
 								</svg>
-							</div>
-							<div className="svg-container sublime">
+							</SvgContainer>
+							<SvgContainer classAppend="sublime">
 								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 									 viewBox="0 0 500 500" enableBackground="new 0 0 500 500">
 								<g id="Layer_1">
@@ -374,8 +375,8 @@ class HomePage extends React.Component {
 										c4.3-1.4,7.7-6.3,7.7-11C404.3,151.4,404.3,56.4,404.3,56.4z"/>
 								</g>
 								</svg>
-							</div>
-							<div className="svg-container chrome-dev">
+							</SvgContainer>
+							<SvgContainer classAppend="chrome-dev">
 
 								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 									 viewBox="0 0 500 500" enableBackground="new 0 0 500 500" >
@@ -426,8 +427,8 @@ class HomePage extends React.Component {
 									</g>
 								</g>
 								</svg>
-							</div>
-							<div className="svg-container node">
+							</SvgContainer>
+							<SvgContainer classAppend="node">
 
 								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 									 viewBox="0 0 500 500" enableBackground="new 0 0 500 500" >
@@ -499,8 +500,8 @@ class HomePage extends React.Component {
 										c1.2-0.7,2-1.8,2.2-3.1l-41.7-71.3c-0.3-0.1-0.6-0.1-0.9-0.1C197.5,183.5,197.3,183.5,197.2,183.5"/>
 								</g>
 								</svg>
-							</div>
-							<div className="svg-container reactjs">
+							</SvgContainer>
+							<SvgContainer classAppend="reactjs">
 
 								<svg version="1.1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
 									 viewBox="0 0 500 500" enableBackground="new 0 0 500 500">
@@ -539,8 +540,8 @@ class HomePage extends React.Component {
 										C433,250.1,433,250.2,433,250.4z"/>
 								</g>
 								</svg>
-							</div>
-							<div className="svg-container webpack">
+							</SvgContainer>
+							<SvgContainer classAppend="webpack">
 								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 									 viewBox="0 0 500 500" enableBackground="new 0 0 500 500" >
 								<g id="Layer_1">
@@ -558,7 +559,7 @@ class HomePage extends React.Component {
 									</g>
 								</g>
 								</svg>
-							</div>
+							</SvgContainer>
 						</div>
 					</div>
 				</div>

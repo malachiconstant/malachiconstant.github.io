@@ -1,0 +1,36 @@
+@import 'global-variables';
+
+.tech-wrapper {
+	.svg-container {
+		svg {
+			transform: translateY(300%) rotateY(85deg);
+		}
+		&.flips {
+			svg {
+				animation: 
+					rise 0.7s cubic-bezier(0.19, 1, 0.22, 1),
+					open2 0.2s 0.7s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+				transform: translateY(0%) rotateY(0deg);
+			}
+		}
+	}
+}
+
+
+@keyframes rise {
+	0% {
+		transform: translateY(100%) rotateY(85deg);
+	}
+	100% {
+		transform: translateY(0%) rotateY(85deg);
+	}
+}
+
+@keyframes open2 {
+	0% {
+		transform: rotateY(85deg);
+	}
+	100% {
+		transform: rotateY(0deg);
+	}
+}
