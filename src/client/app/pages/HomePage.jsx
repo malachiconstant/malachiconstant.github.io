@@ -625,6 +625,10 @@ class HomePage extends React.Component {
 									C253.1,43,253,44,253,45v19h-11.4c0,0,0.1-30.8,0-34H253v4.9c1.5-2.3,4.2-5.6,10.1-5.6c7.4,0,12.9,4.8,12.9,15.3V64z"/>
 								</svg>
 							</a>
+							
+						</div>
+						<div className="section">
+							<p><a target="_blank" href="/src/client/public/media/jonManalo.pdf">CV</a></p>
 						</div>
 					</div>
 				</div>
