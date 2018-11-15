@@ -628,7 +628,7 @@ class HomePage extends React.Component {
 							
 						</div>
 						<div className="section">
-							<p><a target="_blank" href="/src/client/public/media/jonManalo.pdf">CV</a></p>
+							<p><a target="_blank" href="/src/client/public/media/JonManalo.pdf">CV</a></p>
 						</div>
 					</div>
 				</div>
