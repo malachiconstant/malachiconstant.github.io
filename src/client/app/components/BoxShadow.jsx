@@ -20,12 +20,12 @@ class BoxShadow extends React.PureComponent {
 		this.boxShadow();
 		// this.mobileImage();
 		window.addEventListener('load', this.mobileImage);
-		window.addEventListener('scroll', this.boxShadow);
+		// window.addEventListener('scroll', this.boxShadow);
 		window.addEventListener('resize', this.boxShadow);
 		window.addEventListener('resize', this.mobileImage);
 	}
 	componentWillUnmount() {
-  		window.removeEventListener('scroll', this.boxShadow);
+  		// window.removeEventListener('scroll', this.boxShadow);
   		window.removeEventListener('resize', this.boxShadow);
   		window.removeEventListener('resize', this.mobileImage);
 	};
