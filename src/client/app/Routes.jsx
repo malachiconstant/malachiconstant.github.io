@@ -9,7 +9,7 @@ import Client from "./client.jsx";
 
 
 const Routes = (
-	<Route path="/" component={MainPage}>
+	<Route path="/">
 	 	<IndexRoute component={HomePage}/>
 		<Route path="about" component={AboutTheSitePage}></Route>
 	</Route>

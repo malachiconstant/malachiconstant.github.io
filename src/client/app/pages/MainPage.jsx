@@ -16,7 +16,7 @@ class MainPage extends React.Component {
 	}
 
 	componentDidMount(){
-		const hour= new Date().getHours();
+		const hour = new Date().getHours();
 		console.log(hour);
 		if(hour >= 5 && hour <= 11 ) {
 			this.setState({

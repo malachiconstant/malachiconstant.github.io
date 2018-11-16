@@ -32,7 +32,7 @@ class MainMenu extends React.Component {
 				topBar: true
 			});
 		}
-		document.addEventListener('scroll', menuScroll);
+		// document.addEventListener('scroll', menuScroll);
 
 		function menuScroll() {
 			const initOffset = self.state.initOffset;
