@@ -2,8 +2,8 @@
 
 .hero-section {
 	@include shift01(0.3);
-	margin-left: -$pd-one;
-	margin-right: -$pd-one;
+	// margin-left: -$pd-one;
+	// margin-right: -$pd-one;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -24,8 +24,8 @@
 		animation: colorChangeEve 10s 0s linear infinite;
 	}
 	@media(min-width: $min-one) {
-		margin-left: -$pd-one-d;
-		margin-right: -$pd-one-d;
+		// margin-left: -$pd-one-d;
+		// margin-right: -$pd-one-d;
 		background-size: 20px, 2000px;
 	}
 	.section {

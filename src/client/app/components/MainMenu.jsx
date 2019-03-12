@@ -7,78 +7,21 @@ import '../sass/MainMenu.scss';
 class MainMenu extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			menuOpen : false,
-			duration: 0,
-			initOffset: 0,
-			scrollOffset: 0,
-			scrolling: false,
-			topBar: true
-		};
-		this.menuRef = null;
-		this.setMenuRef = element => {
-			this.menuRef = element;
-		}
-		this._toggleMenu = this._toggleMenu.bind(this);
-		this._goTop = this._goTop.bind(this);
 	}
-	componentDidMount(){
-		const self = this;
-		let scrollDetect = self.state.scrolling;
-
-		this.setState({initOffset: window.pageYOffset});
-		if (self.state.scrollOffset == self.state.initOffset) {
-			self.setState({
-				topBar: true
-			});
-		}
-		// document.addEventListener('scroll', menuScroll);
-
-		function menuScroll() {
-			const initOffset = self.state.initOffset;
-			const scrollOffset = self.state.scrollOffset;
-			const scrollingAction = (scrollDetect !== self.state.scrolling);
-			const scrollUpOrTop = (scrollOffset < initOffset || scrollOffset == 0 || window.pageYOffset < 100);
-			const scrollDown = ((scrollOffset - 150) > initOffset);
-
-			if (scrollingAction) {
-				self.setState({
-					scrolling: true,
-					scrollOffset: window.pageYOffset
-				});	
-				clearTimeout(scrollDetect);
-			}
-			if(scrollUpOrTop){
-				self.setState({
-					topBar: true
-				});
-			}
-			if(scrollDown && !self.state.menuOpen){
-				self.setState({
-					topBar: false
-				});
-				clearTimeout(scrollDetect);
-			}
-			scrollDetect = setTimeout(function(){
-				self.setState({
-					initOffset: window.pageYOffset,
-					scrolling: false
-				});
-			}, 25);
-		}
-
-	}
-	_toggleMenu(){
-		this.setState(prevState => ({
-			menuOpen : !prevState.menuOpen,
-			duration: this.state.menuOpen ?  this.state.duration : new Date().getTime()
-		}));
-
-	}
-	_goTop(){
+	_goTop() {
 		TweenMax.to(window, 1, {scrollTo: 0, ease: Power3.easeOut});
 	}
-	renderMenuList(){
+	goToSection(anchor) {
+		console.log(`${anchor}`);
+		TweenMax.to(window, 1, {scrollTo: (document.getElementById(`${anchor}`).offsetTop -41), ease: Power3.easeOut});
+	}
+	render() {
+
+		const listDimensions = {
+			width: `${this.props.width}px`,
+			height: `${this.props.height - 138}px`
+		}
+
 		const menuList = [
 			{
 				"linkTitle": "About Me",
@@ -101,34 +44,13 @@ class MainMenu extends React.Component {
 				"hRef" : "contact"
 			}
 		];
-		
-		return[...menuList].map((menu,i) => {
-			function goToSection(number) {
-				console.log('' + menu.hRef);
-				TweenMax.to(window, 1, {scrollTo: (document.getElementById('' + menu.hRef).offsetTop + number), ease: Power3.easeOut});
-			}
-			
-			return(
-				<li key={i}>
-					<div onClick={() => {this._toggleMenu(), goToSection(-41)}} title={menu.linkDescription}>
-						<span>{menu.linkTitle}</span>
-					</div>
-				</li>
-			)
-		} )
-	}
-	render() {
 
-		const listDimensions = {
-			width: window.innerWidth + "px",
-			height: window.innerHeight + "px"
-		}
 		return(
-			<div ref={this.setMenuRef} className={"main-menu " + this.props.time + " " + ((this.state.menuOpen) ? "active" : "not-active") + " " + ((this.state.topBar) ? "nav-down" : "nav-up")}>
+			<div ref={this.setMenuRef} className={`main-menu ${this.props.time} ${this.props.menuOpen ? "active" : "not-active"}` }>
 				<div className="mobile-wrapper">
 					<div className="top-bar">
-						<div className="main-logo" onClick={() => {this._goTop()}}><span>jonManalo.com</span></div>
-						<div onClick={() => this._toggleMenu()} className={"menu-button " + ((this.state.menuOpen) ? "visible" : "hidden")} role="button" aria-haspopup="true" tabIndex="0">
+						<div className="main-logo" onClick={() => this._goTop()}><span>jonManalo.com</span></div>
+						<div onClick={this.props.toggleMenu} className={"menu-button " + ((this.props.menuOpen) ? "visible" : "hidden")} role="button" aria-haspopup="true" tabIndex="0">
 							<div className="bars-container ">
 								<div className="common-icon menu-icon top"></div>
 								<div className="common-icon menu-icon middle"></div>
@@ -142,13 +64,21 @@ class MainMenu extends React.Component {
 					</div>
 				</div>
 				<CrossHatch 
-				menuOpen={this.state.menuOpen}
-				duration={this.state.duration}
-				time={this.props.time}
+					menuOpen={this.props.menuOpen}
+					duration={this.props.duration}
+					time={this.props.time}
 				/>
 				<div className="list-container" style={listDimensions}>
 					<ul>
-						{this.renderMenuList()}
+						{menuList.map((menu,i) => {
+							return (
+								<li key={i}>
+									<div onClick={() => {this.props.toggleMenu, this.goToSection(menu.hRef)}} title={menu.linkDescription}>
+										<span>{menu.linkTitle}</span>
+									</div>
+								</li>
+							)
+						})}
 					</ul>
 				</div>
 			</div>

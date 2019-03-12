@@ -8,9 +8,6 @@ import '../sass/Pens.scss';
 import '../sass/Contact.scss';
 import MainMenu from "../components/MainMenu.jsx";
 import ProgressMeter from "../components/ProgressMeter.jsx";
-import TextShadow from "../components/TextShadow.jsx";
-import BoxShadow from "../components/BoxShadow.jsx";
-import SvgContainer from "../components/SvgContainer.jsx";
 import Hero from '../sections/Hero.jsx';
 import AboutMe from '../sections/AboutMe.jsx';
 import AboutTheSite from '../sections/AboutTheSite.jsx';
@@ -18,21 +15,34 @@ import Pens from '../sections/Pens.jsx';
 import Contact from '../sections/Contact.jsx';
 
 class HomePage extends React.Component {
-
-	constructor(props) {
-		super(props);
-		this.state = {
+	state = {
 			time: "day",
 			width: window.innerWidth,
-			height: window.outerHeight
-		};
-	}
+			height: window.outerHeight,
+			menuOpen: false,
+			duration: 0
+	};
 	componentDidMount() {
 		const link = document.createElement('meta');
 		link.name="author";
 		link.content="Jon Manalo";
 		document.getElementsByTagName('head')[0].appendChild(link);
 
+		this._timeOfDay();
+		this._updateDims();
+		window.addEventListener('resize', this._updateDims.bind(this));
+	}
+	componentWillUnmount() {
+		window.removeEventListener('resize', this._updateDims.bind(this));
+	}
+	// TOGGLE MAIN MENU
+	_toggleMenu = () => {
+		this.setState({
+			menuOpen : this.state.menuOpen ? false : true,
+			duration: this.state.menuOpen ?  this.state.duration : new Date().getTime()
+		});
+	}
+	_timeOfDay() {
 		const hour = new Date().getHours();
 		console.log(hour);
 		if(hour >= 5 && hour <= 11 ) {
@@ -50,12 +60,6 @@ class HomePage extends React.Component {
 				time: "evening"
 			});
 		}
-
-		this._updateDims();
-		window.addEventListener('resize', this._updateDims.bind(this));
-	}
-	componentWillUnmount() {
-		window.removeEventListener('resize', this._updateDims.bind(this));
 	}
 	_updateDims() {
 		this.setState({
@@ -63,40 +67,40 @@ class HomePage extends React.Component {
 			height: window.outerHeight
 		});
 	}
-	_penH() {
-		const winW = this.state.width;
-		if(winW > 768) {
-			return 400;
-		}
-		else {
-			return 250;
-		}
-	}
+	_penH = () => this.state.width > 768 ? 400 : 250;
+
 	render() {		
 		return(
 			<div className={"page-container " + this.state.time}>
-				<MainMenu time={this.state.time} />
+				<MainMenu 
+					time={this.state.time}
+					width={this.state.width}
+					height={this.state.height}
+					toggleMenu={this._toggleMenu}
+					menuOpen={this.state.menuOpen}
+					duration={this.state.duration}
+				/>
 				<div className="page-content-wrapper">
 					<div ref="genericPage" className={`generic-page home-page ${this.state.time}`}>
 
-				{/* ======= HERO ======== */}	
+						{/* ======= HERO ======== */}	
 						<Hero className={`block`} time={this.state.time} secHeight={this.state.height} />
 
-				{/* ======= ABOUT ME ======== */} 
+						{/* ======= ABOUT ME ======== */} 
 						<div id="about-me">
 						</div>
 						<AboutMe />
 
-				{/* ======= ABOUT THE SITE ======== */}
+						{/* ======= ABOUT THE SITE ======== */}
 						<AboutTheSite time={this.state.time} />
 
-				{/* ======= PENS ======== */}
-						<Pens width={this._penH()}/>
+						{/* ======= PENS ======== */}
+						<Pens width={this._penH}/>
 
-				{/* ======= CONTACT ======== */}
+						{/* ======= CONTACT ======== */}
 						<Contact time={this.state.time} />
 
-				{/* ======= FOOTER ======== */}
+						{/* ======= FOOTER ======== */}
 						<div className="block">
 							<div className="section footer">
 								<span>Jon Manalo - 2018</span>
