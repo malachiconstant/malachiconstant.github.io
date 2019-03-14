@@ -483,79 +483,8 @@
   100% {
     -webkit-transform: rotateX(0deg);
             transform: rotateX(0deg); } }
-.box-shadow {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  position: relative; }
-  .box-shadow .profile-image {
-    max-width: 400px;
-    position: relative;
-    -webkit-transition: -webkit-transform 0.2s;
-    transition: -webkit-transform 0.2s;
-    transition: transform 0.2s;
-    transition: transform 0.2s, -webkit-transform 0.2s;
-    -webkit-transition-timing-function: ease-out;
-            transition-timing-function: ease-out; }
-
-@media (min-width: 769px) {
-  .section.left .box-shadow {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end; } }
-.tech-wrapper .svg-container svg {
-  -webkit-transform: translateY(300%) rotateY(85deg);
-          transform: translateY(300%) rotateY(85deg); }
-
-.tech-wrapper .svg-container.flips svg {
-  -webkit-animation: rise 0.7s cubic-bezier(0.19, 1, 0.22, 1), open2 0.2s 0.7s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-          animation: rise 0.7s cubic-bezier(0.19, 1, 0.22, 1), open2 0.2s 0.7s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  -webkit-transform: translateY(0%) rotateY(0deg);
-          transform: translateY(0%) rotateY(0deg); }
-
-@-webkit-keyframes rise {
-  0% {
-    -webkit-transform: translateY(100%) rotateY(85deg);
-            transform: translateY(100%) rotateY(85deg); }
-  100% {
-    -webkit-transform: translateY(0%) rotateY(85deg);
-            transform: translateY(0%) rotateY(85deg); } }
-
-@keyframes rise {
-  0% {
-    -webkit-transform: translateY(100%) rotateY(85deg);
-            transform: translateY(100%) rotateY(85deg); }
-  100% {
-    -webkit-transform: translateY(0%) rotateY(85deg);
-            transform: translateY(0%) rotateY(85deg); } }
-
-@-webkit-keyframes open2 {
-  0% {
-    -webkit-transform: rotateY(85deg);
-            transform: rotateY(85deg); }
-  100% {
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg); } }
-
-@keyframes open2 {
-  0% {
-    -webkit-transform: rotateY(85deg);
-            transform: rotateY(85deg); }
-  100% {
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg); } }
 .hero-section {
   background-color: rgba(255, 165, 210, 0.3);
-  margin-left: -15px;
-  margin-right: -15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -584,8 +513,6 @@
             animation: colorChangeEve 10s 0s linear infinite; }
   @media (min-width: 769px) {
     .hero-section {
-      margin-left: -30px;
-      margin-right: -30px;
       background-size: 20px, 2000px; } }
   .hero-section .section > div {
     width: 100%; }
@@ -682,6 +609,75 @@
     background-color: rgba(255, 0, 210, 0.3); }
   100% {
     background-color: rgba(255, 165, 210, 0.3); } }
+.box-shadow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  position: relative; }
+  .box-shadow .profile-image {
+    max-width: 400px;
+    position: relative;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s;
+    -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out; }
+
+@media (min-width: 769px) {
+  .section.left .box-shadow {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; } }
+.tech-wrapper .svg-container svg {
+  -webkit-transform: translateY(300%) rotateY(85deg);
+          transform: translateY(300%) rotateY(85deg); }
+
+.tech-wrapper .svg-container.flips svg {
+  -webkit-animation: rise 0.7s cubic-bezier(0.19, 1, 0.22, 1), open2 0.2s 0.7s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+          animation: rise 0.7s cubic-bezier(0.19, 1, 0.22, 1), open2 0.2s 0.7s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  -webkit-transform: translateY(0%) rotateY(0deg);
+          transform: translateY(0%) rotateY(0deg); }
+
+@-webkit-keyframes rise {
+  0% {
+    -webkit-transform: translateY(100%) rotateY(85deg);
+            transform: translateY(100%) rotateY(85deg); }
+  100% {
+    -webkit-transform: translateY(0%) rotateY(85deg);
+            transform: translateY(0%) rotateY(85deg); } }
+
+@keyframes rise {
+  0% {
+    -webkit-transform: translateY(100%) rotateY(85deg);
+            transform: translateY(100%) rotateY(85deg); }
+  100% {
+    -webkit-transform: translateY(0%) rotateY(85deg);
+            transform: translateY(0%) rotateY(85deg); } }
+
+@-webkit-keyframes open2 {
+  0% {
+    -webkit-transform: rotateY(85deg);
+            transform: rotateY(85deg); }
+  100% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg); } }
+
+@keyframes open2 {
+  0% {
+    -webkit-transform: rotateY(85deg);
+            transform: rotateY(85deg); }
+  100% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg); } }
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)

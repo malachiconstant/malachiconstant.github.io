@@ -1,18 +1,22 @@
 import React from 'react';
 import {render} from 'react-dom';
+import PropTypes from "prop-types";
 import TextShadow from "../components/TextShadow.jsx";
 import '../sass/HeroSection.scss';
 
-class Hero extends React.PureComponent {
+class Hero extends React.Component {
 	constructor(props) {
 	  super(props);
-	  this.state = {
-	  };
+	}
+
+static propTypes = {
+		time: PropTypes.string,
+		height: PropTypes.number
 	}
 
 	render() {
 		const secStyle= {
-			height: `${this.props.secHeight - 138}px`
+			height: `${this.props.height - 138}px`
 		}
 		return(
 			<div className={`hero-section ${this.props.time}`} id="heroSection" style={secStyle}>

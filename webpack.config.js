@@ -6,13 +6,13 @@ var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
 var APP_DIR = path.resolve(__dirname, 'src/client/app');
 
 var config = {
-  entry: APP_DIR + '/client.jsx',
+  entry: APP_DIR + '/App.jsx',
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js',
   },
 	module : {
-	    loaders : [
+	    rules : [
 			{
 				test : /\.jsx?/,
 				include : APP_DIR,

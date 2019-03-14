@@ -7,7 +7,7 @@ import '../sass/VectorStreaks.scss';
 
 
 
-class VectorStreaks extends React.PureComponent {
+class VectorStreaks extends React.Component {
 		constructor(props) {
 	  super(props);
 	  this.state = {

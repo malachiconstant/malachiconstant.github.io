@@ -3,12 +3,7 @@ import {render} from 'react-dom';
 import TextShadow from "../components/TextShadow.jsx";
 import BoxShadow from "../components/BoxShadow.jsx";
 
-class AboutMe extends React.PureComponent {
-	constructor(props) {
-	  super(props);
-	  this.state = {
-	  };
-	}
+class AboutMe extends React.Component {
 
 	render() {
 		return(
