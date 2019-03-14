@@ -15,6 +15,7 @@ import Pens from '../sections/Pens.jsx';
 import Contact from '../sections/Contact.jsx';
 
 class HomePage extends React.Component {
+
 	state = {
 			time: "day",
 			width: window.innerWidth,
@@ -22,6 +23,7 @@ class HomePage extends React.Component {
 			menuOpen: false,
 			duration: 0
 	};
+
 	componentDidMount() {
 		const link = document.createElement('meta');
 		link.name="author";
@@ -29,19 +31,20 @@ class HomePage extends React.Component {
 		document.getElementsByTagName('head')[0].appendChild(link);
 
 		this._timeOfDay();
-		this._updateDims();
 		window.addEventListener('resize', this._updateDims.bind(this));
 	}
+
 	componentWillUnmount() {
 		window.removeEventListener('resize', this._updateDims.bind(this));
 	}
-	// TOGGLE MAIN MENU
+	// toggle main menu
 	_toggleMenu = () => {
 		this.setState({
 			menuOpen : this.state.menuOpen ? false : true,
 			duration: this.state.menuOpen ?  this.state.duration : new Date().getTime()
 		});
 	}
+	// determine color scheme, depending on time of day
 	_timeOfDay() {
 		const hour = new Date().getHours();
 		console.log(hour);
@@ -61,13 +64,13 @@ class HomePage extends React.Component {
 			});
 		}
 	}
+	// update dimensions of browser
 	_updateDims() {
 		this.setState({
 			width: window.innerWidth,
 			height: window.outerHeight
 		});
 	}
-	_penH = () => this.state.width > 768 ? 400 : 250;
 
 	render() {		
 		return(
@@ -84,7 +87,7 @@ class HomePage extends React.Component {
 					<div ref="genericPage" className={`generic-page home-page ${this.state.time}`}>
 
 						{/* ======= HERO ======== */}	
-						<Hero className={`block`} time={this.state.time} secHeight={this.state.height} />
+						<Hero className={`block`} time={this.state.time} height={this.state.height} />
 
 						{/* ======= ABOUT ME ======== */} 
 						<div id="about-me">
@@ -95,7 +98,7 @@ class HomePage extends React.Component {
 						<AboutTheSite time={this.state.time} />
 
 						{/* ======= PENS ======== */}
-						<Pens width={this._penH}/>
+						<Pens width={this.state.width}/>
 
 						{/* ======= CONTACT ======== */}
 						<Contact time={this.state.time} />
@@ -103,14 +106,19 @@ class HomePage extends React.Component {
 						{/* ======= FOOTER ======== */}
 						<div className="block">
 							<div className="section footer">
-								<span>Jon Manalo - 2018</span>
+								<span>{`Jon Manalo -  ${new Date().getFullYear()}`}</span>
 							</div>
 						</div>
 					</div>
 				</div>
-				<ProgressMeter time={this.state.time} />
+				<ProgressMeter
+					time={this.state.time}
+					width={this.state.width}
+					height={this.state.height}
+				/>
 			</div>
 		)
 	}
 }
+
 export default HomePage;

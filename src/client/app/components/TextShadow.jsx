@@ -1,67 +1,57 @@
 import React from 'react';
 import {render} from 'react-dom';
+import PropTypes from "prop-types";
 import {Link, IndexLink} from 'react-router';
 import '../sass/TextShadow.scss';
 import '../sass/TextAnim.scss';
 
-class TextShadow extends React.PureComponent {
+class TextShadow extends React.Component {
+
+	tsRef = React.createRef();
+
 	constructor(props) {
 	  super(props);
-	  this.state = {
-	  };
-	  this.tsRef = null;
-	  this.setTsRef = element => {
-	  	this.tsRef = element;
-	  }
-	  this.textShadow = this.textShadow.bind(this);
-	  this.textAnim = this.textAnim.bind(this);
+	  this.textFX = this.textFX.bind(this);
+	}
+
+	static propTypes = {
+		role: PropTypes.string,
+		classAppend: PropTypes.string
 	}
 
 	componentDidMount() {
-		this.textShadow();
-		window.addEventListener('load', this.textAnim);
-		window.addEventListener('scroll', this.textShadow);
-		window.addEventListener('scroll', this.textAnim);
-		window.addEventListener('resize', this.textShadow);
+		window.addEventListener('scroll', this.textFX);
+		window.addEventListener('resize', this.textFX);
 
 	}
+
 	componentWillUnmount() {
-  		window.removeEventListener('scroll', this.textShadow);
-  		window.removeEventListener('scroll', this.textAnim);
-  		window.removeEventListener('resize', this.textShadow);
-	};
-	textShadow() {
+  		window.removeEventListener('scroll', this.textFX);
+  		window.removeEventListener('resize', this.textFX);
+	}
+	// text shadow moves as user scrolls page.  shadow position dependent on y position of element in browser window
+	textFX() {
 		const winPos = window.scrollY;
 		const winCenter = window.outerHeight / 3; 
 		const winPC = window.scrollY + winCenter;
-		const tsRef = this.tsRef.childNodes;
-		// console.log(shCenter); 
-		var i;
-		for (i = 0; i < tsRef.length; i++) {
-			tsRef[i].style.textShadow = "2px " + Math.min(5, Math.max(-5, ((winPos) - (tsRef[i].offsetParent.offsetTop - winCenter)) * 0.015)) + "px 3px rgba(0,0,0,0.3)";
-			// if (this.props.role == "heading") {
-			// 	console.dir('yes title role');
-			// }
-		}
-	};
-	textAnim() {
-		const winPos = window.scrollY; 
+		const tsRef = this.tsRef.current.childNodes;
 		const winThresh = winPos + (window.outerHeight * 0.66666);
-		const tsRef = this.tsRef.childNodes;
-		var i;
-		for (i = 0; i < tsRef.length; i++) {
-			if(winThresh > tsRef[i].offsetParent.offsetTop && this.props.role == "heading") {
-				tsRef[i].classList.add('vroom');
+
+		Array.from(tsRef).map(box => {
+			box.style.textShadow = `2px ${Math.min(5, Math.max(-5, ((winPos) - (box.offsetParent.offsetTop - winCenter)) * 0.015))}px 3px rgba(0,0,0,0.3)`;
+			if(winThresh > box.offsetParent.offsetTop && this.props.role == "heading") {
+				box.classList.add("vroom");
 			}
-			
-		}
-	};
+		})
+	}
+
 	render() {
 		return(
-			<div className={`text-shadow ${this.props.classAppend ? this.props.classAppend : ""}`} ref={this.setTsRef} >
+			<div className={`text-shadow ${this.props.classAppend ? this.props.classAppend : ``}`} ref={this.tsRef} >
 				{this.props.children}
 			</div>
 		)
 	}
 }
+
 export default TextShadow;

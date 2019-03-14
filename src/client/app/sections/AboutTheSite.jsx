@@ -1,26 +1,23 @@
 import React from 'react';
 import {render} from 'react-dom';
+import PropTypes from "prop-types";
 import TextShadow from "../components/TextShadow.jsx";
 import BoxShadow from "../components/BoxShadow.jsx";
 import SvgContainer from "../components/SvgContainer.jsx";
+import { svgColors } from "../helpers.js";
 
-class AboutTheSite extends React.PureComponent {
+class AboutTheSite extends React.Component {
+
 	constructor(props) {
 	  super(props);
-	  this.state = {
-	  };
+	}
+
+	static propTypes = {
+		time: PropTypes.string
 	}
 
 	render() {
-		function svgColors(theProp, color1, color2) {
-			switch(theProp){
-				case "evening":
-					return color1;
-					break;
-				default:
-					return color2;				
-			}
-		}
+
 		return(
 			<div className={`block shift-01 ${this.props.time}`}>
 				<div id="about-the-site">
