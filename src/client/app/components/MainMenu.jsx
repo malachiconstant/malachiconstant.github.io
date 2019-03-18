@@ -16,7 +16,8 @@ class MainMenu extends React.Component {
 		width: PropTypes.number,
 		height: PropTypes.number,
 		menuOpen: PropTypes.bool,
-		duration: PropTypes.number
+		duration: PropTypes.number,
+		toggleMenu: PropTypes.func
 	}
 	// scroll to top of page
 	_goTop() {
@@ -26,6 +27,11 @@ class MainMenu extends React.Component {
 	goToSection(anchor) {
 		console.log(`${anchor}`);
 		TweenMax.to(window, 1, {scrollTo: (document.getElementById(`${anchor}`).offsetTop -41), ease: Power3.easeOut});
+	}
+	// go to section and close menu
+	_goToAndToggle(anchor) {
+		this.goToSection(anchor);
+		this.props.toggleMenu();
 	}
 
 	render() {
@@ -88,7 +94,7 @@ class MainMenu extends React.Component {
 						{menuList.map((menu,i) => {
 							return (
 								<li key={i}>
-									<div onClick={() => {this.props.toggleMenu, this.goToSection(menu.hRef)}} title={menu.linkDescription}>
+									<div onClick={() => {this._goToAndToggle(menu.hRef)}} title={menu.linkDescription}>
 										<span>{menu.linkTitle}</span>
 									</div>
 								</li>
