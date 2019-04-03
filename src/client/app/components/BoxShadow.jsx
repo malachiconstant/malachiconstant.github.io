@@ -29,7 +29,7 @@ class BoxShadow extends React.Component {
 		const boxRef = this.boxRef.current.childNodes;
 
 		Array.from(boxRef).map(box => {
-			box.style.boxShadow = `2px ${Math.min(5, Math.max(-5, ((winPos) - (box.offsetParent.offsetTop - winCenter)) * 0.015))}px 3px rgba(0,0,0,0.3)`;
+			box.style.boxShadow = `2px ${Math.min(8, Math.max(-8, ((winPos) - (box.offsetParent.offsetTop - winCenter)) * 0.015))}px 3px rgba(0,0,0,0.3)`;
 		})
 	}
 

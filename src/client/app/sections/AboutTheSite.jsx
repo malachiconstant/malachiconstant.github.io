@@ -29,7 +29,7 @@ class AboutTheSite extends React.Component {
 				</div>
 				<div className="section about-site">
 					<TextShadow parallax="false" rate="0.5">
-						<p>This website aims to use the technologies I've learned, thus far.  It will be constantly evolving as I refine the skills I already have, and as I learn new ones.  You can view the <a href="https://github.com/malachiconstant/malachiconstant.github.io" title="github repository" target="_blank">Github repository for this site here.</a></p>
+						<p>This website aims to use the technologies I've learned, thus far.  It will constantly evolve as I refine existing skills and develop new ones.  You can view the <a href="https://github.com/malachiconstant/malachiconstant.github.io" title="github repository" target="_blank">Github repository for this site here.</a></p>
 					</TextShadow>
 					<div className="tech-wrapper">
 						<SvgContainer  classAppend="sass">
