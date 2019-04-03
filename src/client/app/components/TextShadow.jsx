@@ -38,7 +38,7 @@ class TextShadow extends React.Component {
 		const winThresh = winPos + (window.outerHeight * 0.66666);
 
 		Array.from(tsRef).map(box => {
-			box.style.textShadow = `2px ${Math.min(5, Math.max(-5, ((winPos) - (box.offsetParent.offsetTop - winCenter)) * 0.015))}px 3px rgba(0,0,0,0.3)`;
+			box.style.textShadow = `2px ${Math.min(8, Math.max(-8, ((winPos) - (box.offsetParent.offsetTop - winCenter)) * 0.015))}px 3px rgba(0,0,0,0.3)`;
 			if(winThresh > box.offsetParent.offsetTop && this.props.role == "heading") {
 				box.classList.add("vroom");
 			}

@@ -4,14 +4,14 @@ import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, hashHistory} from 'react-router';
 import HomePage from "./pages/HomePage.jsx";
 // import MainPage from "./pages/MainPage.jsx";
-import AboutTheSitePage from "./pages/AboutTheSitePage.jsx";
+import MoviesPage from "./pages/MoviesPage.jsx";
 import App from "./App.jsx";
 
 
 const Routes = (
 	<Route path="/">
 	 	<IndexRoute component={HomePage}/>
-		<Route path="about" component={AboutTheSitePage}></Route>
+		<Route path="movies" component={MoviesPage}></Route>
 	</Route>
  )
 export default Routes;
