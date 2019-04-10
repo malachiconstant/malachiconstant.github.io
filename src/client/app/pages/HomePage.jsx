@@ -58,7 +58,7 @@ class HomePage extends React.Component {
 				time: "afternoon"
 			});
 		}
-		if(hour >= 19 && hour <= 5) {
+		if(hour >= 19 || hour <= 5) {
 			this.setState({
 				time: "evening"
 			});

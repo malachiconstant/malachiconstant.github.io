@@ -1,0 +1,106 @@
+@import 'global-variables';
+
+.movie-batch {
+	@media(min-width: $bp-one) {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr;
+		&.grid-1 {
+			grid-template-areas:
+			"mb-1 mb-0 mb-0 mb-2"
+			"mb-1 mb-0 mb-0 mb-2"
+			"mb-3 mb-0 mb-0 mb-4"
+			"mb-3 mb-0 mb-0 mb-4"
+			;
+			.mb-0 {
+				.title-block h3 {
+					font-size: 28px; 
+				}
+				.desc-block p {
+					font-size: 18px;
+				}
+			}
+		}
+		&.grid-2 {
+			grid-template-areas:
+			"mb-1 mb-0 mb-3 mb-3"
+			"mb-1 mb-0 mb-3 mb-3"
+			"mb-2 mb-0 mb-4 mb-4"
+			"mb-2 mb-0 mb-4 mb-4"
+			;
+		}
+		&.grid-3 {
+			grid-template-areas:
+			"mb-1 mb-2 mb-0 mb-0"
+			"mb-1 mb-2 mb-0 mb-0"
+			"mb-3 mb-4 mb-0 mb-0"
+			"mb-3 mb-4 mb-0 mb-0"
+			;
+			.mb-0 {
+				.title-block h3 {
+					font-size: 28px; 
+				}
+				.desc-block p {
+					font-size: 18px;
+				}
+			}
+		}
+		&.grid-4 {
+			grid-template-areas:
+			"mb-0 mb-0 mb-1 mb-2"
+			"mb-0 mb-0 mb-1 mb-2"
+			"mb-0 mb-0 mb-3 mb-4"
+			"mb-0 mb-0 mb-3 mb-4"
+			;
+			.mb-0 {
+				.title-block h3 {
+					font-size: 28px; 
+				}
+				.desc-block p {
+					font-size: 18px;
+				}
+			}
+		}
+
+	}
+	> div {
+		background-size: cover;
+	}	
+}
+.movie-block {
+	background-position: 50% 50%;
+	color: #ffffff;
+	min-height: 300px;
+	padding: 4.69%;
+	h3, p {
+		display: inline;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		background-color: rgba(0,0,0,0.5);
+	}
+	.title-block h3 {
+		font-size: 22px;
+		color: #ffff00; 
+	}
+	.desc-block p {
+		font-size: 14px;
+	}
+}
+
+.mb- {
+	&0 {
+		grid-area: mb-0;
+	}
+	&1 {
+		grid-area: mb-1;
+	}
+	&2 {
+		grid-area: mb-2;
+	}
+	&3 {
+		grid-area: mb-3;
+	}
+	&4 {
+		grid-area: mb-4;
+	}
+}
