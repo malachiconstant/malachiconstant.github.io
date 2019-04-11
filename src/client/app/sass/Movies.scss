@@ -1,5 +1,11 @@
 @import 'global-variables';
 
+.movies-page {
+	> h2 {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
 .movie-batch {
 	@media(min-width: $bp-one) {
 		display: grid;

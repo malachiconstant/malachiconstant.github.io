@@ -678,6 +678,10 @@
   100% {
     -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg); } }
+.movies-page > h2 {
+  padding-left: 30px;
+  padding-right: 30px; }
+
 @media (min-width: 768px) {
   .movie-batch {
     display: grid;

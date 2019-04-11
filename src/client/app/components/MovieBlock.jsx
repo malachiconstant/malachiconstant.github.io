@@ -7,6 +7,9 @@ class MovieBlock extends React.Component {
 	constructor(props) {
 		super(props);
 	}
+	state= {
+		gridNumber: Math.floor(Math.random() * 4) + 1
+	}
 
 	static propTypes = {
 		data: PropTypes.array
@@ -22,7 +25,7 @@ class MovieBlock extends React.Component {
 
 		return(
 			<React.Fragment>
-				<div className={`movie-batch ${this.props.batch} grid-${Math.floor(Math.random() * 4) + 1}`}>
+				<div className={`movie-batch ${this.props.batch} grid-${this.state.gridNumber}`}>
 					{
 						(this.props.data).map((data, i) => (
 
