@@ -2,6 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import PropTypes from 'prop-types';
 import MovieBlock from "../components/MovieBlock.jsx";
+import '../sass/Movies.scss';
 
 class MovieBatch extends React.Component {
 	constructor(props) {
@@ -14,6 +15,7 @@ class MovieBatch extends React.Component {
 	componentDidMount() {
 
 	}
+	// divide arrays
 	_chunk(array, size) {
 		const chunked_arr = [];
 		let index = 0;

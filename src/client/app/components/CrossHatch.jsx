@@ -20,7 +20,7 @@ class CrossHatch extends React.Component {
 
 	crossLines(dimension,splitBy) {
 		const totalLines = dimension * splitBy;
-		const round =  Math.round(totalLines);
+		const round =  100;
 		return Array.from(Array(round).keys());
 	}
 

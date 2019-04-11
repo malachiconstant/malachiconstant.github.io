@@ -678,6 +678,69 @@
   100% {
     -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg); } }
+.movies-page > h2 {
+  padding-left: 30px;
+  padding-right: 30px; }
+
+@media (min-width: 768px) {
+  .movie-batch {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr; }
+    .movie-batch.grid-1 {
+      grid-template-areas: "mb-1 mb-0 mb-0 mb-2" "mb-1 mb-0 mb-0 mb-2" "mb-3 mb-0 mb-0 mb-4" "mb-3 mb-0 mb-0 mb-4"; }
+      .movie-batch.grid-1 .mb-0 .title-block h3 {
+        font-size: 28px; }
+      .movie-batch.grid-1 .mb-0 .desc-block p {
+        font-size: 18px; }
+    .movie-batch.grid-2 {
+      grid-template-areas: "mb-1 mb-0 mb-3 mb-3" "mb-1 mb-0 mb-3 mb-3" "mb-2 mb-0 mb-4 mb-4" "mb-2 mb-0 mb-4 mb-4"; }
+    .movie-batch.grid-3 {
+      grid-template-areas: "mb-1 mb-2 mb-0 mb-0" "mb-1 mb-2 mb-0 mb-0" "mb-3 mb-4 mb-0 mb-0" "mb-3 mb-4 mb-0 mb-0"; }
+      .movie-batch.grid-3 .mb-0 .title-block h3 {
+        font-size: 28px; }
+      .movie-batch.grid-3 .mb-0 .desc-block p {
+        font-size: 18px; }
+    .movie-batch.grid-4 {
+      grid-template-areas: "mb-0 mb-0 mb-1 mb-2" "mb-0 mb-0 mb-1 mb-2" "mb-0 mb-0 mb-3 mb-4" "mb-0 mb-0 mb-3 mb-4"; }
+      .movie-batch.grid-4 .mb-0 .title-block h3 {
+        font-size: 28px; }
+      .movie-batch.grid-4 .mb-0 .desc-block p {
+        font-size: 18px; } }
+
+.movie-batch > div {
+  background-size: cover; }
+
+.movie-block {
+  background-position: 50% 50%;
+  color: #ffffff;
+  min-height: 300px;
+  padding: 4.69%; }
+  .movie-block h3, .movie-block p {
+    display: inline;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.5); }
+  .movie-block .title-block h3 {
+    font-size: 22px;
+    color: #ffff00; }
+  .movie-block .desc-block p {
+    font-size: 14px; }
+
+.mb-0 {
+  grid-area: mb-0; }
+
+.mb-1 {
+  grid-area: mb-1; }
+
+.mb-2 {
+  grid-area: mb-2; }
+
+.mb-3 {
+  grid-area: mb-3; }
+
+.mb-4 {
+  grid-area: mb-4; }
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
