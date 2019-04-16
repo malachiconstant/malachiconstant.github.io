@@ -1,6 +1,7 @@
 @import 'global-variables';
 
 .movies-page {
+	padding: 1px;
 	> h2 {
 		padding-left: 30px;
 		padding-right: 30px;
@@ -8,76 +9,125 @@
 }
 .movie-batch {
 	@media(min-width: $bp-one) {
+		.mb-0 {
+			.title-block h3 {
+				font-size: 28px; 
+			}
+			.desc-block p {
+				font-size: 18px;
+			}
+		}
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		grid-template-rows: 1fr 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-column-gap: 1px;
+  		grid-row-gap: 1px;
+  		padding-top: 0.5px;
+  		padding-bottom: 0.5px;
 		&.grid-1 {
 			grid-template-areas:
-			"mb-1 mb-0 mb-0 mb-2"
-			"mb-1 mb-0 mb-0 mb-2"
-			"mb-3 mb-0 mb-0 mb-4"
-			"mb-3 mb-0 mb-0 mb-4"
+			"mb-1 mb-1 mb-0 mb-0 mb-4 mb-4"
+			"mb-1 mb-1 mb-0 mb-0 mb-4 mb-4"
+			"mb-1 mb-1 mb-0 mb-0 mb-2 mb-2"
+			"mb-1 mb-1 mb-0 mb-0 mb-2 mb-2"
+			"mb-3 mb-3 mb-3 mb-3 mb-2 mb-2"
+			"mb-3 mb-3 mb-3 mb-3 mb-2 mb-2"
 			;
-			.mb-0 {
-				.title-block h3 {
-					font-size: 28px; 
-				}
-				.desc-block p {
-					font-size: 18px;
-				}
-			}
 		}
 		&.grid-2 {
 			grid-template-areas:
-			"mb-1 mb-0 mb-3 mb-3"
-			"mb-1 mb-0 mb-3 mb-3"
-			"mb-2 mb-0 mb-4 mb-4"
-			"mb-2 mb-0 mb-4 mb-4"
+			"mb-0 mb-0 mb-1 mb-1 mb-1 mb-3"
+			"mb-0 mb-0 mb-1 mb-1 mb-1 mb-3"
+			"mb-0 mb-0 mb-1 mb-1 mb-1 mb-3"
+			"mb-0 mb-0 mb-4 mb-2 mb-2 mb-2"
+			"mb-0 mb-0 mb-4 mb-2 mb-2 mb-2"
+			"mb-0 mb-0 mb-4 mb-2 mb-2 mb-2"
 			;
 		}
 		&.grid-3 {
 			grid-template-areas:
-			"mb-1 mb-2 mb-0 mb-0"
-			"mb-1 mb-2 mb-0 mb-0"
-			"mb-3 mb-4 mb-0 mb-0"
-			"mb-3 mb-4 mb-0 mb-0"
+			"mb-1 mb-1 mb-1 mb-2 mb-0 mb-0"
+			"mb-1 mb-1 mb-1 mb-2 mb-0 mb-0"
+			"mb-1 mb-1 mb-1 mb-2 mb-0 mb-0"
+			"mb-4 mb-3 mb-3 mb-3 mb-0 mb-0"
+			"mb-4 mb-3 mb-3 mb-3 mb-0 mb-0"
+			"mb-4 mb-3 mb-3 mb-3 mb-0 mb-0"
 			;
-			.mb-0 {
-				.title-block h3 {
-					font-size: 28px; 
-				}
-				.desc-block p {
-					font-size: 18px;
-				}
-			}
 		}
 		&.grid-4 {
 			grid-template-areas:
-			"mb-0 mb-0 mb-1 mb-2"
-			"mb-0 mb-0 mb-1 mb-2"
-			"mb-0 mb-0 mb-3 mb-4"
-			"mb-0 mb-0 mb-3 mb-4"
+			"mb-4 mb-0 mb-0 mb-0 mb-3 mb-3"
+			"mb-4 mb-0 mb-0 mb-0 mb-3 mb-3"
+			"mb-4 mb-0 mb-0 mb-0 mb-3 mb-3"
+			"mb-1 mb-1 mb-1 mb-2 mb-2 mb-2"
+			"mb-1 mb-1 mb-1 mb-2 mb-2 mb-2"
+			"mb-1 mb-1 mb-1 mb-2 mb-2 mb-2"
 			;
-			.mb-0 {
-				.title-block h3 {
-					font-size: 28px; 
-				}
-				.desc-block p {
-					font-size: 18px;
-				}
-			}
+		}
+		&.grid-5 {
+			grid-template-areas:
+			"mb-3 mb-3 mb-0 mb-0 mb-0 mb-4"
+			"mb-3 mb-3 mb-0 mb-0 mb-0 mb-4"
+			"mb-3 mb-3 mb-0 mb-0 mb-0 mb-4"
+			"mb-1 mb-1 mb-1 mb-2 mb-2 mb-2"
+			"mb-1 mb-1 mb-1 mb-2 mb-2 mb-2"
+			"mb-1 mb-1 mb-1 mb-2 mb-2 mb-2"
+			;
+		}
+		&.grid-6 {
+			grid-template-areas:
+			"mb-4 mb-4 mb-2 mb-2 mb-3 mb-3"
+			"mb-4 mb-4 mb-2 mb-2 mb-3 mb-3"
+			"mb-4 mb-4 mb-2 mb-2 mb-3 mb-3"
+			"mb-0 mb-0 mb-0 mb-1 mb-1 mb-1"
+			"mb-0 mb-0 mb-0 mb-1 mb-1 mb-1"
+			"mb-0 mb-0 mb-0 mb-1 mb-1 mb-1"
+			;
+		}
+		&.grid-7 {
+			grid-template-areas:
+			"mb-4 mb-4 mb-0 mb-0 mb-1 mb-1"
+			"mb-4 mb-4 mb-0 mb-0 mb-1 mb-1"
+			"mb-2 mb-2 mb-0 mb-0 mb-1 mb-1"
+			"mb-2 mb-2 mb-0 mb-0 mb-1 mb-1"
+			"mb-2 mb-2 mb-3 mb-3 mb-3 mb-3"
+			"mb-2 mb-2 mb-3 mb-3 mb-3 mb-3"
+			;
 		}
 
 	}
-	> div {
-		background-size: cover;
-	}	
+	
 }
-.movie-block {
-	background-position: 50% 50%;
+.movie-block-wrapper {
+	background-image: url(/src/client/public/media/loading.gif);
+	background-position: center center;
+	background-size: 40px;
+	background-repeat: no-repeat;
 	color: #ffffff;
+	background-color: $black;
+	display: flex;
+	align-self: stretch;
 	min-height: 300px;
-	padding: 4.69%;
+	@media(min-width: $bp-one) {
+		min-height: 24vw;
+	}
+
+	.movie-block {
+		padding: 4.69%;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		opacity: 0;
+		transition: all 0.4s;
+	}
+	&.animate {
+		.movie-block {
+			opacity: 1;
+		}
+	}
 	h3, p {
 		display: inline;
 		padding-top: 0px;
