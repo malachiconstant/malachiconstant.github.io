@@ -28,11 +28,13 @@ class MoviesPage extends React.Component {
 		await releasePromise
 			.then(data => data.json())
 			.then(data => {
-				this.setState({
-					data: data.results,
-					total_pages: data.total_pages,
-					number: 1
-				}) 
+
+					this.setState({
+						data: data.results,
+						total_pages: data.total_pages,
+						number: 1
+					})
+
 			})
 			.catch((err) =>{
 				console.error(err);

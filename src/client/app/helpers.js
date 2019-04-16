@@ -15,3 +15,12 @@ export function svgColors(theProp, color1, color2) {
 export function textCut(theText, characterLimit) {
 	return theText.length < characterLimit ? theText : `${theText.slice(0,characterLimit)}...`;
 }
+
+export function scrollView(ref) {
+		const winPos = window.scrollY;
+		const winThresh = winPos + (window.outerHeight * 0.90);
+		const item = ref.current;
+		if(winThresh > item.offsetTop) {
+			item.classList.add("animate");
+		}
+}
