@@ -8,7 +8,7 @@ class AboutMe extends React.Component {
 	render() {
 		return(
 			<div className="block">			
-				<div>
+				<div id="about-me">
 					<TextShadow classAppend="offside_text" role="heading">
 						<h2>About Me</h2>
 					</TextShadow>

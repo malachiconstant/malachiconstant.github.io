@@ -19,9 +19,6 @@ class MovieBlock extends React.Component {
 	}
 
 	render() {
-		console.dir(this.props.data);
-		
-
 		return(
 			<React.Fragment>
 				<div className={`movie-batch ${this.props.batch} grid-${this.state.gridNumber}`}>
