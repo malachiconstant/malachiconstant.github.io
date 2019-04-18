@@ -10,7 +10,7 @@ import App from "./App.jsx";
 
 const Routes = (
 	<Route path="/">
-	 	<IndexRoute component={HomePage}/>
+	 	<IndexRoute component={HomePage} hash="contact"/>
 		<Route path="movies" component={MoviesPage}></Route>
 	</Route>
  )

@@ -15,7 +15,10 @@ import Pens from '../sections/Pens.jsx';
 import Contact from '../sections/Contact.jsx';
 
 class HomePage extends React.Component {
-
+	constructor(props) {
+		super(props);
+		this._updateDims = this._updateDims.bind(this);
+	}
 	state = {
 			time: "day",
 			width: window.innerWidth,
@@ -31,11 +34,11 @@ class HomePage extends React.Component {
 		document.getElementsByTagName('head')[0].appendChild(link);
 
 		this._timeOfDay();
-		window.addEventListener('resize', this._updateDims.bind(this));
+		window.addEventListener('resize', this._updateDims);
 	}
 
 	componentWillUnmount() {
-		window.removeEventListener('resize', this._updateDims.bind(this));
+		window.removeEventListener('resize', this._updateDims);
 	}
 	// toggle main menu
 	_toggleMenu = () => {
@@ -82,6 +85,7 @@ class HomePage extends React.Component {
 					toggleMenu={this._toggleMenu}
 					menuOpen={this.state.menuOpen}
 					duration={this.state.duration}
+					location={this.props.location}
 				/>
 				<div className="page-content-wrapper">
 					<div ref="genericPage" className={`generic-page home-page ${this.state.time}`}>

@@ -38,18 +38,28 @@
 		.top-bar {
 			border-bottom: 1px solid $shift02c;
 		}
+		span {
+			color: $shift02c;
+		}
+		.menu-button {
+			&.alternate a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				color: $shift02c;
+			}
+		}
 	}
 	.main-logo {
 		position: relative;
 		z-index:1;
 		display: flex;
 		align-items: center;
-		cursor: pointer;		
-	}
-	&.morning {
-		span {
-			color: $shift02c;
-		}
+		cursor: pointer;
+		&.alternate {
+ 			letter-spacing: inherit;
+ 		}		
 	}
 	&.evening {
 		color: $white;
@@ -122,6 +132,14 @@
 				}
 			}
 		}
+		.menu-button {
+			&.alternate a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+			}
+		}
 	}
 	.bars-container,
 	.exit-container {
@@ -171,6 +189,7 @@
 			padding-bottom:40px;
 			span {
 				font-size: 32px;
+				cursor: pointer;
 			}
 		}
 	}

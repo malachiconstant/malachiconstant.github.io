@@ -8,6 +8,7 @@ class ProgressMeter extends React.Component {
 
 	constructor(props) {
 		super(props);
+		this._progressBar = this._progressBar.bind(this)
 	}
 
 	state = {
@@ -21,16 +22,16 @@ class ProgressMeter extends React.Component {
 	}
 
 	componentDidMount() {
-		window.addEventListener('scroll', this._progressBar.bind(this));
-		window.addEventListener('resize', this._progressBar.bind(this));
+		window.addEventListener('scroll', this._progressBar);
+		window.addEventListener('resize', this._progressBar);
 	}
 
-	componentWillUnMount() {
-		window.removeEventListener('scroll', this._progressBar.bind(this));
-		window.removeEventListener('resize', this._progressBar.bind(this));
+	componentWillUnmount() {
+		window.removeEventListener('scroll', this._progressBar);
+		window.removeEventListener('resize', this._progressBar);
 	}
 
-	_progressBar = () => {
+	_progressBar() {
 		const winHeight = this.props.height;
 		const winWidth = this.props.width;
 		const body = document.body;
