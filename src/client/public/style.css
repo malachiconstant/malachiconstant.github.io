@@ -287,7 +287,8 @@
     cursor: pointer; }
     .main-menu .main-logo.alternate {
       letter-spacing: inherit; }
-  .main-menu.evening {
+  .main-menu.evening,
+  .main-menu.evening a {
     color: #ffffff; }
   .main-menu .menu-button {
     position: relative;
@@ -740,6 +741,7 @@
       grid-template-areas: "mb-4 mb-4 mb-0 mb-0 mb-1 mb-1" "mb-4 mb-4 mb-0 mb-0 mb-1 mb-1" "mb-2 mb-2 mb-0 mb-0 mb-1 mb-1" "mb-2 mb-2 mb-0 mb-0 mb-1 mb-1" "mb-2 mb-2 mb-3 mb-3 mb-3 mb-3" "mb-2 mb-2 mb-3 mb-3 mb-3 mb-3"; } }
 
 .movie-block-wrapper {
+  position: relative;
   background-image: url(/src/client/public/media/loading.gif);
   background-position: center center;
   background-size: 40px;
@@ -756,6 +758,7 @@
     .movie-block-wrapper {
       min-height: 24vw; } }
   .movie-block-wrapper .movie-block {
+    position: relative;
     padding: 4.69%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -770,7 +773,24 @@
     width: 100%;
     opacity: 0;
     -webkit-transition: all 0.4s;
-    transition: all 0.4s; }
+    transition: all 0.4s;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .movie-block-wrapper .movie-block:before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      z-index: 0;
+      background-image: url(/src/client/public/media/mesh.png);
+      background-size: 2px;
+      -webkit-animation-duration: 6s;
+              animation-duration: 6s;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
   .movie-block-wrapper.animate .movie-block {
     opacity: 1; }
   .movie-block-wrapper h3, .movie-block-wrapper p {
@@ -783,21 +803,146 @@
     color: #ffff00; }
   .movie-block-wrapper .desc-block p {
     font-size: 14px; }
+  .movie-block-wrapper .text-block,
+  .movie-block-wrapper .details {
+    position: relative;
+    z-index: 1; }
+  .movie-block-wrapper .details {
+    color: #323232;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    background-color: #ffff00;
+    width: 120px;
+    padding-left: 5px;
+    font-size: 18px; }
+    .movie-block-wrapper .details:hover, .movie-block-wrapper .details:focus, .movie-block-wrapper .details:active {
+      letter-spacing: 6px;
+      font-weight: 400; }
 
 .mb-0 {
   grid-area: mb-0; }
+  .mb-0 .movie-block:before {
+    -webkit-animation-name: oChange1;
+            animation-name: oChange1;
+    opacity: 1; }
 
 .mb-1 {
   grid-area: mb-1; }
+  .mb-1 .movie-block:before {
+    -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+    -webkit-animation-name: oChange2;
+            animation-name: oChange2;
+    opacity: 0.3; }
 
 .mb-2 {
   grid-area: mb-2; }
+  .mb-2 .movie-block:before {
+    -webkit-animation-name: oChange3;
+            animation-name: oChange3;
+    opacity: 0.3; }
 
 .mb-3 {
   grid-area: mb-3; }
+  .mb-3 .movie-block:before {
+    -webkit-animation-delay: 0.6s;
+            animation-delay: 0.6s;
+    -webkit-animation-name: oChange2;
+            animation-name: oChange2;
+    opacity: 0.3; }
 
 .mb-4 {
   grid-area: mb-4; }
+  .mb-4 .movie-block:before {
+    -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+    -webkit-animation-name: oChange1;
+            animation-name: oChange1;
+    opacity: 1; }
+
+.mb-0 .movie-block:hover:before, .mb-0 .movie-block:focus:before, .mb-0 .movie-block:active:before, .mb-1 .movie-block:hover:before, .mb-1 .movie-block:focus:before, .mb-1 .movie-block:active:before, .mb-2 .movie-block:hover:before, .mb-2 .movie-block:focus:before, .mb-2 .movie-block:active:before, .mb-3 .movie-block:hover:before, .mb-3 .movie-block:focus:before, .mb-3 .movie-block:active:before, .mb-4 .movie-block:hover:before, .mb-4 .movie-block:focus:before, .mb-4 .movie-block:active:before {
+  opacity: 0;
+  -webkit-animation-name: none;
+          animation-name: none; }
+
+@-webkit-keyframes oChange1 {
+  0% {
+    opacity: 1; }
+  25% {
+    opacity: 1; }
+  50% {
+    opacity: 0.3; }
+  75% {
+    opacity: 0.3; }
+  100% {
+    opacity: 1; } }
+
+@keyframes oChange1 {
+  0% {
+    opacity: 1; }
+  25% {
+    opacity: 1; }
+  50% {
+    opacity: 0.3; }
+  75% {
+    opacity: 0.3; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes oChange2 {
+  0% {
+    opacity: 0.3; }
+  25% {
+    opacity: 1; }
+  50% {
+    opacity: 1; }
+  75% {
+    opacity: 0.3; }
+  100% {
+    opacity: 0.3; } }
+
+@keyframes oChange2 {
+  0% {
+    opacity: 0.3; }
+  25% {
+    opacity: 1; }
+  50% {
+    opacity: 1; }
+  75% {
+    opacity: 0.3; }
+  100% {
+    opacity: 0.3; } }
+
+@-webkit-keyframes oChange3 {
+  0% {
+    opacity: 0.3; }
+  25% {
+    opacity: 0.3; }
+  50% {
+    opacity: 1; }
+  75% {
+    opacity: 1; }
+  100% {
+    opacity: 0.3; } }
+
+@keyframes oChange3 {
+  0% {
+    opacity: 0.3; }
+  25% {
+    opacity: 0.3; }
+  50% {
+    opacity: 1; }
+  75% {
+    opacity: 1; }
+  100% {
+    opacity: 0.3; } }
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)

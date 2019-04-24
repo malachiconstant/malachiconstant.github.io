@@ -100,6 +100,7 @@
 	
 }
 .movie-block-wrapper {
+	position: relative;
 	background-image: url(/src/client/public/media/loading.gif);
 	background-position: center center;
 	background-size: 40px;
@@ -114,6 +115,7 @@
 	}
 
 	.movie-block {
+		position: relative;
 		padding: 4.69%;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -123,6 +125,20 @@
 		width: 100%;
 		opacity: 0;
 		transition: all 0.4s;
+		justify-content: space-between;
+		&:before {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				content: "";
+				z-index: 0;
+				background-image: url(/src/client/public/media/mesh.png);
+				background-size: 2px;
+				animation-duration: 6s;
+				animation-iteration-count: infinite;
+			}
 	}
 	&.animate {
 		.movie-block {
@@ -137,27 +153,104 @@
 	}
 	.title-block h3 {
 		font-size: 22px;
-		color: #ffff00; 
+		color: $yellow 
 	}
 	.desc-block p {
 		font-size: 14px;
+	}
+	.text-block,
+	.details {
+		position: relative;
+		z-index: 1;
+	}
+	.details {
+		color: $black;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		background-color: $yellow;
+		width: 120px;
+		padding-left: 5px;
+		font-size: 18px;
+		&:hover,
+		&:focus,
+		&:active {
+			letter-spacing: $letter-hover;
+			font-weight: $font-bold;
+		}
 	}
 }
 
 .mb- {
 	&0 {
 		grid-area: mb-0;
+		.movie-block:before {
+			animation-name: oChange1;
+			opacity: 1;
+		}
 	}
 	&1 {
 		grid-area: mb-1;
+		.movie-block:before {
+			animation-delay: 0.3s;
+			animation-name: oChange2;
+			opacity: 0.3;
+		}
 	}
 	&2 {
 		grid-area: mb-2;
+		.movie-block:before {
+			animation-name: oChange3;
+			opacity: 0.3;
+		}
 	}
 	&3 {
 		grid-area: mb-3;
+		.movie-block:before {
+			animation-delay: 0.6s;
+			animation-name: oChange2;
+			opacity: 0.3;
+		}
 	}
 	&4 {
 		grid-area: mb-4;
+		.movie-block:before {
+			animation-delay: 0.3s;
+			animation-name: oChange1;
+			opacity: 1;
+		}
 	}
+	&0,&1,&2,&3,&4 {
+		.movie-block {
+			&:hover,
+			&:focus,
+			&:active {
+				&:before{
+					opacity: 0;
+					animation-name: none;
+				}
+			}
+		}
+	}
+}
+@keyframes oChange1 {
+	0% {opacity: 1;}
+	25% {opacity: 1;}
+	50% {opacity: 0.3;}
+	75% {opacity: 0.3;}
+	100% {opacity: 1;}
+}
+@keyframes oChange2 {
+	0% {opacity: 0.3;}
+	25% {opacity: 1;}
+	50% {opacity: 1;}
+	75% {opacity: 0.3;}
+	100% {opacity: 0.3;}
+}
+@keyframes oChange3 {
+	0% {opacity: 0.3;}
+	25% {opacity: 0.3;}
+	50% {opacity: 1;}
+	75% {opacity: 1;}
+	100% {opacity: 0.3;}
 }
