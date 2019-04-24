@@ -27,7 +27,7 @@
 		&:hover,
 		&:focus,
 		&:active{
-			letter-spacing: 6px;
+			letter-spacing: $letter-hover;
 			font-weight: $font-bold;
 		}
 	}

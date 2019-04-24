@@ -61,7 +61,8 @@
  			letter-spacing: inherit;
  		}		
 	}
-	&.evening {
+	&.evening,
+	&.evening a {
 		color: $white;
 	}
 	.menu-button {

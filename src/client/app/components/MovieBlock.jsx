@@ -1,5 +1,8 @@
 import React from 'react';
 import {render} from 'react-dom';
+import {Link, IndexLink} from 'react-router';
+import { Router, Route, IndexRoute, hashHistory} from 'react-router';
+import MovieDetails from "../pages/MovieDetails.jsx";
 import PropTypes from 'prop-types';
 import { textCut, scrollView } from "../helpers.js";
 
@@ -15,9 +18,7 @@ class MovieBlock extends React.Component {
 		data: PropTypes.array
 	}
 	componentDidMount() {
-
 	}
-
 	render() {
 		return(
 			<React.Fragment>
@@ -69,14 +70,17 @@ class IndBlock extends React.Component {
 						backgroundImage: `url(${data.backdrop_path ? bgImage + data.backdrop_path : data.poster_path ? bgImage + data.poster_path : placeHolder})`
 					}}
 					>
-						<div className={`title-block`}>
-							<h3>{textCut(data.title, 32)}</h3>
+						<div className={`text-block`}>
+							<div className={`title-block`}>
+								<h3>{textCut(data.title, 32)}</h3>
+							</div>
+							<div className={`desc-block`}>
+								<p>{textCut(data.overview, 80)}</p>
+							</div>
 						</div>
-						<div className={`desc-block`}>
-							<p>{textCut(data.overview, 80)}</p>
-						</div>
+						<Link className={`details`} to={`/movies/${data.id}`}><span>details</span></Link>
 					</div>
-					
+					{/*<Route path={`/movies/:movieId`} component={MovieDetails}/>*/}
 
 				</div>
 		)
