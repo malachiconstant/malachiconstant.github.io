@@ -78,7 +78,7 @@ class IndBlock extends React.Component {
 								<p>{textCut(data.overview, 80)}</p>
 							</div>
 						</div>
-						<Link className={`details`} to={`/movies/${data.id}`}><span>details</span></Link>
+						<Link className={`details`} to={{ pathname: `/movies/${data.id}`, state: { data } }}><span>details</span></Link>
 					</div>
 					{/*<Route path={`/movies/:movieId`} component={MovieDetails}/>*/}
 

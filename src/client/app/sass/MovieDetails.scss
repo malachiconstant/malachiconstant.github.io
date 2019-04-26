@@ -1,0 +1,38 @@
+@import 'global-variables';
+
+.movie-details-page {
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: grid;
+	width: 100%;
+	grid-template-columns: [q1] 1fr [q2] 1fr;
+	grid-template-rows: [q3] auto [q4] auto [q5] auto [q6] auto;
+	grid-column-gap: $pd-one;
+	align-items: start;
+	@media (min-width: $bp-one) {
+		grid-column-gap: $pd-one-d;
+	}
+	h1, p {
+		background-color: rgba(0,0,0,0.5);
+		display: block;
+	}
+	h1 {
+		color: $yellow;
+		
+		width: auto;
+		grid-column: q1 /q1;
+		grid-row: q3 /q3;
+
+	}
+	p {
+		color: $white;
+		grid-column: q1/ q1;
+		grid-row: q4 / q4;
+	}
+	img {
+		display: block;
+		grid-column: q2 / q2;
+		grid-row: q4 / q5;
+		width: 100%;
+	}
+}
