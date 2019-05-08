@@ -706,36 +706,107 @@
     -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg); } }
 .movie-details-page {
+  background-color: #323232;
   background-repeat: no-repeat;
   background-size: cover;
-  display: grid;
+  display: block;
   width: 100%;
-  grid-template-columns: [q1] 1fr [q2] 1fr;
-  grid-template-rows: [q3] auto [q4] auto [q5] auto [q6] auto;
+  grid-template-columns: [col1] calc(60% - 15px) [col2] 40%;
+  grid-template-rows: [row1] 72px [row2] auto [row3] auto;
   grid-column-gap: 15px;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start; }
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px;
+  position: relative; }
+  .movie-details-page:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/src/client/public/media/mesh.png);
+    z-index: 0; }
+  .movie-details-page:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #323232;
+    z-index: 0;
+    opacity: 1;
+    -webkit-animation-duration: 15s;
+            animation-duration: 15s;
+    -webkit-animation-name: appears;
+            animation-name: appears;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
   @media (min-width: 768px) {
     .movie-details-page {
-      grid-column-gap: 30px; } }
+      display: grid;
+      grid-column-gap: 30px;
+      grid-template-columns: [col1] calc(60% - 30px) [col2] 40%; } }
   .movie-details-page h1, .movie-details-page p {
     background-color: rgba(0, 0, 0, 0.5);
-    display: block; }
-  .movie-details-page h1 {
-    color: #ffff00;
-    width: auto;
-    grid-column: q1 /q1;
-    grid-row: q3 /q3; }
+    display: inline;
+    letter-spacing: 6px; }
   .movie-details-page p {
-    color: #ffffff;
-    grid-column: q1/ q1;
-    grid-row: q4 / q4; }
-  .movie-details-page img {
-    display: block;
-    grid-column: q2 / q2;
-    grid-row: q4 / q5;
-    width: 100%; }
+    line-height: 3; }
+  .movie-details-page .title {
+    grid-column: col1;
+    grid-row: row1;
+    position: relative;
+    z-index: 1; }
+    .movie-details-page .title h1 {
+      color: #ffff00;
+      width: auto; }
+  .movie-details-page .desc {
+    grid-column: col1;
+    grid-row: row2 / row3;
+    place-self: start center;
+    padding-top: 15px;
+    position: relative;
+    z-index: 1; }
+    .movie-details-page .desc p {
+      color: #ffffff; }
+    @media (min-width: 768px) {
+      .movie-details-page .desc {
+        padding-top: 30px; } }
+  .movie-details-page .img-container {
+    width: 100%;
+    grid-row: row1 / row3;
+    place-self: center center;
+    position: relative;
+    z-index: 1;
+    padding-top: 15px; }
+    .movie-details-page .img-container img {
+      height: auto;
+      display: block;
+      width: 100%;
+      -o-object-fit: contain;
+         object-fit: contain; }
+    @media (min-width: 768px) {
+      .movie-details-page .img-container {
+        padding-top: 0; } }
+
+@-webkit-keyframes appears {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes appears {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 .movies-page {
   padding: 1px;
   padding-top: 41px; }
