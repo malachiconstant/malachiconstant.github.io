@@ -15,6 +15,7 @@ class MovieDetails extends React.Component {
 		height: window.outerHeight
 	}
 	componentDidMount() {
+		window.scroll(0,0);
 		window.addEventListener('resize', this._updateDims);
 	}
 	componentWillUnmount() {
@@ -35,11 +36,17 @@ class MovieDetails extends React.Component {
 		}
 		return(
 			<div className="movie-details-page generic-page" style={bgStyle}>
-				<h1>{data.title}</h1>
-				<p className="overview">
+				<div className="title">
+					<h1>{data.title}</h1>
+				</div>
+				<div className="desc">
+					<p className="overview">
 					{data.overview}
-				</p>		
+					</p>	
+				</div>
+				<div className="img-container">
 					<img src={data.poster_path ? bgImage + data.poster_path : data.backdrop_path ? bgImage + data.backdrop_path : placeHolder} alt={data.title} />
+				</div>
 			</div>
 		)
 	}
