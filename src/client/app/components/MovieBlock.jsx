@@ -57,7 +57,7 @@ class IndBlock extends React.Component {
 	}
 	render() {
 		const bgImage = `https://image.tmdb.org/t/p/w1000_and_h563_face`;
-		const placeHolder = `https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80`;
+		const placeHolder = `src/client/public/media/placeholder.png`;
 		const data = this.props.data;
 		return(
 				<div

@@ -43,12 +43,16 @@
 		}
 		.menu-button {
 			&.alternate a {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				width: 100%;
 				color: $shift02c;
 			}
+		}
+	}
+	.menu-button {
+		&.alternate a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
 		}
 	}
 	.main-logo {

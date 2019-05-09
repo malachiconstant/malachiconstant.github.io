@@ -66,7 +66,6 @@ class MoviesPage extends React.Component {
 	// determine color scheme, depending on time of day
 	_timeOfDay() {
 		const hour = new Date().getHours();
-		console.log(hour);
 		if(hour >= 5 && hour <= 11 ) {
 			this.setState({
 				time: "morning"

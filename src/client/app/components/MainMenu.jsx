@@ -56,6 +56,14 @@ class MainMenu extends React.Component {
 				</div>
 			)
 		}
+		if(this.props.location.pathname.startsWith(`/movies/`)) {
+			return(
+				<div className="menu-button alternate">
+					<Link className="back-button" to={`/movies`}>&alpha;
+					</Link>	
+				</div>
+			)
+		}
 		return  (
 			<div onClick={this.props.toggleMenu} className={"menu-button " + ((this.props.menuOpen) ? "visible" : "hidden")} role="button" aria-haspopup="true" tabIndex="0">
 				<div className="bars-container ">
