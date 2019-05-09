@@ -709,6 +709,7 @@
   background-color: #323232;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
   display: block;
   width: 100%;
   grid-template-columns: [col1] calc(60% - 15px) [col2] 40%;
@@ -742,8 +743,8 @@
     background-color: #323232;
     z-index: 0;
     opacity: 1;
-    -webkit-animation-duration: 15s;
-            animation-duration: 15s;
+    -webkit-animation-duration: 10s;
+            animation-duration: 10s;
     -webkit-animation-name: appears;
             animation-name: appears;
     -webkit-animation-fill-mode: forwards;
