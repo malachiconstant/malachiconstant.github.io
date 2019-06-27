@@ -134,9 +134,9 @@
 				height: 100%;
 				content: "";
 				z-index: 0;
+				opacity: 1;
 				background-image: url(/src/client/public/media/mesh.png);
 				background-size: 2px;
-				animation-duration: 6s;
 				animation-iteration-count: infinite;
 			}
 	}
@@ -186,38 +186,45 @@
 		grid-area: mb-0;
 		.movie-block:before {
 			animation-name: oChange1;
-			opacity: 1;
+			animation-direction: alternate;
+			animation-delay: 3s;
+			animation-duration: 5s;
 		}
 	}
 	&1 {
 		grid-area: mb-1;
 		.movie-block:before {
-			animation-delay: 0.3s;
-			animation-name: oChange2;
-			opacity: 0.3;
+			animation-name: oChange1;
+			animation-direction: alternate;
+			animation-delay: 6s;
+			animation-duration: 4.5s;
 		}
 	}
 	&2 {
 		grid-area: mb-2;
 		.movie-block:before {
-			animation-name: oChange3;
-			opacity: 0.3;
+			animation-name: oChange1;
+			animation-direction: alternate;
+			animation-delay: 4s;
+			animation-duration: 4s;
 		}
 	}
 	&3 {
 		grid-area: mb-3;
 		.movie-block:before {
-			animation-delay: 0.6s;
-			animation-name: oChange2;
-			opacity: 0.3;
+			animation-name: oChange1;
+			animation-direction: alternate;
+			animation-delay: 5s;
+			animation-duration: 3.5s;
 		}
 	}
 	&4 {
 		grid-area: mb-4;
 		.movie-block:before {
-			animation-delay: 0.3s;
 			animation-name: oChange1;
-			opacity: 1;
+			animation-direction: alternate;
+			animation-delay: 7s;
+			animation-duration: 3s;
 		}
 	}
 	&0,&1,&2,&3,&4 {
@@ -226,8 +233,8 @@
 			&:focus,
 			&:active {
 				&:before{
-					opacity: 0;
 					animation-name: none;
+					opacity: 0;
 				}
 			}
 		}
@@ -236,21 +243,6 @@
 @keyframes oChange1 {
 	0% {opacity: 1;}
 	25% {opacity: 1;}
-	50% {opacity: 0.3;}
-	75% {opacity: 0.3;}
-	100% {opacity: 1;}
-}
-@keyframes oChange2 {
-	0% {opacity: 0.3;}
-	25% {opacity: 1;}
-	50% {opacity: 1;}
-	75% {opacity: 0.3;}
-	100% {opacity: 0.3;}
-}
-@keyframes oChange3 {
-	0% {opacity: 0.3;}
-	25% {opacity: 0.3;}
-	50% {opacity: 1;}
 	75% {opacity: 1;}
 	100% {opacity: 0.3;}
 }

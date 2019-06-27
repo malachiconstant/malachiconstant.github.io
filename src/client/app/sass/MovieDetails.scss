@@ -8,10 +8,11 @@
 	display: block;
 	width: 100%;
 	grid-template-columns: [col1] calc(60% - 15px) [col2] 40%;
-	grid-template-rows: [row1] 72px [row2] auto [row3] auto;
+	grid-template-rows: [row1] 72px [row2] auto [row3] auto [row4];
 	grid-column-gap: $pd-one;
 	align-items: center;
 	padding: 30px 15px;
+	padding-top: 45px;
 	position: relative;
 	&:before {
 		content: "";
@@ -54,6 +55,7 @@
 		grid-column-gap: $pd-one-d;
 		grid-template-columns: [col1] calc(60% - 30px) [col2] 40%;
 		padding: 30px;
+		padding-top: 75px;
 	}
 	h1, p {
 		background-color: rgba(0,0,0,0.5);
@@ -113,6 +115,43 @@
 		@media (min-width: $bp-one) {
 			padding-top: 0;
 		}
+	}
+
+	.stats-container {
+		display: flex;
+		grid-row: row4;
+		grid-column: col1;
+		position: relative;
+		z-index: 1;
+		span {
+			color: $white;
+			display: block;
+			text-align: center;
+		}
+	}
+	.pop-container {
+		width: 50%;
+		background-color: rgba(0,0,0,0.5);
+		padding-top: 15px;
+		padding-bottom: 15px;
+		margin-top: 15px;
+	}
+	#popularity {
+		height: 100px;
+		width: 100%;
+	}
+	.canvasjs-chart-credit,
+	.canvasjs-chart-toolbar,
+	.canvasjs-chart-tooltip,
+	.canvasjs-chart-tip {
+		display: none !important;
+	}
+	.stats-text {
+		font-size: 12px;
+	}
+	.pop-rating {
+		font-size: 22px;
+		font-weight: $font-bold;
 	}
 }
 

@@ -34,7 +34,7 @@ class MainMenu extends React.Component {
 	}
 	// if on movies page, then change home link
 	_homeLink() {
-		if(this.props.location.pathname === `/movies`) {
+		if(this.props.location.pathname.includes(`/movies`)) {
 			return(
 				<Link className="main-logo alternate" to={`/`}>
 					<span>jonManalo.com</span>
@@ -126,7 +126,7 @@ class MainMenu extends React.Component {
 				<div className="list-container" style={listDimensions}>
 					<ul>
 						{menuList.map((menu,i) => {
-							// if on moives page, then change action buttons to links
+							// if on movies page, then change action buttons to links
 							if(this.props.location.pathname === `/movies`) {
 								return (
 									<li key={i}><Link to={`/${menu.hRef}`}><span>{menu.linkTitle}</span></Link></li>

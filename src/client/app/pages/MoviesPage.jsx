@@ -18,11 +18,12 @@ class MoviesPage extends React.Component {
 		endRelease: 0,
 		data: [],
 		number: 1,
-		total_pages: 1
+		total_pages: 1,
 	}
 
 	async componentDidMount() {
-
+			
+		
 		this._timeOfDay();
 		window.addEventListener('resize', this._updateDims);
 

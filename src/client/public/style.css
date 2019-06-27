@@ -714,12 +714,13 @@
   display: block;
   width: 100%;
   grid-template-columns: [col1] calc(60% - 15px) [col2] 40%;
-  grid-template-rows: [row1] 72px [row2] auto [row3] auto;
+  grid-template-rows: [row1] 72px [row2] auto [row3] auto [row4];
   grid-column-gap: 15px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   padding: 30px 15px;
+  padding-top: 45px;
   position: relative; }
   .movie-details-page:before {
     content: "";
@@ -762,7 +763,8 @@
       display: grid;
       grid-column-gap: 30px;
       grid-template-columns: [col1] calc(60% - 30px) [col2] 40%;
-      padding: 30px; } }
+      padding: 30px;
+      padding-top: 75px; } }
   .movie-details-page h1, .movie-details-page p {
     background-color: rgba(0, 0, 0, 0.5);
     display: inline;
@@ -811,6 +813,37 @@
     @media (min-width: 768px) {
       .movie-details-page .img-container {
         padding-top: 0; } }
+  .movie-details-page .stats-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    grid-row: row4;
+    grid-column: col1;
+    position: relative;
+    z-index: 1; }
+    .movie-details-page .stats-container span {
+      color: #ffffff;
+      display: block;
+      text-align: center; }
+  .movie-details-page .pop-container {
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 15px; }
+  .movie-details-page #popularity {
+    height: 100px;
+    width: 100%; }
+  .movie-details-page .canvasjs-chart-credit,
+  .movie-details-page .canvasjs-chart-toolbar,
+  .movie-details-page .canvasjs-chart-tooltip,
+  .movie-details-page .canvasjs-chart-tip {
+    display: none !important; }
+  .movie-details-page .stats-text {
+    font-size: 12px; }
+  .movie-details-page .pop-rating {
+    font-size: 22px;
+    font-weight: 400; }
 
 @-webkit-keyframes appears {
   0% {
@@ -903,10 +936,9 @@
       height: 100%;
       content: "";
       z-index: 0;
+      opacity: 1;
       background-image: url(/src/client/public/media/mesh.png);
       background-size: 2px;
-      -webkit-animation-duration: 6s;
-              animation-duration: 6s;
       -webkit-animation-iteration-count: infinite;
               animation-iteration-count: infinite; }
   .movie-block-wrapper.animate .movie-block {
@@ -949,113 +981,80 @@
   .mb-0 .movie-block:before {
     -webkit-animation-name: oChange1;
             animation-name: oChange1;
-    opacity: 1; }
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-delay: 3s;
+            animation-delay: 3s;
+    -webkit-animation-duration: 5s;
+            animation-duration: 5s; }
 
 .mb-1 {
   grid-area: mb-1; }
   .mb-1 .movie-block:before {
-    -webkit-animation-delay: 0.3s;
-            animation-delay: 0.3s;
-    -webkit-animation-name: oChange2;
-            animation-name: oChange2;
-    opacity: 0.3; }
+    -webkit-animation-name: oChange1;
+            animation-name: oChange1;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-delay: 6s;
+            animation-delay: 6s;
+    -webkit-animation-duration: 4.5s;
+            animation-duration: 4.5s; }
 
 .mb-2 {
   grid-area: mb-2; }
   .mb-2 .movie-block:before {
-    -webkit-animation-name: oChange3;
-            animation-name: oChange3;
-    opacity: 0.3; }
+    -webkit-animation-name: oChange1;
+            animation-name: oChange1;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-delay: 4s;
+            animation-delay: 4s;
+    -webkit-animation-duration: 4s;
+            animation-duration: 4s; }
 
 .mb-3 {
   grid-area: mb-3; }
   .mb-3 .movie-block:before {
-    -webkit-animation-delay: 0.6s;
-            animation-delay: 0.6s;
-    -webkit-animation-name: oChange2;
-            animation-name: oChange2;
-    opacity: 0.3; }
+    -webkit-animation-name: oChange1;
+            animation-name: oChange1;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-delay: 5s;
+            animation-delay: 5s;
+    -webkit-animation-duration: 3.5s;
+            animation-duration: 3.5s; }
 
 .mb-4 {
   grid-area: mb-4; }
   .mb-4 .movie-block:before {
-    -webkit-animation-delay: 0.3s;
-            animation-delay: 0.3s;
     -webkit-animation-name: oChange1;
             animation-name: oChange1;
-    opacity: 1; }
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-delay: 7s;
+            animation-delay: 7s;
+    -webkit-animation-duration: 3s;
+            animation-duration: 3s; }
 
 .mb-0 .movie-block:hover:before, .mb-0 .movie-block:focus:before, .mb-0 .movie-block:active:before, .mb-1 .movie-block:hover:before, .mb-1 .movie-block:focus:before, .mb-1 .movie-block:active:before, .mb-2 .movie-block:hover:before, .mb-2 .movie-block:focus:before, .mb-2 .movie-block:active:before, .mb-3 .movie-block:hover:before, .mb-3 .movie-block:focus:before, .mb-3 .movie-block:active:before, .mb-4 .movie-block:hover:before, .mb-4 .movie-block:focus:before, .mb-4 .movie-block:active:before {
-  opacity: 0;
   -webkit-animation-name: none;
-          animation-name: none; }
+          animation-name: none;
+  opacity: 0; }
 
 @-webkit-keyframes oChange1 {
   0% {
     opacity: 1; }
   25% {
     opacity: 1; }
-  50% {
-    opacity: 0.3; }
   75% {
-    opacity: 0.3; }
+    opacity: 1; }
   100% {
-    opacity: 1; } }
+    opacity: 0.3; } }
 
 @keyframes oChange1 {
   0% {
     opacity: 1; }
   25% {
-    opacity: 1; }
-  50% {
-    opacity: 0.3; }
-  75% {
-    opacity: 0.3; }
-  100% {
-    opacity: 1; } }
-
-@-webkit-keyframes oChange2 {
-  0% {
-    opacity: 0.3; }
-  25% {
-    opacity: 1; }
-  50% {
-    opacity: 1; }
-  75% {
-    opacity: 0.3; }
-  100% {
-    opacity: 0.3; } }
-
-@keyframes oChange2 {
-  0% {
-    opacity: 0.3; }
-  25% {
-    opacity: 1; }
-  50% {
-    opacity: 1; }
-  75% {
-    opacity: 0.3; }
-  100% {
-    opacity: 0.3; } }
-
-@-webkit-keyframes oChange3 {
-  0% {
-    opacity: 0.3; }
-  25% {
-    opacity: 0.3; }
-  50% {
-    opacity: 1; }
-  75% {
-    opacity: 1; }
-  100% {
-    opacity: 0.3; } }
-
-@keyframes oChange3 {
-  0% {
-    opacity: 0.3; }
-  25% {
-    opacity: 0.3; }
-  50% {
     opacity: 1; }
   75% {
     opacity: 1; }
