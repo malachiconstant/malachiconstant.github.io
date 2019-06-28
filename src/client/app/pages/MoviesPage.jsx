@@ -3,6 +3,7 @@ import {render} from 'react-dom';
 import {Link, IndexLink} from 'react-router';
 import MovieBatch from "../components/MovieBatch.jsx";
 import MainMenu from "../components/MainMenu.jsx";
+import {tmdbApi} from "../helpers.js";
 
 class MoviesPage extends React.Component {
 	constructor(props) {
@@ -31,7 +32,7 @@ class MoviesPage extends React.Component {
 		await this._nextFriday(5);
 
 		// fetch api according to release date
-		const releasePromise = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=b9ee7a8429ae1c80a5b558bd87dfe79d&language=en-US&sort_by=popularity.desc&include_adult=false&primary_release_date.gte=${this.state.startRelease}&primary_release_date.lte=${this.state.endRelease}&page=1`);
+		const releasePromise = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${tmdbApi()}&language=en-US&sort_by=popularity.desc&include_adult=false&primary_release_date.gte=${this.state.startRelease}&primary_release_date.lte=${this.state.endRelease}&page=1`);
 
 		await releasePromise
 			.then(data => data.json())
@@ -122,7 +123,7 @@ class MoviesPage extends React.Component {
 		const docHeight = Math.max( body.scrollHeight, body.offsetHeight, 
                        html.clientHeight, html.scrollHeight, html.offsetHeight );
 		 if (endBlock > (docHeight * 0.99)) {
-			const releasePromise2 = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=b9ee7a8429ae1c80a5b558bd87dfe79d&language=en-US&sort_by=popularity.desc&include_adult=false&primary_release_date.gte=${this.state.startRelease}&primary_release_date.lte=${this.state.endRelease}&page=${this.state.number + 1}`);
+			const releasePromise2 = fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${tmdbApi()}&language=en-US&sort_by=popularity.desc&include_adult=false&primary_release_date.gte=${this.state.startRelease}&primary_release_date.lte=${this.state.endRelease}&page=${this.state.number + 1}`);
 
 		await releasePromise2
 			.then(data => data.json())

@@ -844,6 +844,22 @@
   .movie-details-page .pop-rating {
     font-size: 22px;
     font-weight: 400; }
+  .movie-details-page .credits-container {
+    position: relative;
+    z-index: 1;
+    border: 0.5px solid #ffff00;
+    padding: 0 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: rgba(0, 0, 0, 0.5); }
+    .movie-details-page .credits-container p {
+      color: #ffffff;
+      font-size: 14px;
+      background-color: transparent; }
+    .movie-details-page .credits-container span {
+      color: #ffff00; }
+  .movie-details-page .credits-content {
+    color: #ffffff; }
 
 @-webkit-keyframes appears {
   0% {

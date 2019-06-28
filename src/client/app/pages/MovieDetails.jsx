@@ -3,6 +3,7 @@ import {render} from 'react-dom';
 import { Router, Route, IndexRoute, hashHistory} from 'react-router';
 import PropTypes from 'prop-types';
 import MainMenu from "../components/MainMenu.jsx";
+import {tmdbApi} from "../helpers.js";
 import '../sass/MovieDetails.scss';
 
 class MovieDetails extends React.Component {
@@ -17,19 +18,35 @@ class MovieDetails extends React.Component {
 	state = {
 		width: window.innerWidth,
 		height: window.outerHeight,
+		crew: [],
 		time: `afternoon`,
 		stats: false
 	}
-	componentDidMount() {
+	async componentDidMount() {
 		this._timeOfDay();
 		window.scroll(0,0);
 		window.addEventListener('resize', this._updateDims);
 		window.addEventListener('scroll', this._popStats);
+		window.addEventListener('load', this._popStats);
 
+		const getCredits = fetch(`https://api.themoviedb.org/3/movie/${this.props.location.state.data.id}/credits?api_key=${tmdbApi()}`);
+
+		await getCredits
+			.then(credits => credits.json())
+			.then(credits => {
+
+				this.setState({
+					crew: credits.crew,
+				})
+			})
+			.catch((err) =>{
+				console.error(err);
+			});
 	}
 	componentWillUnmount() {
 		window.removeEventListener('resize', this._updateDims);
 		window.removeEventListener('scroll', this.popStats);
+		window.removeEventListener('load', this.popStats);
 	}
 	_updateDims() {
 		this.setState({
@@ -62,10 +79,8 @@ class MovieDetails extends React.Component {
 			});
 		}
 	}
-
 	// POPULARITY SECTION
 	_popStats() {
-
 		// POPULARITY CHART
 		CanvasJS.addColorSet("chartRatings",
             [//colorSet Array
@@ -76,13 +91,13 @@ class MovieDetails extends React.Component {
 		const animChartDur = (1/(popularity/100)) * 2000;
 
 		const winPos = window.scrollY; 
-		const winThresh = winPos + window.outerHeight;
+		const winThresh = winPos + (window.outerHeight);
 		const body = document.body;
 		const html = document.documentElement;
 		const theHeight = Math.max( body.scrollHeight, body.offsetHeight, 
                        html.clientHeight, html.scrollHeight, html.offsetHeight );
-
-		if(winThresh > theHeight && this.state.stats == false) {
+		
+		if(winThresh >= (theHeight * 0.95) && this.state.stats == false) {
 			var chart = new CanvasJS.Chart("popularity", {
 				colorSet: "chartRatings",
 				animationEnabled: true,
@@ -122,6 +137,9 @@ class MovieDetails extends React.Component {
 
 		}
 
+	}
+	_findRole(role) {
+		this.state.crew.map(crew => `%${crew.job}`);
 	}
 
 	render() {
@@ -163,6 +181,20 @@ class MovieDetails extends React.Component {
 						</div>
 						<span className="stats-text pop-text">popularity<br />rating</span>
 					</div>
+				</div>
+				<div className="credits-container">
+					<p><span>Director: </span>
+					{
+						this.state.crew.filter(crew => crew.job == `Director`).map((crew, i) => crew.name).join(`, `)				
+					}
+					</p>
+					<br />
+					<p><span>Writer(s): </span>
+						{
+						this.state.crew.filter(crew => crew.department ==`Writing`).map((crew, i) => crew.name).join(`, `)
+						}
+					</p>
+					
 				</div>
 			</div>
 		)

@@ -153,6 +153,27 @@
 		font-size: 22px;
 		font-weight: $font-bold;
 	}
+	.credits-container {
+		position: relative;
+		z-index: 1;
+		border: 0.5px solid $yellow;
+		padding: 0 15px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		background-color: rgba(0,0,0,0.5);
+		p {
+			color: $white;
+			font-size: 14px;
+			background-color: transparent;
+		}
+		span {
+			color: $yellow;
+		}
+	}
+
+	.credits-content {
+		color: $white;
+	}
 }
 
 @keyframes appears {

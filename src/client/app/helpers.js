@@ -24,3 +24,7 @@ export function scrollView(ref) {
 			item.classList.add("animate");
 		}
 }
+
+export function tmdbApi() {
+	return `b9ee7a8429ae1c80a5b558bd87dfe79d`;
+}
