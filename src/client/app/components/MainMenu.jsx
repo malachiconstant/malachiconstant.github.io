@@ -86,7 +86,6 @@ class MainMenu extends React.Component {
 	}
 
 	render() {
-		console.dir(this.props);
 		// absolute positioned menu will fit and resize to dimension of browser
 		const listDimensions = {
 			width: `${this.props.width}px`,
