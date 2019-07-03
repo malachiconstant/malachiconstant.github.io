@@ -5,6 +5,7 @@ import { Router, Route, IndexRoute, hashHistory} from 'react-router';
 import HomePage from "./pages/HomePage.jsx";
 import MoviesPage from "./pages/MoviesPage.jsx";
 import MovieDetails from "./pages/MovieDetails.jsx";
+import PersonDetails from "./pages/PersonDetails.jsx";
 import App from "./App.jsx";
 
 
@@ -13,6 +14,7 @@ const Routes = (
 	 	<IndexRoute component={HomePage} />
 		<Route path="movies" component={MoviesPage}></Route>
 		<Route path="movies/:movieId" component={MovieDetails}></Route>
+		<Route path="movies/person/:personId" component={PersonDetails}></Route>
 	</Route>
  )
 export default Routes;

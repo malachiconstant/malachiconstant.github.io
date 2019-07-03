@@ -56,7 +56,7 @@ class IndBlock extends React.Component {
 		scrollView(this.mvRef);	
 	}
 	render() {
-		const bgImage = `https://image.tmdb.org/t/p/w1000_and_h563_face`;
+		const bgImage = `https://image.tmdb.org/t/p/w780`;
 		const placeHolder = `src/client/public/media/placeholder.png`;
 		const data = this.props.data;
 		return(

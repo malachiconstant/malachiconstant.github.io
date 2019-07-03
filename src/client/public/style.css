@@ -797,7 +797,7 @@
     place-self: center center;
     position: relative;
     z-index: 1;
-    padding-top: 15px;
+    margin-top: 15px;
     background-image: url(/src/client/public/media/loading.gif);
     min-height: 200px;
     background-repeat: no-repeat;
@@ -856,8 +856,10 @@
       color: #ffffff;
       font-size: 14px;
       background-color: transparent; }
-    .movie-details-page .credits-container span {
+    .movie-details-page .credits-container span.job-title {
       color: #ffff00; }
+    .movie-details-page .credits-container .crew-name span {
+      color: #ffffff; }
   .movie-details-page .credits-content {
     color: #ffffff; }
 
@@ -1076,6 +1078,11 @@
     opacity: 1; }
   100% {
     opacity: 0.3; } }
+.person-details-page.movie-details-page .img-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  place-self: start center; }
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)

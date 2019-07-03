@@ -1,14 +1,16 @@
 import React from 'react';
 import {render} from 'react-dom';
 import PropTypes from "prop-types";
-import {Link, IndexLink} from 'react-router';
+import {Link, IndexLink, hashHistory, browserHistory} from 'react-router';
 import CrossHatch from "../components/CrossHatch.jsx";
 import '../sass/MainMenu.scss';
+
 
 class MainMenu extends React.Component {
 
 	constructor(props) {
 		super(props);
+		this._goBack = this._goBack.bind(this);
 	}
 
 	static propTypes = {
@@ -31,6 +33,10 @@ class MainMenu extends React.Component {
 	_goToAndToggle(anchor) {
 		this.goToSection(anchor);
 		this.props.toggleMenu();
+	}
+	_goBack() {
+		// console.dir(this.props)
+		window.history.back();
 	}
 	// if on movies page, then change home link
 	_homeLink() {
@@ -56,11 +62,11 @@ class MainMenu extends React.Component {
 				</div>
 			)
 		}
-		if(this.props.location.pathname.startsWith(`/movies/`)) {
+		if(this.props.location.pathname.startsWith(`/movies`)) {
 			return(
 				<div className="menu-button alternate">
-					<Link className="back-button" to={`/movies`}>&alpha;
-					</Link>	
+					<a className="back-button" onClick={this._goBack}>&alpha;
+					</a>	
 				</div>
 			)
 		}
@@ -80,6 +86,7 @@ class MainMenu extends React.Component {
 	}
 
 	render() {
+		console.dir(this.props);
 		// absolute positioned menu will fit and resize to dimension of browser
 		const listDimensions = {
 			width: `${this.props.width}px`,

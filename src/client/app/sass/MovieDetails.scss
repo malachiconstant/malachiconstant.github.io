@@ -99,7 +99,7 @@
 		place-self: center center;
 		position: relative;
 		z-index: 1;
-		padding-top: 15px;
+		margin-top: 15px;
 		background-image: url(/src/client/public/media/loading.gif);
 		min-height: 200px;
 		background-repeat: no-repeat;
@@ -166,8 +166,11 @@
 			font-size: 14px;
 			background-color: transparent;
 		}
-		span {
+		span.job-title {
 			color: $yellow;
+		}
+		.crew-name span {
+			color: $white;
 		}
 	}
 

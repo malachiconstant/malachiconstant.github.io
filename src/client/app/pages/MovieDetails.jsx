@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import { Router, Route, IndexRoute, hashHistory} from 'react-router';
+import { Link, IndexLink, Router, Route, IndexRoute, hashHistory} from 'react-router';
 import PropTypes from 'prop-types';
 import MainMenu from "../components/MainMenu.jsx";
 import {tmdbApi} from "../helpers.js";
@@ -45,8 +45,8 @@ class MovieDetails extends React.Component {
 	}
 	componentWillUnmount() {
 		window.removeEventListener('resize', this._updateDims);
-		window.removeEventListener('scroll', this.popStats);
-		window.removeEventListener('load', this.popStats);
+		window.removeEventListener('scroll', this._popStats);
+		window.removeEventListener('load', this._popStats);
 	}
 	_updateDims() {
 		this.setState({
@@ -143,7 +143,7 @@ class MovieDetails extends React.Component {
 	}
 
 	render() {
-		const bgImage = `https://image.tmdb.org/t/p/w1000_and_h563_face`;
+		const bgImage = `https://image.tmdb.org/t/p/w780`;
 		const placeHolder = `src/client/public/media/placeholder.png`;
 		const data = this.props.location.state.data;
 		const bgStyle = {
@@ -183,13 +183,29 @@ class MovieDetails extends React.Component {
 					</div>
 				</div>
 				<div className="credits-container">
-					<p><span>Director: </span>
+					<p><span className="job-title">Director: </span>
 					{
-						this.state.crew.filter(crew => crew.job == `Director`).map((crew, i) => crew.name).join(`, `)				
+						this.state.crew.filter(crew => crew.job == `Director`).map((crew, i) => {
+							return (
+								
+									<Link
+										key={i}
+										className="crew-name"
+										to={{
+											pathname: `/movies/person/${crew.id}`,
+											state: { crew }
+										}}
+									>
+										<span>{ crew.name }</span>
+									</Link>
+								
+							)
+							
+						})				
 					}
 					</p>
 					<br />
-					<p><span>Writer(s): </span>
+					<p><span className="job-title">Writer(s): </span>
 						{
 						this.state.crew.filter(crew => crew.department ==`Writing`).map((crew, i) => crew.name).join(`, `)
 						}
