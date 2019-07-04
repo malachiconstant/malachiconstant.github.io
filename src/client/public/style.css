@@ -1083,6 +1083,9 @@
   margin-right: auto;
   width: 75%;
   place-self: start center; }
+
+.person-details-page.movie-details-page .also-in * {
+  color: #ffffff; }
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -1162,7 +1165,8 @@ a {
   text-decoration: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  display: inline-block; }
+  display: inline-block;
+  cursor: pointer; }
   a:hover {
     -webkit-transform: scale(1.02);
             transform: scale(1.02); }

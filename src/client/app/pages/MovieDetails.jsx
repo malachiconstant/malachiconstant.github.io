@@ -138,9 +138,6 @@ class MovieDetails extends React.Component {
 		}
 
 	}
-	_findRole(role) {
-		this.state.crew.map(crew => `%${crew.job}`);
-	}
 
 	render() {
 		const bgImage = `https://image.tmdb.org/t/p/w780`;

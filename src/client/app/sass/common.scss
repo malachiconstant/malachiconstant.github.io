@@ -78,6 +78,7 @@ a {
 	text-decoration: none;
 	transition: all 0.3s;
 	display: inline-block;
+	cursor: pointer;
 	&:hover {
 		transform: scale(1.02);
 	}
