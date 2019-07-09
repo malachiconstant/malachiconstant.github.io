@@ -84,19 +84,17 @@ class PersonDetails extends React.Component {
         }
     }
 
-
     render() {
         const data = this.props.location.state.crew;
         const imagePath = `https://image.tmdb.org/t/p/h632`;
         const bgPath = `https://image.tmdb.org/t/p/original`
 
 
-             // console.log(Array.from(this.state.credits.crew));
             const arrLength = this.state.credits.crew ? this.state.credits.crew.filter((crew, i, arr) => crew.job == `Director` && crew.backdrop_path != null).length -1 : ``;
             const randomBg = this.state.credits.crew ? this.state.credits.crew.filter((crew, i, arr) => crew.job == `Director`)[Math.floor(Math.random() * arrLength)].backdrop_path : ``;
             
             const bgImage = {
-                backgroundImage: `url(${imagePath}${randomBg})`,
+                backgroundImage: `url(${randomBg ? bgPath + randomBg : "src/client/public/media/placeholder.png"})`,
                 minHeight: `${this.state.height}px`
             }
         
@@ -115,7 +113,7 @@ class PersonDetails extends React.Component {
                     <h1>{data.name}</h1>
                 </div>
                 <div className="img-container">
-                    <img src={imagePath + data.profile_path} alt={data.title} />
+                    <img src={data.profile_path ? imagePath + data.profile_path : `src/client/public/media/profile-photo.jpg`} alt={data.title} />
                 </div>
                 <div className="desc">
                     <p className="overview">

@@ -205,9 +205,32 @@
 			transition: opacity 0.3s linear 0s, top 0s linear 0s;
 		}
 	}
-
+	.bouncing {
+		display: inline-block;
+		transform: translateY(-10px);
+		animation-name: bouncing;
+		animation-duration: 0.4s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+	}
 }
 
 @media (min-width: $min-one) {
 
+}
+
+@keyframes bouncing {
+	0% {
+		transform: translateY(-20px);
+	}
+	50% {
+		transform: translateY(0px);
+	}
+	75% {
+		transform: translateY(4px) scaleY(0.8);
+	}
+	100% {
+		transform: translateY(4px) scaleY(0.8);
+	}
 }

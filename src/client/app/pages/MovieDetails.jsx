@@ -189,7 +189,7 @@ class MovieDetails extends React.Component {
 										key={i}
 										className="crew-name"
 										to={{
-											pathname: `/movies/person/${crew.id}`,
+											pathname: `/playground-area/movies/person/${crew.id}`,
 											state: { crew }
 										}}
 									>

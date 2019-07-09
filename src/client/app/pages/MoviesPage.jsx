@@ -155,13 +155,14 @@ class MoviesPage extends React.Component {
 				/>
 
 				<h2>Upcoming Movies</h2>
+				<ul>
+					<li>Displaying <a target="_blank" href="https://www.themoviedb.org/" title="The movie database">tmdb</a> api via <a href="https://reactjs.org/" title="Reactjs">Reactjs</a>.</li>
+					<li>Combination of CSS, <a target="_blank" href="https://canvasjs.com/" title="CanvasJS">CanvasJS</a>, and <a target="_blank" href="https://greensock.com/gsap">GSAP</a> for animations</li>
+				</ul>
+
 					<div className="movie-page-wrapper">
 								<MovieBatch data={this.state.data} />
-						{/*
-							data.map((item, i) => (
-								<p key={i}>{item.title}</p>
-							))
-						*/}
+						
 					</div>
 			</div>
 		)

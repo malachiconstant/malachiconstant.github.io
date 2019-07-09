@@ -1,0 +1,28 @@
+@import 'global-variables';
+
+.playground-area-page {
+	padding-top: 41px;
+	.desc {
+		width: 100%;
+		padding-bottom: $pd-one;
+		@media (min-width: $bp-one) {
+			width:75%;
+		}
+	}
+	.project-container {
+		@media (min-width: $bp-one) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			width: 25%;
+		}
+		span {
+			font-weight: $font-bold;
+		}
+	}
+	.project-image {
+		img {
+			width: 100%;
+		}
+	}
+}

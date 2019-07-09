@@ -40,7 +40,7 @@ class MainMenu extends React.Component {
 	}
 	// if on movies page, then change home link
 	_homeLink() {
-		if(this.props.location.pathname.includes(`/movies`)) {
+		if(this.props.location.pathname.includes(`/playground-area`)) {
 			return(
 				<Link className="main-logo alternate" to={`/`}>
 					<span>jonManalo.com</span>
@@ -54,7 +54,7 @@ class MainMenu extends React.Component {
 		)
 	}
 	_altMenu() {
-		if(this.props.location.pathname ===`/movies`) {
+		if(this.props.location.pathname === `/playground-area`) {
 			return(
 				<div className="menu-button alternate">
 					<Link className="back-button" to={`/`}>&alpha;
@@ -62,7 +62,7 @@ class MainMenu extends React.Component {
 				</div>
 			)
 		}
-		if(this.props.location.pathname.startsWith(`/movies`)) {
+		if(this.props.location.pathname.startsWith(`/playground-area/movies`)) {
 			return(
 				<div className="menu-button alternate">
 					<a className="back-button" onClick={this._goBack}>&alpha;
@@ -133,7 +133,7 @@ class MainMenu extends React.Component {
 					<ul>
 						{menuList.map((menu,i) => {
 							// if on movies page, then change action buttons to links
-							if(this.props.location.pathname === `/movies`) {
+							if(this.props.location.pathname === `/playground-area`) {
 								return (
 									<li key={i}><Link to={`/${menu.hRef}`}><span>{menu.linkTitle}</span></Link></li>
 								)
@@ -147,7 +147,7 @@ class MainMenu extends React.Component {
 								</li>
 							)
 						})}
-						<li><Link to={`/movies`}><span>Upcoming Movies</span></Link></li>
+						<li><Link to={`/playground-area`}><span className="bouncing">🏀</span><span>Playground Area!</span></Link></li>
 					</ul>
 				</div>
 			</div>

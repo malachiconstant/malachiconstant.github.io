@@ -4,8 +4,19 @@
 	padding: 1px;
 	padding-top: 41px;
 	> h2 {
-		padding-left: 30px;
-		padding-right: 30px;
+		padding-left: $pd-one-d;
+		padding-right: $pd-one-d;
+	}
+	> ul {
+		padding-left: calc(#{$pd-one-d} * 2);
+		padding-right: $pd-one-d;
+		padding-bottom: $pd-one-d;
+		li {
+			list-style-type: circle;
+		}
+		a {
+			font-weight: $font-vbold;
+		}
 	}
 }
 .movie-batch {
