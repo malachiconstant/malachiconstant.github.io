@@ -12,6 +12,10 @@
  	&.nav-up {
  		top: -45px;
  	}
+ 	.back-button {
+ 		font-size: 36px;
+ 		line-height: 1;
+ 	}
 	.top-bar{
 		position:relative;
 		top: 0;
@@ -53,6 +57,7 @@
 			align-items: center;
 			justify-content: center;
 			width: 100%;
+			line-height: 1;
 		}
 	}
 	.main-logo {

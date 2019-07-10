@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, hashHistory} from 'react-router';
+import { Router, Route, IndexRoute} from 'react-router';
 import HomePage from "./pages/HomePage.jsx";
 import PlaygroundAreaPage from "./pages/PlaygroundAreaPage.jsx";
 import MoviesPage from "./pages/MoviesPage.jsx";

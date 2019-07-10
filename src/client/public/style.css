@@ -234,6 +234,9 @@
     top: 0; }
   .main-menu.nav-up {
     top: -45px; }
+  .main-menu .back-button {
+    font-size: 36px;
+    line-height: 1; }
   .main-menu .top-bar {
     position: relative;
     top: 0;
@@ -275,7 +278,8 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    width: 100%; }
+    width: 100%;
+    line-height: 1; }
   .main-menu .main-logo {
     position: relative;
     z-index: 1;
@@ -924,7 +928,8 @@
     .movie-details-page .credits-container span.job-title {
       color: #ffff00; }
     .movie-details-page .credits-container .crew-name span {
-      color: #ffffff; }
+      color: #ffffff;
+      font-weight: 700; }
   .movie-details-page .credits-content {
     color: #ffffff; }
 

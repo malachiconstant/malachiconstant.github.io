@@ -17,6 +17,44 @@
     type="image/png" 
     href="src/client/public/media/thesmiths.png">
     <link rel="stylesheet" type="text/css" href="src/client/public/style.css">
+
+    <!-- JSON LD  -->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "WebPage",
+            "name": "Jon Manalo",
+            "description": "This website aims to use the technologies I've learned, thus far.  It will constantly evolve as I refine existing skills and develop new ones.",
+            "primaryImageOfPage": "https://jonmanalo.com/src/client/public/media/profile.jpg",
+            "mainEntity": {
+                "@type": "Person",
+                "name" : "Jon Manalo",
+                "familyName": "Manalo",
+                "description": "I am a front-end web developer based in Toronto. Because of my background in visual arts, I've always been interested in the aesthetics and animations of a site or app. Whenever presented with a design comp, I enjoy problem-solving and finding solutions to match the designers' intent.
+                I am an audiophile. I listen to music while I code, and I like playing with musical instruments.  I am a cinephile in my spare time. I am also an avid gamer with a preference for fps games.
+                Oh, and I love food!",
+                "jobTitle": {
+                    "@type": "DefinedTerm",
+                    "inDefinedTermSet": "https://en.wikipedia.org/wiki/Main_Page",
+                    "name": "Front-end Web Developer",
+                    "url": "https://en.wikipedia.org/wiki/Front-end_web_development"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Toronto",
+                    "addressRegion": "ON",
+                    "addressCountry": "Canada"
+                },
+                "image": "https://jonmanalo.com/src/client/public/media/profile.jpg",
+                "sameAs": "http://jonmanalo.ca"
+            },
+            "publisher": {
+                "@type": "ProfilePage",
+                "name": "Jon's Website"
+            }
+        }
+</script>
+
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 <body>
