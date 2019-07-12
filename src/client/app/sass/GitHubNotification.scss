@@ -1,0 +1,106 @@
+@import 'global-variables';
+
+.github-container {
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: space-between;
+	position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    overflow: hidden;
+    @media (min-width: $bp-one) {
+    	flex-direction: row;
+    }
+	.github-preview {
+		cursor: pointer;
+		display: flex;
+		background-color: $off-white;
+		width: 100%;
+		
+		justify-content: flex-end;
+		padding-right: 45px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		border-bottom: 1px solid $black;
+		border-left: 1.5px solid $black;
+		transform: skewX(60deg) translateX(35px);
+		max-height: 45px;
+		> * {
+			transform: skewX(-60deg);
+		}
+		.evening & {
+			background-color: $silver;
+			border-bottom: 1px solid $white;
+			border-left: 1.5px solid $white;
+		}
+		.morning & {
+			border-bottom: 1px solid $shift02c;
+			border-left: 1.5px solid $shift02c;
+		}
+		@media (min-width: $bp-one) {
+			width: 50%;
+			padding-right: 60px;
+			max-width: 345px;
+		}
+		.svg-container {
+			height: 30px;
+			width: 30px;
+			margin-right: 12px;
+		}
+	}
+	.update-container {
+		display: flex;
+		align-items: flex-end;
+		flex-direction: column;
+	}
+	.update-time {
+		font-size: 12px;
+	}
+	.details-button {
+		font-size: 12px;
+		font-weight: 700;
+	}
+	.visible {
+		display: block;
+	}
+	.hidden {
+		display: none;
+	}
+	.detailed-update-container {
+		transition: all 0.5s;
+		transform: translateX(-100%);
+		padding-top: 55px;
+		padding-bottom: 15px;
+		padding-left: $pd-one;
+		padding-right: $pd-one;
+		background-color: $off-white;
+		min-height: 40px;
+		border-bottom: 1px solid $black;
+		border-right: 1px solid $black;
+		cursor: pointer;
+		margin-top: -40px;
+		@media (min-width: $bp-one) {
+			margin-top: 0;
+			padding-top: 10px;
+			padding-left: $pd-one-d;
+			padding-right: $pd-one-d;
+		}
+		> span {
+			font-size: 14px;
+			font-weight: $font-vbold;
+			padding-bottom: 5px;
+			display: inline-block;
+		}
+		&.true {
+			transform: translateX(0%);
+		}
+		ul {
+			list-style-type: circle;
+			padding-left: 20px;
+			li {
+				font-size: 12px;
+			}
+		}
+	}
+}

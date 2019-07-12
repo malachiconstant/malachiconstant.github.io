@@ -88,7 +88,6 @@ class HomePage extends React.Component {
 				/>
 				<div className="page-content-wrapper">
 					<div ref="genericPage" className={`generic-page home-page ${this.state.time}`}>
-
 						{/* ======= HERO ======== */}	
 						<Hero className={`block`} time={this.state.time} height={this.state.height} />
 

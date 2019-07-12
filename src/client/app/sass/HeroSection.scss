@@ -12,6 +12,7 @@
 	background-size: 20px, 1000px;
 	background-position: 0% 0%, -100px -100px;
 	background-attachment: fixed, fixed;
+	position: relative;
 	&.morning {
 		@include shift02(0.3);
 		animation: colorChangeMor 10s 0s linear infinite;

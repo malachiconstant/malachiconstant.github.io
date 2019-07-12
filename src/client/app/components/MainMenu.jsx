@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import PropTypes from "prop-types";
-import {Link, IndexLink, hashHistory, browserHistory} from 'react-router';
+import {Link, IndexLink, hashHistory} from 'react-router';
 import CrossHatch from "../components/CrossHatch.jsx";
 import '../sass/MainMenu.scss';
 
@@ -21,6 +21,7 @@ class MainMenu extends React.Component {
 		duration: PropTypes.number,
 		toggleMenu: PropTypes.func
 	}
+	
 	// scroll to top of page
 	_goTop() {
 		TweenMax.to(window, 1, {scrollTo: 0, ease: Power3.easeOut});

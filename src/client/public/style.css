@@ -557,6 +557,119 @@
   100% {
     -webkit-transform: rotateX(0deg);
             transform: rotateX(0deg); } }
+.github-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden; }
+  @media (min-width: 768px) {
+    .github-container {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
+  .github-container .github-preview {
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #f2f2f2;
+    width: 100%;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding-right: 45px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #323232;
+    border-left: 1.5px solid #323232;
+    -webkit-transform: skewX(60deg) translateX(35px);
+            transform: skewX(60deg) translateX(35px);
+    max-height: 45px; }
+    .github-container .github-preview > * {
+      -webkit-transform: skewX(-60deg);
+              transform: skewX(-60deg); }
+    .evening .github-container .github-preview {
+      background-color: c0c0c0;
+      border-bottom: 1px solid #ffffff;
+      border-left: 1.5px solid #ffffff; }
+    .morning .github-container .github-preview {
+      border-bottom: 1px solid #a600ff;
+      border-left: 1.5px solid #a600ff; }
+    @media (min-width: 768px) {
+      .github-container .github-preview {
+        width: 50%;
+        padding-right: 60px;
+        max-width: 345px; } }
+    .github-container .github-preview .svg-container {
+      height: 30px;
+      width: 30px;
+      margin-right: 12px; }
+  .github-container .update-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  .github-container .update-time {
+    font-size: 12px; }
+  .github-container .details-button {
+    font-size: 12px;
+    font-weight: 700; }
+  .github-container .visible {
+    display: block; }
+  .github-container .hidden {
+    display: none; }
+  .github-container .detailed-update-container {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    padding-top: 55px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #f2f2f2;
+    min-height: 40px;
+    border-bottom: 1px solid #323232;
+    border-right: 1px solid #323232;
+    cursor: pointer;
+    margin-top: -40px; }
+    @media (min-width: 768px) {
+      .github-container .detailed-update-container {
+        margin-top: 0;
+        padding-top: 10px;
+        padding-left: 30px;
+        padding-right: 30px; } }
+    .github-container .detailed-update-container > span {
+      font-size: 14px;
+      font-weight: 700;
+      padding-bottom: 5px;
+      display: inline-block; }
+    .github-container .detailed-update-container.true {
+      -webkit-transform: translateX(0%);
+              transform: translateX(0%); }
+    .github-container .detailed-update-container ul {
+      list-style-type: circle;
+      padding-left: 20px; }
+      .github-container .detailed-update-container ul li {
+        font-size: 12px; }
 .hero-section {
   background-color: rgba(255, 165, 210, 0.3);
   display: -webkit-box;
@@ -573,7 +686,8 @@
   background-image: url("/src/client/public/media/bg_02.png"), url("/src/client/public/media/hero-bg-day.png");
   background-size: 20px, 1000px;
   background-position: 0% 0%, -100px -100px;
-  background-attachment: fixed, fixed; }
+  background-attachment: fixed, fixed;
+  position: relative; }
   .hero-section.morning {
     background-color: rgba(255, 165, 0, 0.3);
     -webkit-animation: colorChangeMor 10s 0s linear infinite;

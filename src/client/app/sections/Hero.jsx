@@ -2,6 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import PropTypes from "prop-types";
 import TextShadow from "../components/TextShadow.jsx";
+import GitHubNotification from "../components/GitHubNotification.jsx";
 import '../sass/HeroSection.scss';
 
 class Hero extends React.Component {
@@ -20,12 +21,14 @@ static propTypes = {
 		}
 		return(
 			<div className={`hero-section ${this.props.time}`} id="heroSection" style={secStyle}>
-					<div className="section">
-						<TextShadow>
-							<h2>Good {this.props.time}!</h2>
-							<p>Welcome to my site.  Most of everything you see here has been designed and developed by yours truly.</p>
-						</TextShadow>
-					</div>	
+				{/* ======= GITHUB NOTIFICATION ======== */}
+				<GitHubNotification time={this.props.time} />
+				<div className="section">
+					<TextShadow>
+						<h2>Good {this.props.time}!</h2>
+						<p>Welcome to my site.  Most of everything you see here has been designed and developed by yours truly.</p>
+					</TextShadow>
+				</div>	
 			</div>
 		)
 	}
