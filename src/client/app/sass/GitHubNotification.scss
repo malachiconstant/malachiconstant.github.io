@@ -9,6 +9,7 @@
     right: 0;
     width: 100%;
     overflow: hidden;
+    z-index: 1;
     @media (min-width: $bp-one) {
     	flex-direction: row;
     }
@@ -17,7 +18,6 @@
 		display: flex;
 		background-color: $off-white;
 		width: 100%;
-		
 		justify-content: flex-end;
 		padding-right: 45px;
 		padding-top: 5px;
@@ -37,6 +37,9 @@
 		.morning & {
 			border-bottom: 1px solid $shift02c;
 			border-left: 1.5px solid $shift02c;
+		}
+		path {
+			transition: all 0.3s;
 		}
 		@media (min-width: $bp-one) {
 			width: 50%;
@@ -70,7 +73,7 @@
 	.detailed-update-container {
 		transition: all 0.5s;
 		transform: translateX(-100%);
-		padding-top: 55px;
+		padding-top: 41px;
 		padding-bottom: 15px;
 		padding-left: $pd-one;
 		padding-right: $pd-one;
@@ -78,20 +81,41 @@
 		min-height: 40px;
 		border-bottom: 1px solid $black;
 		border-right: 1px solid $black;
-		cursor: pointer;
 		margin-top: -40px;
+		.evening & {
+			background-color: $silver;
+			border-bottom: 1px solid $white;
+			border-right: 1.5px solid $white;
+		}
+		.morning & {
+			border-bottom: 1px solid $shift02c;
+			border-right: 1px solid $shift02c;
+		}
 		@media (min-width: $bp-one) {
 			margin-top: 0;
-			padding-top: 10px;
+			padding-top: 1px;
 			padding-left: $pd-one-d;
 			padding-right: $pd-one-d;
 		}
-		> span {
-			font-size: 14px;
-			font-weight: $font-vbold;
-			padding-bottom: 5px;
-			display: inline-block;
-		}
+		> div {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			span {
+				font-size: 14px;
+				font-weight: $font-vbold;
+				display: inline-block;
+				&.exit {
+					font-size: 20px;
+					cursor: pointer;
+					padding-top: 15px;
+					padding-left: 15px;
+					padding-right: 0px;
+					padding-bottom: 15px;
+				}
+			}
+		} 
+
 		&.true {
 			transform: translateX(0%);
 		}

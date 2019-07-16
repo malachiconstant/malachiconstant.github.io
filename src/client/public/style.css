@@ -437,8 +437,11 @@
       padding-top: 40px;
       padding-bottom: 40px; }
       .main-menu .list-container ul span {
-        font-size: 32px;
+        font-size: 20px;
         cursor: pointer; }
+        @media (min-width: 768px) {
+          .main-menu .list-container ul span {
+            font-size: 32px; } }
   .main-menu.active .list-container {
     top: 0;
     opacity: 1;
@@ -572,7 +575,8 @@
   top: 0;
   right: 0;
   width: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  z-index: 1; }
   @media (min-width: 768px) {
     .github-container {
       -webkit-box-orient: horizontal;
@@ -607,6 +611,9 @@
     .morning .github-container .github-preview {
       border-bottom: 1px solid #a600ff;
       border-left: 1.5px solid #a600ff; }
+    .github-container .github-preview path {
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s; }
     @media (min-width: 768px) {
       .github-container .github-preview {
         width: 50%;
@@ -641,7 +648,7 @@
     transition: all 0.5s;
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
-    padding-top: 55px;
+    padding-top: 41px;
     padding-bottom: 15px;
     padding-left: 15px;
     padding-right: 15px;
@@ -649,19 +656,41 @@
     min-height: 40px;
     border-bottom: 1px solid #323232;
     border-right: 1px solid #323232;
-    cursor: pointer;
     margin-top: -40px; }
+    .evening .github-container .detailed-update-container {
+      background-color: c0c0c0;
+      border-bottom: 1px solid #ffffff;
+      border-right: 1.5px solid #ffffff; }
+    .morning .github-container .detailed-update-container {
+      border-bottom: 1px solid #a600ff;
+      border-right: 1px solid #a600ff; }
     @media (min-width: 768px) {
       .github-container .detailed-update-container {
         margin-top: 0;
-        padding-top: 10px;
+        padding-top: 1px;
         padding-left: 30px;
         padding-right: 30px; } }
-    .github-container .detailed-update-container > span {
-      font-size: 14px;
-      font-weight: 700;
-      padding-bottom: 5px;
-      display: inline-block; }
+    .github-container .detailed-update-container > div {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .github-container .detailed-update-container > div span {
+        font-size: 14px;
+        font-weight: 700;
+        display: inline-block; }
+        .github-container .detailed-update-container > div span.exit {
+          font-size: 20px;
+          cursor: pointer;
+          padding-top: 15px;
+          padding-left: 15px;
+          padding-right: 0px;
+          padding-bottom: 15px; }
     .github-container .detailed-update-container.true {
       -webkit-transform: translateX(0%);
               transform: translateX(0%); }
