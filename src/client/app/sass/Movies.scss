@@ -18,6 +18,15 @@
 			font-weight: $font-vbold;
 		}
 	}
+	&.generic-page {
+		.movie-block p {
+			color: $white;
+		}
+		.details span {
+			color: $black;
+		}
+	} 
+
 }
 .movie-batch {
 	@media(min-width: $bp-one) {

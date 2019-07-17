@@ -29,6 +29,10 @@ body {
 	font-size: 18px;
 	color: $black;
 	letter-spacing: 0.15em;
+	background-color: $off-white;
+	&.evening {
+		background-color: $silver;
+	}
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -86,7 +90,19 @@ a {
 #app {
 	width: 100%;
 }
-
+.generic-page {
+	&.morning {
+		h1, h2, p, li, span, a {
+			color: $shift02c;
+		}
+	}
+	&.evening {
+		background-color: $silver;
+		h1, h2, p, li, span, a {
+			color: $white;
+		}
+	}
+}
 @media (min-width: $min-one) {
 
 }

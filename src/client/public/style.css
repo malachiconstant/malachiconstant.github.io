@@ -699,6 +699,8 @@
       padding-left: 20px; }
       .github-container .detailed-update-container ul li {
         font-size: 12px; }
+        .github-container .detailed-update-container ul li a {
+          vertical-align: middle; }
 .hero-section {
   background-color: rgba(255, 165, 210, 0.3);
   display: -webkit-box;
@@ -1101,6 +1103,10 @@
       list-style-type: circle; }
     .movies-page > ul a {
       font-weight: 700; }
+  .movies-page.generic-page .movie-block p {
+    color: #ffffff; }
+  .movies-page.generic-page .details span {
+    color: #323232; }
 
 @media (min-width: 768px) {
   .movie-batch {
@@ -1335,7 +1341,10 @@ body {
   font-weight: 300;
   font-size: 18px;
   color: #323232;
-  letter-spacing: 0.15em; }
+  letter-spacing: 0.15em;
+  background-color: #f2f2f2; }
+  body.evening {
+    background-color: c0c0c0; }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -1394,3 +1403,11 @@ a {
 
 #app {
   width: 100%; }
+
+.generic-page.morning h1, .generic-page.morning h2, .generic-page.morning p, .generic-page.morning li, .generic-page.morning span, .generic-page.morning a {
+  color: #a600ff; }
+
+.generic-page.evening {
+  background-color: c0c0c0; }
+  .generic-page.evening h1, .generic-page.evening h2, .generic-page.evening p, .generic-page.evening li, .generic-page.evening span, .generic-page.evening a {
+    color: #ffffff; }

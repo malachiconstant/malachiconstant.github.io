@@ -50,7 +50,6 @@ class MoviesPage extends React.Component {
 			});
 
 		window.addEventListener('scroll', this._showScroll);
-
 	}
 
 	componentWillUnmount() {
@@ -143,7 +142,7 @@ class MoviesPage extends React.Component {
 	render() {
 		// const data = this.state.data; 
 		return(
-			<div className="movies-page generic-page">
+			<div className={`movies-page generic-page ${this.state.time}`}>
 				<MainMenu 
 					time={this.state.time}
 					width={this.state.width}

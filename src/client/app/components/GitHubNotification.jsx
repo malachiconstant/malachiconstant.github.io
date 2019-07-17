@@ -81,7 +81,7 @@ class GitHubNotification extends React.Component {
 					</div>
 					<ul>
 						{first[0].payload.commits.map((entry, i) => {
-							return (<li key={i}>{entry.message}</li>)
+							return (<li key={i}><a target="_blank" href={`https://github.com/malachiconstant/malachiconstant.github.io/commit/${entry.sha}`}>{entry.message}</a></li>)
 						})}
 					</ul>
 				</div>

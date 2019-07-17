@@ -18,8 +18,6 @@ class PlaygroundAreaPage extends React.Component {
 	componentDidMount() {
 		this._timeOfDay();
 		window.addEventListener('resize', this._updateDims);
-
-
 	}
 	componentWillUnmount() {
         window.removeEventListener('resize', this._updateDims);
@@ -59,7 +57,7 @@ class PlaygroundAreaPage extends React.Component {
 	render() {
 		return(
 
-			<div className="main-page generic-page playground-area-page">
+			<div className={`main-page generic-page playground-area-page ${this.state.time}`}>
 				<MainMenu 
                     time={this.state.time}
                     width={this.state.width}
