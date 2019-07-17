@@ -94,16 +94,13 @@ class PersonDetails extends React.Component {
         const imagePath = `https://image.tmdb.org/t/p/h632`;
         const bgPath = `https://image.tmdb.org/t/p/original`;
         const arrLength = this.state.credits.crew ? this.state.credits.crew.filter((crew, i, arr) => crew.job == `Director` && crew.backdrop_path != null).length - 1 : 0;
-            console.log(`arr ${arrLength} `);
-
+            
         const randomBg = this.state.credits.crew && arrLength >= 0 ? this.state.credits.crew.filter((crew, i, arr) => crew.job == `Director` && crew.backdrop_path != null)[Math.floor(Math.random() * arrLength)].backdrop_path : null;
 
-            console.log(`randombg ${Math.floor(Math.random() * arrLength)}`);
-            
-            const bgImage = {
-                backgroundImage: `url(${randomBg != null ? bgPath + randomBg : "src/client/public/media/placeholder.png"})`,
-                minHeight: `${this.state.height}px`
-            }
+        const bgImage = {
+            backgroundImage: `url(${randomBg != null ? bgPath + randomBg : "src/client/public/media/placeholder.png"})`,
+            minHeight: `${this.state.height}px`
+        }
         
         return (
             <div className="person-details-page movie-details-page generic-page" style={bgImage}>
