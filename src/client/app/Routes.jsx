@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute} from 'react-router';
 import HomePage from "./pages/HomePage.jsx";
 import PlaygroundAreaPage from "./pages/PlaygroundAreaPage.jsx";
+import PixiPage from "./pages/PixiPage.jsx";
 import MoviesPage from "./pages/MoviesPage.jsx";
 import MovieDetails from "./pages/MovieDetails.jsx";
 import PersonDetails from "./pages/PersonDetails.jsx";
@@ -17,6 +18,8 @@ const Routes = (
 		<Route path="playground-area" component={PlaygroundAreaPage}></Route>
 		<Route path="playground-area/movies/:movieId" component={MovieDetails}></Route>
 		<Route path="playground-area/movies/person/:personId" component={PersonDetails}></Route>
+		<Route path="playground-area/pixi-area" component={PixiPage}></Route>
+
 	</Route>
  )
 export default Routes;

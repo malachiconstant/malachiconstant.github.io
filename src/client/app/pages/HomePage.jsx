@@ -74,7 +74,8 @@ class HomePage extends React.Component {
 		});
 	}
 
-	render() {		
+	render() {	
+
 		return(
 			<div className={"page-container " + this.state.time}>
 				<MainMenu 
