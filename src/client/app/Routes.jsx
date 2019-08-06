@@ -18,7 +18,7 @@ const Routes = (
 		<Route path="playground-area" component={PlaygroundAreaPage}></Route>
 		<Route path="playground-area/movies/:movieId" component={MovieDetails}></Route>
 		<Route path="playground-area/movies/person/:personId" component={PersonDetails}></Route>
-		<Route path="playground-area/pixi-area" component={PixiPage}></Route>
+		<Route path="playground-area/pixi-page" component={PixiPage}></Route>
 
 	</Route>
  )

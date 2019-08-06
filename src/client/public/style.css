@@ -912,21 +912,60 @@
         width: 75%; } }
   @media (min-width: 768px) {
     .playground-area-page .project-container {
+      display: grid;
+      grid-template-columns: 25% 25% 25% 25%;
+      grid-template-rows: 235px;
+      grid-gap: 30px; } }
+  .playground-area-page .project-container span {
+    font-weight: 400; }
+  .playground-area-page .project-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch; }
+    .playground-area-page .project-content a {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-      -webkit-box-pack: start;
-          -ms-flex-pack: start;
-              justify-content: flex-start;
-      width: 25%; } }
-  .playground-area-page .project-container span {
-    font-weight: 400; }
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      width: 100%; }
+      .playground-area-page .project-content a .img-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        min-height: 195px;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; }
   .playground-area-page .project-image img {
     width: 100%; }
+  .playground-area-page .img-container {
+    background-color: #323232; }
 .pixi-page {
   padding-top: 41px; }
+  .pixi-page > h2 {
+    padding-left: 30px;
+    padding-right: 30px; }
+  .pixi-page h3, .pixi-page p {
+    line-height: 1.25;
+    padding-left: 30px;
+    padding-right: 30px; }
+  .pixi-page > ul {
+    padding-left: calc(30px * 2);
+    padding-right: 30px;
+    padding-bottom: 30px; }
+    .pixi-page > ul li {
+      list-style-type: circle; }
+    .pixi-page > ul a {
+      font-weight: 700; }
   .pixi-page .desc {
     width: 100%;
     padding-bottom: 15px; }
@@ -948,6 +987,10 @@
     font-weight: 400; }
   .pixi-page .project-image img {
     width: 100%; }
+
+.pixi-section {
+  border-top: 1px solid #323232;
+  border-bottom: 1px solid #323232; }
 .movie-details-page {
   background-color: #323232;
   background-repeat: no-repeat;

@@ -11,18 +11,36 @@
 	}
 	.project-container {
 		@media (min-width: $bp-one) {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: flex-start;
-			width: 25%;
+			display: grid;
+			grid-template-columns: 25% 25% 25% 25%;
+			grid-template-rows: 235px;
+			grid-gap: 30px;
 		}
 		span {
 			font-weight: $font-bold;
+		}
+	}
+	.project-content {
+		display: flex;
+		align-items: stretch;
+		a {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			width: 100%;
+			.img-container {
+				display: flex;
+				min-height: 195px;
+				align-items: center;
+			}
 		}
 	}
 	.project-image {
 		img {
 			width: 100%;
 		}
+	}
+	.img-container {
+		background-color: $black;
 	}
 }

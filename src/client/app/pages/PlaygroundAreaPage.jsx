@@ -73,11 +73,23 @@ class PlaygroundAreaPage extends React.Component {
 				</div>
 				<div className="block project-container">
 					<div className="project-content">
-						
-							<Link className="project-image" to="playground-area/movies"><img alt="film reel" src="src/client/public/media/placeholder.png" />
+					
+							<Link className="project-image" to="playground-area/movies">
+                                <div className="img-container">
+                                    <img alt="film reel" src="src/client/public/media/placeholder.png" />
+                                </div>
 							<span>Upcoming Movies</span></Link>
 						
 					</div>
+                    <div className="project-content">
+                        
+                            <Link className="project-image" to="playground-area/pixi-page">
+                                <div className="img-container">
+                                    <img alt="PixiJS" src="src/client/public/media/pixijs-v5-logo.png" />
+                                </div>
+                            <span>PixiJS Page</span></Link>
+                        
+                    </div>
 				</div>
 			</div>
 		)

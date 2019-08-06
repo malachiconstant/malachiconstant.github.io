@@ -1,10 +1,10 @@
-import React from 'react';
-import {render} from 'react-dom';
-import {Link, IndexLink} from 'react-router';
+import React from "react";
+import {render} from "react-dom";
+import {Link, IndexLink} from "react-router";
 import MainMenu from "../components/MainMenu.jsx";
-import * as PIXI from 'pixi.js';
-import '../sass/GenericPage.scss';
-import '../sass/PixiPage.scss';
+import "../sass/GenericPage.scss";
+import "../sass/PixiPage.scss";
+import PixiSection01 from '../sections/PixiSection01.jsx';
 
 class PixiPage extends React.Component {
 	constructor(props) {
@@ -18,28 +18,12 @@ class PixiPage extends React.Component {
 
 	componentDidMount() {
 		this._timeOfDay();
-		window.addEventListener('resize', this._updateDims);
-
-         let app = new PIXI.Application({ 
-            antialias: true,    // default: false
-            transparent: false, // default: false
-            resolution: 1,
-            backgroundColor: 0xFF0000  
-          }
-        );
-        // app.renderer.backgroundColor = 0xFF0000;  
-        document.getElementById("pixi-wrapper").appendChild(app.view);
-        app.renderer.view.style.position = "absolute";
-        app.renderer.view.style.display = "block";
-        app.renderer.autoResize = true;
-        app.renderer.resize(window.innerWidth, window.innerHeight);
-        window.addEventListener('resize', function(){
-            app.renderer.resize(window.innerWidth, window.innerHeight);
-        }); 
+		window.addEventListener(`resize`, this._updateDims);
 	}
 	componentWillUnmount() {
-        window.removeEventListener('resize', this._updateDims);
+        window.removeEventListener(`resize`, this._updateDims);
     }
+
     _updateDims() {
         this.setState({
             width: window.innerWidth,
@@ -86,8 +70,11 @@ class PixiPage extends React.Component {
                     duration={this.state.duration}
                     location={this.props.location}
                 />
-				<h1 className="block">Pixi</h1>
-                <div id="pixi-wrapper"></div>
+				<h2 className="block">Pixi</h2>
+                <ul>
+                    <li>testing capabilities of <a target="_blank" href="https://www.pixijs.com/" title="PixiJS">PixiJS</a>, which is a 2D <a href="https://get.webgl.org/" title="WebGL">WebGL</a> renderer</li>
+                </ul>
+                <PixiSection01 width={this.state.width} height={this.state.height} time={this.state.time} />
 			</div>
 		)
 	}
