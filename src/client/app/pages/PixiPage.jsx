@@ -5,6 +5,7 @@ import MainMenu from "../components/MainMenu.jsx";
 import "../sass/GenericPage.scss";
 import "../sass/PixiPage.scss";
 import PixiSection01 from '../sections/PixiSection01.jsx';
+import PixiSection02 from '../sections/PixiSection02.jsx';
 
 class PixiPage extends React.Component {
 	constructor(props) {
@@ -75,6 +76,7 @@ class PixiPage extends React.Component {
                     <li>testing capabilities of <a target="_blank" href="https://www.pixijs.com/" title="PixiJS">PixiJS</a>, which is a 2D <a href="https://get.webgl.org/" title="WebGL">WebGL</a> renderer</li>
                 </ul>
                 <PixiSection01 width={this.state.width} height={this.state.height} time={this.state.time} />
+                <PixiSection02 width={this.state.width} height={this.state.height} time={this.state.time} />
 			</div>
 		)
 	}
