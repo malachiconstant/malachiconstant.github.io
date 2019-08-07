@@ -92,13 +92,13 @@ a {
 }
 .generic-page {
 	&.morning {
-		h1, h2, p, li, span, a {
+		h1, h2, h3, p, li, span, a {
 			color: $shift02c;
 		}
 	}
 	&.evening {
 		background-color: $silver;
-		h1, h2, p, li, span, a {
+		h1, h2, h3, p, li, span, a {
 			color: $white;
 		}
 	}

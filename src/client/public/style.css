@@ -991,6 +991,12 @@
 .pixi-section {
   border-top: 1px solid #323232;
   border-bottom: 1px solid #323232; }
+  .morning .pixi-section {
+    border-top: 1px solid #a600ff;
+    border-bottom: 1px solid #a600ff; }
+  .evening .pixi-section {
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff; }
 .movie-details-page {
   background-color: #323232;
   background-repeat: no-repeat;
@@ -1475,10 +1481,10 @@ a {
 #app {
   width: 100%; }
 
-.generic-page.morning h1, .generic-page.morning h2, .generic-page.morning p, .generic-page.morning li, .generic-page.morning span, .generic-page.morning a {
+.generic-page.morning h1, .generic-page.morning h2, .generic-page.morning h3, .generic-page.morning p, .generic-page.morning li, .generic-page.morning span, .generic-page.morning a {
   color: #a600ff; }
 
 .generic-page.evening {
   background-color: c0c0c0; }
-  .generic-page.evening h1, .generic-page.evening h2, .generic-page.evening p, .generic-page.evening li, .generic-page.evening span, .generic-page.evening a {
+  .generic-page.evening h1, .generic-page.evening h2, .generic-page.evening h3, .generic-page.evening p, .generic-page.evening li, .generic-page.evening span, .generic-page.evening a {
     color: #ffffff; }

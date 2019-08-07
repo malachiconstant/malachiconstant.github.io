@@ -23,7 +23,7 @@ class PixiSection01 extends React.Component {
             antialias: true,    // default: false
             transparent: false, // default: false
             resolution: 1,
-            backgroundColor: 0xFF0000  
+            backgroundColor: 0x000000 
           });
         document.getElementById("pixi-wrapper_01").appendChild(app.view);
 
@@ -34,15 +34,15 @@ class PixiSection01 extends React.Component {
         app.renderer.resize(document.body.offsetWidth, window.innerHeight - 113);
         const ratio = (window.innerHeight - 113)/document.body.offsetWidth;
 
-        // -- texture 01
-        const textA = PIXI.Texture.from(`src/client/public/media/car_01.png`);
-        const textB = PIXI.Texture.from(`src/client/public/media/placeholder.png`);
+        //spaceship texture
+        const textA = PIXI.Texture.from(`src/client/public/media/ship.png`);
 
-        // -- pixi sprite
+        //pixi sprite
         const sprite = new PIXI.Sprite(textA);
 
         sprite.anchor.set(0.5);
 
+        //set location of sprite
         sprite.x = app.screen.width / 2;
         sprite.y = app.screen.height / 2;
 
@@ -50,8 +50,14 @@ class PixiSection01 extends React.Component {
 
         sprite.interactive = true;
         sprite.buttonMode = true;
-        sprite.scale.x = -1;
+
+        // set orientation of sprite (facing left/right)
+        sprite.scale.x = 1;
+
+        //start ticker
         app.ticker.add(moving);
+
+        //change direction of sprite on click
         sprite.on(`pointertap`, () => {
             switch (num) {
                 case 0:
@@ -66,23 +72,31 @@ class PixiSection01 extends React.Component {
         });
 
         function moving() {
-                switch (num) {
-                    case 0:
-                        sprite.scale.x = -1;
-                        sprite.position.x = sprite.position.x;
-                        break;
+            switch (num) {
+                case 0:
+                    sprite.scale.x = 1;
+                    sprite.position.x = sprite.position.x;
+                    break;
 
-                    case 1:
-                        sprite.scale.x = -1
-                        sprite.position.x += 1;
-                        break;
+                case 1:
+                    sprite.scale.x = 1
+                    sprite.position.x += 3;
+                    break;
 
-                    case 2:
-                        sprite.scale.x = 1
-                        sprite.position.x -= 1;
-                        
-                }   
+                case 2:
+                    sprite.scale.x = -1
+                    sprite.position.x -= 3;
+                    
             }
+           
+            if (sprite.position.x + (sprite.width/2) >= document.body.offsetWidth) {
+                num = 2;
+            }
+            if (sprite.position.x - (sprite.width/2) <= 0) {
+                num = 1;
+            }   
+        }
+
 
         window.addEventListener(`resize`, function(){
             app.renderer.resize(document.body.offsetWidth, document.body.offsetWidth * ratio);
@@ -96,7 +110,7 @@ class PixiSection01 extends React.Component {
         return(
             <div className="pixi-section">
                 <h3>Test # 1</h3>
-                <p><strong>Description:</strong> simple canvas where object changes direction on an onclick event.</p>
+                <p><strong>Description:</strong> simple canvas where object changes direction when it hits the edge of the screen or on an onclick event.</p>
                 <div id="pixi-wrapper_01"></div>
             </div>
         )
