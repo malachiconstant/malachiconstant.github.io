@@ -29,10 +29,28 @@ class PixiSection01 extends React.Component {
 
         let num = 0;
 
+        const mobileBreak = (size) =>  {
+            if(document.body.offsetWidth <= size) {
+                app.renderer.resize(document.body.offsetWidth, window.innerHeight/2);
+                let ratio = (window.innerHeight/2)/document.body.offsetWidth;
+            } else {
+                app.renderer.resize(document.body.offsetWidth, window.innerHeight - 113);
+                let ratio = (window.innerHeight - 113)/document.body.offsetWidth;
+            }
+            console.log('fire');
+        };
+
+        mobileBreak(480);
+
         app.renderer.view.style.display = "block";
         app.renderer.autoResize = true;
-        app.renderer.resize(document.body.offsetWidth, window.innerHeight - 113);
-        const ratio = (window.innerHeight - 113)/document.body.offsetWidth;
+        
+        // app.renderer.resize(document.body.offsetWidth, window.innerHeight - 113);
+        // let ratio = (window.innerHeight - 113)/document.body.offsetWidth;
+
+        // enable scroll on body
+        app.renderer.plugins.interaction.autoPreventDefault = false;
+        app.renderer.view.style.touchAction = 'auto';
 
         //spaceship texture
         const textA = PIXI.Texture.from(`src/client/public/media/ship.png`);
@@ -99,7 +117,7 @@ class PixiSection01 extends React.Component {
 
 
         window.addEventListener(`resize`, function(){
-            app.renderer.resize(document.body.offsetWidth, document.body.offsetWidth * ratio);
+            mobileBreak(480);
             sprite.x = app.screen.width / 2;
             sprite.y = app.screen.height / 2;
         });

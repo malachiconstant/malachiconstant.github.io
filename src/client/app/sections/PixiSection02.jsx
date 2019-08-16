@@ -27,10 +27,25 @@ class PixiSection02 extends React.Component {
           });
         document.getElementById("pixi-wrapper_02").appendChild(app.view);
 
+        // enable scroll on body
+        app.renderer.plugins.interaction.autoPreventDefault = false;
+        app.renderer.view.style.touchAction = 'auto';
+
         app.renderer.view.style.display = "block";
         app.renderer.autoResize = true;
-        app.renderer.resize(document.body.offsetWidth, window.innerHeight - 113);
-        const ratio = (window.innerHeight - 113)/document.body.offsetWidth;
+        
+        const mobileBreak = (size) =>  {
+            if(document.body.offsetWidth <= size) {
+                app.renderer.resize(document.body.offsetWidth, window.innerHeight/2);
+                let ratio = (window.innerHeight/2)/document.body.offsetWidth;
+            } else {
+                app.renderer.resize(document.body.offsetWidth, window.innerHeight - 113);
+                let ratio = (window.innerHeight - 113)/document.body.offsetWidth;
+            }
+            console.log('fire');
+        };
+
+        mobileBreak(480);
 
         const graphics = new PIXI.Graphics();
 
@@ -75,7 +90,7 @@ class PixiSection02 extends React.Component {
         app.stage.addChild(graphics);       
 
         window.addEventListener(`resize`, function(){
-            app.renderer.resize(document.body.offsetWidth, document.body.offsetWidth * ratio);
+            mobileBreak(480);
         });
     }
 
