@@ -1,2 +1,4 @@
 *.md
 index.html
+src/client/app/firebaseConfig.js
+src/client/app/hide.js

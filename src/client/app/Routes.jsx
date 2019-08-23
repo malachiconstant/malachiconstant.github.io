@@ -8,6 +8,7 @@ import PixiPage from "./pages/PixiPage.jsx";
 import MoviesPage from "./pages/MoviesPage.jsx";
 import MovieDetails from "./pages/MovieDetails.jsx";
 import PersonDetails from "./pages/PersonDetails.jsx";
+import SpotifyPage from "./pages/SpotifyPage.jsx";
 import App from "./App.jsx";
 
 
@@ -19,6 +20,7 @@ const Routes = (
 		<Route path="playground-area/movies/:movieId" component={MovieDetails}></Route>
 		<Route path="playground-area/movies/person/:personId" component={PersonDetails}></Route>
 		<Route path="playground-area/pixi-page" component={PixiPage}></Route>
+		<Route path="playground-area/spotify-page" component={SpotifyPage}></Route>
 
 	</Route>
  )
