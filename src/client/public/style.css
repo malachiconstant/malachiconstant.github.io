@@ -1390,6 +1390,109 @@
 
 .person-details-page.movie-details-page .also-in * {
   color: #ffffff; }
+.towga-page {
+  padding: 1px;
+  padding-top: 41px; }
+  .towga-page > h2 {
+    padding-left: 30px;
+    padding-right: 30px; }
+  .towga-page ul {
+    padding-left: calc(30px * 2);
+    padding-right: 30px;
+    padding-bottom: 30px; }
+    .towga-page ul li {
+      list-style-type: circle; }
+    .towga-page ul a {
+      font-weight: 700; }
+  .towga-page.generic-page .page-wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #323232; }
+    .towga-page.generic-page .page-wrapper h3 {
+      color: #ffffff; }
+  .towga-page .page-wrapper span {
+    color: #ffffff;
+    font-size: 24px;
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-transition-delay: 1s;
+            transition-delay: 1s; }
+  .towga-page .page-wrapper .comment {
+    padding-top: calc($pd-one-d / 2);
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-transition-delay: 1.6s;
+            transition-delay: 1.6s; }
+    .towga-page .page-wrapper .comment p {
+      font-size: 16px;
+      color: #ffffff;
+      font-style: italic; }
+  .towga-page .towga-reply {
+    padding-top: 30px; }
+    .towga-page .towga-reply span.appear {
+      opacity: 1; }
+    .towga-page .towga-reply .comment.appear {
+      opacity: 1; }
+  .towga-page form {
+    max-height: 700px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s; }
+    .towga-page form.shrink {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      max-height: 0; }
+  .towga-page .form-inputs {
+    display: block; }
+    @media (min-width: 768px) {
+      .towga-page .form-inputs {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-column-gap: 30px; } }
+  .towga-page .input-container {
+    width: 100%;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    padding: 5px;
+    margin-top: 30px; }
+    .towga-page .input-container input {
+      width: 100%; }
+    @media (min-width: 768px) {
+      .towga-page .input-container {
+        margin-top: 0; } }
+  .towga-page input, .towga-page textarea {
+    color: #ffffff;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border: none;
+    font-size: 18px; }
+    .towga-page input::-webkit-input-placeholder, .towga-page textarea::-webkit-input-placeholder {
+      color: #ffffff; }
+    .towga-page input::-moz-placeholder, .towga-page textarea::-moz-placeholder {
+      color: #ffffff; }
+    .towga-page input::-ms-input-placeholder, .towga-page textarea::-ms-input-placeholder {
+      color: #ffffff; }
+    .towga-page input::placeholder, .towga-page textarea::placeholder {
+      color: #ffffff; }
+  .towga-page textarea {
+    margin-top: 30px;
+    width: 100%;
+    min-height: 200px;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    padding: 5px; }
+    @media (min-width: 768px) {
+      .towga-page textarea {
+        width: 50%; } }
+  .towga-page input[type="submit"] {
+    color: #323232;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.4);
+    font-size: 24px;
+    cursor: pointer;
+    margin-top: 30px; }
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)

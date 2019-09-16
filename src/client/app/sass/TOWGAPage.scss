@@ -1,0 +1,121 @@
+@import 'global-variables';
+
+.towga-page{
+    padding: 1px;
+    padding-top: 41px;
+    > h2 {
+		padding-left: $pd-one-d;
+		padding-right: $pd-one-d;
+	}
+    ul {
+        padding-left: calc(#{$pd-one-d} * 2);
+        padding-right: $pd-one-d;
+        padding-bottom: $pd-one-d;
+        li {
+            list-style-type: circle;
+        }
+        a {
+            font-weight: $font-vbold;
+        }
+    }
+    &.generic-page .page-wrapper {
+        padding-left: $pd-one-d;
+		padding-right: $pd-one-d;
+        background-color: $black;
+        h3 {
+            color: $white;
+        }
+    }
+    .page-wrapper {
+        span {
+            color: $white;
+            font-size: 24px;
+            opacity: 0;
+            transition: all 0.3s;
+            transition-delay: 1s;
+        }
+        .comment {
+            padding-top: calc($pd-one-d / 2);
+            opacity: 0;
+            transition: all 0.3s;
+            transition-delay: 1.6s;
+            p {
+                font-size: 16px;
+                color: $white;
+                font-style: italic;
+            }
+        }
+        
+    }
+    .towga-reply {
+        padding-top: $pd-one-d;
+        span.appear {
+            opacity: 1;
+        }
+        .comment.appear {
+            opacity: 1;
+        }
+    }
+    form {
+        max-height: 700px;
+        transition: all 0.3s;
+        &.shrink {
+            transform: scale(0);
+            max-height: 0;
+        }
+    }
+    .form-inputs {
+        display: block;
+        @media(min-width: $bp-one) {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-column-gap: $pd-one-d;
+        }
+        
+    }
+    .input-container {
+        width: 100%;
+        border: 1px solid $white;
+        border-radius: 3px;
+        padding: 5px;
+        margin-top: $pd-one-d;
+        input {
+            width: 100%;
+        }
+        @media(min-width: $bp-one) {
+            margin-top: 0;
+        }
+
+    }
+    input, textarea {
+        color: $white;
+            &::placeholder {
+                color: $white;
+            }
+        background-color: transparent;
+        box-shadow: none;
+        border: none;
+        font-size: 18px;
+    }
+    textarea {
+        margin-top: $pd-one-d;
+        width: 100%;
+        min-height: 200px;
+        border: 1px solid $white;
+        border-radius: 3px;
+        padding: 5px;
+        @media(min-width: $bp-one) {
+            width: 50%;
+        }
+    }
+    input[type="submit"] {
+        color: $black;
+        border-radius: 3px;
+        background-color: rgba(255,255,255, 0.4);
+        font-size: 24px;
+        cursor: pointer;
+        margin-top: $pd-one-d;
+    }
+    
+}
+   
