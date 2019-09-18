@@ -49,12 +49,22 @@
     }
     .towga-reply {
         padding-top: $pd-one-d;
-        span.appear {
-            opacity: 1;
+
+        span {
+            color: $white !important;
+            font-weight: $font-bold;
+            &.appear {
+                opacity: 1;
+            }
         }
-        .comment.appear {
-            opacity: 1;
+
+        .comment {
+            color: $white !important;
+            &.appear {
+                opacity: 1;
+            }
         }
+
     }
     form {
         max-height: 700px;

@@ -20,7 +20,7 @@ const Routes = (
 		<Route path="playground-area/movies/:movieId" component={MovieDetails}></Route>
 		<Route path="playground-area/movies/person/:personId" component={PersonDetails}></Route>
 		<Route path="playground-area/pixi-page" component={PixiPage}></Route>
-		<Route path="playground-area/towga" component={TOWGAPage}></Route>
+		<Route path="playground-area/totga" component={TOWGAPage}></Route>
 
 	</Route>
  )

@@ -93,10 +93,10 @@ class TOWGAPage extends React.Component {
     }
     
     _handleChange(propertyName, event) {
-        let theInputs = this.state.data;
-        theInputs[propertyName] = event.target.value;
+        let data = this.state.data;
+        data[propertyName] = event.target.value;
         this.setState({
-            theInputs
+            data
         });
     }
     _handleSubmit(event) {
@@ -154,10 +154,10 @@ class TOWGAPage extends React.Component {
                     location={this.props.location}
                 />
 
-                <h2>TOWGA</h2>
+                <h2>The One That Got Away</h2>
                 <ul>
                     <li>Created Realtime Database from Google Firebase</li>
-                    <li>Users key information into database, which alters it, and receives an random entry from the database in return from a previous user</li>
+                    <li>Users key information into database, which alters it, and receives an random entry from the database</li>
                 </ul>
 
                     <div className="page-wrapper">

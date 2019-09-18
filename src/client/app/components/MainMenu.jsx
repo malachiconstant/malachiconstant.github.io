@@ -63,7 +63,7 @@ class MainMenu extends React.Component {
 				</div>
 			)
 		}
-		if(this.props.location.pathname.startsWith(`/playground-area/movies`) || this.props.location.pathname == `/playground-area/pixi-page`) {
+		if(this.props.location.pathname.startsWith(`/playground-area/`)) {
 			return(
 				<div className="menu-button alternate">
 					<a className="back-button" onClick={this._goBack}>&lt;

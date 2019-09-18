@@ -1431,10 +1431,15 @@
       font-style: italic; }
   .towga-page .towga-reply {
     padding-top: 30px; }
-    .towga-page .towga-reply span.appear {
-      opacity: 1; }
-    .towga-page .towga-reply .comment.appear {
-      opacity: 1; }
+    .towga-page .towga-reply span {
+      color: #ffffff !important;
+      font-weight: 400; }
+      .towga-page .towga-reply span.appear {
+        opacity: 1; }
+    .towga-page .towga-reply .comment {
+      color: #ffffff !important; }
+      .towga-page .towga-reply .comment.appear {
+        opacity: 1; }
   .towga-page form {
     max-height: 700px;
     -webkit-transition: all 0.3s;

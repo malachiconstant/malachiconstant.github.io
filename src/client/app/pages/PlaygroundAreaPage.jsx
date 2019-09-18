@@ -90,6 +90,15 @@ class PlaygroundAreaPage extends React.Component {
                             <span>PixiJS Page</span></Link>
                         
                     </div>
+                    <div className="project-content">
+                        
+                            <Link className="project-image" to="playground-area/totga">
+                                <div className="img-container">
+                                    <img alt="The One That Got Away" src="src/client/public/media/totga.jpeg" />
+                                </div>
+                            <span>The One That Got Away</span></Link>
+                        
+                    </div>
 				</div>
 			</div>
 		)
