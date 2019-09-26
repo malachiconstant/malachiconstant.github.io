@@ -10,11 +10,12 @@ import PixiSection02 from '../sections/PixiSection02.jsx';
 class PixiPage extends React.Component {
 	constructor(props) {
 		super(props);
-		this._updateDims = this._updateDims.bind(this);
+        this._updateDims = this._updateDims.bind(this);
 	}
 	state = {
 			width: window.innerWidth,
-			height: window.outerHeight
+            height: window.outerHeight,
+            time: 'afternoon'
 	}
 
 	componentDidMount() {

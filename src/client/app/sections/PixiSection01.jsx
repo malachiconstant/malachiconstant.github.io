@@ -37,7 +37,6 @@ class PixiSection01 extends React.Component {
                 app.renderer.resize(document.body.offsetWidth, window.innerHeight - 113);
                 let ratio = (window.innerHeight - 113)/document.body.offsetWidth;
             }
-            console.log('fire');
         };
 
         mobileBreak(480);
