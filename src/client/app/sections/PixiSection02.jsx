@@ -20,7 +20,7 @@ class PixiSection02 extends React.Component {
         window.motionY = [];
         
         this.app2 = new PIXI.Application({ 
-            antialias: true,    // default: false
+            antialias: false,    // default: false
             transparent: false, // default: false
             resolution: 1,
            

@@ -76,8 +76,8 @@ class PixiPage extends React.Component {
                 <ul>
                     <li>testing capabilities of <a target="_blank" href="https://www.pixijs.com/" title="PixiJS">PixiJS</a>, which is a 2D <a href="https://get.webgl.org/" title="WebGL">WebGL</a> renderer</li>
                 </ul>
-                <PixiSection01 width={this.state.width} height={this.state.height} time={this.state.time} />
                 <PixiSection02 width={this.state.width} height={this.state.height} time={this.state.time} />
+                <PixiSection01 width={this.state.width} height={this.state.height} time={this.state.time} />
 			</div>
 		)
 	}

@@ -9,6 +9,7 @@ import MoviesPage from "./pages/MoviesPage.jsx";
 import MovieDetails from "./pages/MovieDetails.jsx";
 import PersonDetails from "./pages/PersonDetails.jsx";
 import TOWGAPage from "./pages/TOWGAPage.jsx";
+import ScrollPage from "./pages/ScrollPage.jsx";
 import App from "./App.jsx";
 
 
@@ -21,6 +22,7 @@ const Routes = (
 		<Route path="playground-area/movies/person/:personId" component={PersonDetails}></Route>
 		<Route path="playground-area/pixi-page" component={PixiPage}></Route>
 		<Route path="playground-area/totga" component={TOWGAPage}></Route>
+		<Route path="playground-area/scroll-page" component={ScrollPage}></Route>
 
 	</Route>
  )

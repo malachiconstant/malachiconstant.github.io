@@ -57,7 +57,7 @@ class PlaygroundAreaPage extends React.Component {
 	render() {
 		return(
 
-			<div className={`main-page generic-page playground-area-page ${this.state.time}`}>
+			<div className={`main-page generic-page playground-area-page ${this.state.time}`} style={{height: '3000px'}}>
 				<MainMenu 
                     time={this.state.time}
                     width={this.state.width}
