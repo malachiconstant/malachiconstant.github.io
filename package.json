@@ -2,7 +2,7 @@
   "name": "jonmanalo.com",
   "description": "site of Jon Manalo",
   "dependencies": {
-    "acorn": "^6.1.1",
+    "acorn": "^6.4.1",
     "ajv": "^6.10.0",
     "autoprefixer": "^7.1.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
