@@ -10,7 +10,7 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.4",
     "firebase": "^6.4.0",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.13.1",
     "pixi.js": "^5.1.0",
     "postcss-loader": "^2.0.6",
     "react": "^16.8.4",
