@@ -139,16 +139,8 @@ class MainMenu extends React.Component {
 									<li key={i}><Link to={`/${menu.hRef}`}><span>{menu.linkTitle}</span></Link></li>
 								)
 							}
-							
-							return (
-								<li key={i}>
-									<div onClick={() => {this._goToAndToggle(menu.hRef)}} title={menu.linkDescription}>
-										<span>{menu.linkTitle}</span>
-									</div>
-								</li>
-							)
 						})}
-						<li><Link to={`/playground-area`}><span className="bouncing">🏀</span><span>Playground Area!</span></Link></li>
+						<li><Link to={`/playground-area`}><span className="bouncing">🏀</span><span>Test Area</span></Link></li>
 					</ul>
 				</div>
 			</div>

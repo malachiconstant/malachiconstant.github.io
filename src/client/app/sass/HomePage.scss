@@ -81,3 +81,21 @@
 		justify-content: flex-end;
 	}
 }
+.blm_container {
+	display: flex;
+	
+	align-content: center;
+	justify-content: center;
+	background-color: $black;
+	a {
+		width: 40%;
+		display: flex;
+		min-width: 200px;
+		max-width: 400px;
+		align-self: center;
+
+	}
+	img {
+		width: 100%;
+	}
+}

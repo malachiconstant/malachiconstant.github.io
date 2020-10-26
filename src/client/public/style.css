@@ -115,6 +115,28 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end; }
+
+.blm_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #323232; }
+  .blm_container a {
+    width: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-width: 200px;
+    max-width: 400px;
+    -ms-flex-item-align: center;
+        align-self: center; }
+  .blm_container img {
+    width: 100%; }
 .page-content-wrapper .generic-page .section > .tech-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;

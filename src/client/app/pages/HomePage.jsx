@@ -89,23 +89,16 @@ class HomePage extends React.Component {
 				/>
 				<div className="page-content-wrapper">
 					<div ref="genericPage" className={`generic-page home-page ${this.state.time}`}>
-						{/* ======= HERO ======== */}	
-						<Hero className={`block`} time={this.state.time} height={this.state.height} />
-
-						{/* ======= ABOUT ME ======== */} 
-						<div id="about-me">
-						</div>
-						<AboutMe />
-
-						{/* ======= ABOUT THE SITE ======== */}
-						<AboutTheSite time={this.state.time} />
-
-						{/* ======= PENS ======== */}
-						<Pens width={this.state.width}/>
-
-						{/* ======= CONTACT ======== */}
-						<Contact time={this.state.time} />
-
+            <div 
+              className="blm_container"
+              style={
+                {height: this.state.width > 300 ? `${(this.state.height - 120)}px` : `${this.state.height - 95}px`}
+              }
+            >
+							<a href="https://blacklivesmatter.ca/">
+								<img alt="BLM" src="/src/client/public/media/blm.svg" />
+							</a>
+            </div>
 						{/* ======= FOOTER ======== */}
 						<div className="block">
 							<div className="section footer">
