@@ -2,4 +2,5 @@
 index.html
 src/client/app/firebaseConfig.js
 src/client/app/hide.js
+src/client/app/pages/bkp_TOWGAPage.jsx
 *.code-workspace

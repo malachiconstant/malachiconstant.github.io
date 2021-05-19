@@ -99,6 +99,19 @@ class HomePage extends React.Component {
 								<img alt="BLM" src="/src/client/public/media/blm.svg" />
 							</a>
             </div>
+						{/* ======= HERO ======== */}	
+						<Hero className={`block`} time={this.state.time} height={this.state.height} />
+
+						{/* ======= ABOUT ME ======== */} 
+						<div id="about-me">
+						</div>
+						<AboutMe />
+
+						{/* ======= ABOUT THE SITE ======== */}
+						<AboutTheSite time={this.state.time} />
+
+						{/* ======= CONTACT ======== */}
+						<Contact time={this.state.time} />
 						{/* ======= FOOTER ======== */}
 						<div className="block">
 							<div className="section footer">
